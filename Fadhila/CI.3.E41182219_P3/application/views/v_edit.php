@@ -9,7 +9,6 @@
 		<h3>Edit Data</h3>
 	</center>
 	<?php foreach($user as $u){ ?>
-	<!-- mengarahkan ke fungsi update pada crud.php di controller -->
 	<form action="<?php echo base_url(). 'crud/update'; ?>" method="post">
 		<table style="margin:20px auto;">
 			<tr>

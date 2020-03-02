@@ -18,14 +18,12 @@
 		$no = 1;
 		foreach($user as $u){ 
 		?>
-		<!-- menampilkan data yang telah diolah dari model -->
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $u->nama ?></td>
 			<td><?php echo $u->alamat ?></td>
 			<td><?php echo $u->pekerjaan ?></td>
 			<td>
-			<!-- anchor berfungsi untuk membuat hyperlink  -->
 			      <?php echo anchor('crud/edit/'.$u->id,'Edit'); ?>
                               <?php echo anchor('crud/hapus/'.$u->id,'Hapus'); ?>
 			</td>

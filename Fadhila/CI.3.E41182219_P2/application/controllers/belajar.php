@@ -1,27 +1,37 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 class Belajar extends CI_Controller {
-    
-    // mengakses model m_data
+	
 	function __construct(){
-        parent::__construct();
-        $this->load->model('m_data');
+		parent::__construct();
 		
 	}
-    
-    // menampilkan halaman belajar.php di view
+ 
 	public function index(){
-		$this->load->view('belajar');
+		echo "ini method index pada controller belajar index";
+	}
+ 
+	public function halo(){
+		$this->load->view('v_belajar');
     }
-    
-    function user(){
-        // berfungsi untuk mengambil data dari fungsi ambil_data di model m_data
-        $data['user'] = $this->m_data->ambil_data()->result();
-        // menampilkan data di v_user
-        $this->load->view('v_user.php', $data);
+    public function hai(){
+        $data['nama_web'] = "MalasNgoding.com";
+        $this->load->view('view_belajar',$data);
     }
+    public function hei(){				
+		$data = array(
+			'judul' => "Cara Membuat View Pada CodeIgniter",
+			'tutorial' => "CodeIgniter"
+			);
+		$this->load->view('view_coba', $data);
+    }
+  		 
+	function user(){
+        $this->load->model('m_data');
+		$data['user'] = $this->m_data->ambil_data()->result();
+		$this->load->view('v_user.php',$data);
+	}
  
 }
 

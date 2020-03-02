@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Kelompok3/CI.3.E41181957_P3';
+/*biasanya digunakan untuk membuat URL dari resource yang berada di direktori (root) web*/
+$config['base_url'] = 'http://localhost/Kelompok3/Fadhila/CI.3.E41182219_P3';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +325,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'tutoriallogincodeigniterwwwmalasngodingcom';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
