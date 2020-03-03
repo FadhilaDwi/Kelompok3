@@ -5,7 +5,7 @@ class Welcome extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
-		$this->load->helper('html');
+		$this->load->helper('html'); /*cara menggunakan helper pada controller */
 	}
  
 	public function index(){

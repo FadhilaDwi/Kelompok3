@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet"> ><!--bootstrap-->
         <link href="<?php echo base_url('css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet" crossorigin="anonymous" />
         <link href="<?php echo base_url('css/all.min.css') ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url('css/sb-admin.css') ?>" rel="stylesheet">

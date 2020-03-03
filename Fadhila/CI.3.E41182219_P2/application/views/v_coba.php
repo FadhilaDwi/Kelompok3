@@ -13,4 +13,4 @@
 	echo heading("Helper HTML CodeIgniter | MalasNgoding.com",6);
 	?>
 </body>
-</html>
+</html> <!-- tampilan coba-->

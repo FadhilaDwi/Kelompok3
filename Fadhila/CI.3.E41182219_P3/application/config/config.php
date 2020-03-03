@@ -36,7 +36,7 @@ $config['base_url'] = 'http://localhost/Kelompok3/Fadhila/CI.3.E41182219_P3';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = ''; /*untuk menghilangkan index.php*/
 
 /*
 |--------------------------------------------------------------------------

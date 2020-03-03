@@ -59,7 +59,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 /*librari yang digunakan atau tempat penampungan file*/
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database'); /*koneksi database*/
 
 /*
 | -------------------------------------------------------------------
@@ -91,8 +91,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 /*untuk include file berupa url dan html*/
-$autoload['helper'] = array('url','html');
-
+$autoload['helper'] = array('url','html'); /*berfungsi untuk heading dan menampilkan gambar */
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files

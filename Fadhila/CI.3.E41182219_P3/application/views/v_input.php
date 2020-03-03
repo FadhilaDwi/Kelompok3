@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- tampilan form input --> 
+	<!DOCTYPE html>
 <html>
 <head>
 	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title>

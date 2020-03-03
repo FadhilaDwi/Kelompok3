@@ -10,4 +10,4 @@
 <!-- berfungsi untuk melakukan download -->
 	<a href="<?php echo base_url().'index.php/download/lakukan_download' ?>">Download file</a>
 </body>
-</html>
+</html> <!-- tampilan download --> 
