@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Dengan CodeIgniter | www.malasngoding.com</title>
+	<title>Membuat Login Dengan CodeIgniter | www.malasngoding.com /*form login*/ </title>
 </head>
 <body>
 	<h1>Membuat Login Dengan CodeIgniter <br/> www.malasngoding.com</h1>
@@ -20,6 +20,6 @@
 				<td><input type="submit" value="Login"></td>
 			</tr>
 		</table>
-	</form>
+	</form> 
 </body>
 </html>

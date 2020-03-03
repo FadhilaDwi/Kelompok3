@@ -4,7 +4,7 @@
 	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title>
 </head>
 <body>
-	<center>
+	<center> 
 		<h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1>
 		<h3>Tambah data baru</h3>
 	</center>
@@ -12,7 +12,7 @@
 		<table style="margin:20px auto;">
 			<tr>
 				<td>Nama</td>
-				<td><input type="text" name="nama"></td>
+				<td><input type="text"  name="nama"></td>
 			</tr>
 			<tr>
 				<td>Alamat</td>
@@ -27,6 +27,7 @@
 				<td><input type="submit" value="Tambah"></td>
 			</tr>
 		</table>
+		
 	</form>	
 </body>
 </html>

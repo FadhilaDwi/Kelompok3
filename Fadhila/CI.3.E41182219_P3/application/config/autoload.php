@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-/*librari yang digunakan atau tempat penampungan file yaitu database*/
+/*librari yang digunakan atau tempat penampungan file yaitu database atau mengambil data secara otomatis dari database*/
 /*librari yang digunakan atau tempat penampungan file yaitu session*/
 
 $autoload['libraries'] = array('database', 'session');
@@ -92,7 +92,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-/*untuk include file berupa url dan html*/
+/*untuk include file berupa url*/
 $autoload['helper'] = array('url');
 
 /*

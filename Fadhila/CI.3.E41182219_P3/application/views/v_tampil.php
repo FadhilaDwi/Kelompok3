@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title>
 </head>
-<body>
+<body> 
 	<center><h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1></center>
 	<center><?php echo anchor('crud/tambah','Tambah Data'); ?></center>
 	<table style="margin:20px auto;" border="1">
@@ -15,9 +15,9 @@
 			<th>Action</th>
 		</tr>
 		<?php 
-		$no = 1;
+		$no = 1; /* pada v_tampil merupakan kumpulan perintah untuk menampilkan hasil dari m_data dan controller */
 		foreach($user as $u){ 
-		?>
+		?> 
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $u->nama ?></td>

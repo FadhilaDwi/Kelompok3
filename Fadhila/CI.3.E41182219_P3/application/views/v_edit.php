@@ -10,7 +10,7 @@
 	</center>
 	<?php foreach($user as $u){ ?>
 	<form action="<?php echo base_url(). 'crud/update'; ?>" method="post">
-		<table style="margin:20px auto;">
+		<table style="margin:20px auto;"> 
 			<tr>
 				<td>Nama</td>
 				<td>
@@ -32,6 +32,6 @@
 			</tr>
 		</table>
 	</form>	
-	<?php } ?>
+	<?php } /*form edit*/ ?>
 </body>
 </html>
