@@ -18,4 +18,4 @@
 		<input type="submit" value="Simpan">
 	</form>
 </body>
-</html>
+</html> <!-- tampilan form --> 
