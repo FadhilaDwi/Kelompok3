@@ -50,15 +50,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastName" class="col-sm-3 control-label" name ="kasus">Kasus</label>
+                    <label for="lastName" class="col-sm-3 control-label" >Kasus</label>
                     <div class="col-sm-9">
-                        <input type="text" id="lastName" placeholder="Kasus" class="form-control" autofocus>
+                        <input type="text" id="lastName" placeholder="Kasus" name ="kasus" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label" name="sidang">Jadwal Sidang</label>
+                    <label for="birthDate" class="col-sm-3 control-label" >Jadwal Sidang</label>
                     <div class="col-sm-9">
-                        <input type="date" id="birthDate" placeholder="Jadwal Sidang" class="form-control">
+                        <input type="date" id="birthDate" placeholder="Jadwal Sidang" name="sidang" class="form-control">
                     </div>
                 </div>
                 

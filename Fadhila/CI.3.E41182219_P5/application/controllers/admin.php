@@ -18,7 +18,7 @@ class admin extends CI_Controller{
     }
 	
 	function tambah_aksi(){
-		$nama = $this->input->post('nama');
+		$idpendaftaran = $this->input->post('idpendaftaran');
 		$idadmin = $this->input->post('idadmin');
 		$nama_pen = $this->input->post('nama_pen');
 		$jk = $this->input->post('jk');
@@ -26,7 +26,7 @@ class admin extends CI_Controller{
 		$sidang = $this->input->post('sidang');
  
 		$data = array(
-			'nama' => $nama,
+			'idpendaftaran' => $idpendaftaran,
 			'idadmin' => $idadmin,
 			'nama_pen' => $nama_pen,
 			'jk' => $jk,

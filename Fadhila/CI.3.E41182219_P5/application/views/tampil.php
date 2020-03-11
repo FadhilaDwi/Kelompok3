@@ -8,7 +8,8 @@
 	<center><?php echo anchor('admin/tambah','Tambah Data'); ?></center>
 	<table style="margin:20px auto;" border="1">
 		<tr>
-            <th>id pendaftaran</th>
+            <th>no</th>
+			<th> id pendaftaran</th>
 			<th>id admin</th>
             <th>nama pendaftar</th>
             <th>jenis kelamin</th>
@@ -18,11 +19,12 @@
 			
 		</tr>
 		<?php 
-		$idpendaftaran = 1; /* pada v_tampil merupakan kumpulan perintah untuk menampilkan hasil dari m_data dan controller */
+		$no = 1; /* pada v_tampil merupakan kumpulan perintah untuk menampilkan hasil dari m_data dan controller */
 		foreach($pendaftaran as $u){ 
 		?> 
 		<tr>
-			<td><?php echo $idpendaftaran++ ?></td>
+			<td><?php echo $no++ ?></td>
+			<td><?php echo $u->idpendaftaran ?></td>
             <td><?php echo $u->idadmin ?></td>
 			<td><?php echo $u->nama_pen ?></td>
 			<td><?php echo $u->jk ?></td>
