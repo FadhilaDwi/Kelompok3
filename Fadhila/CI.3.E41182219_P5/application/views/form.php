@@ -9,24 +9,27 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-            <form class="form-horizontal" role="form">
+
+            <form class="form-horizontal" role="form" action="<?php echo base_url(). 'admin/tambah_aksi'; ?>" method="post">
                 <h2>Pendaftaran</h2>
-                <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Id Admin</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="firstName"  class="form-control" autofocus>
-                    </div>
-                </div>
+                
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">No Pendaftaran</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName"  class="form-control" autofocus>
+                        <input type="text" id="firstName"  name = "idpendaftaran" class="form-control" autofocus >
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Id Admin</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName"  name = "idadmin" class="form-control" autofocus>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Nama Pendaftar</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Nama Pendaftar" class="form-control" autofocus>
+                        <input type="text" id="firstName" placeholder="Nama Pendaftar" name = "nama_pen" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,25 +38,25 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Perempuan
+                                    <input type="radio" id="femaleRadio" name="jk" value="perempuan">Perempuan
                                 </label>
                             </div>
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Laki - laki
+                                    <input type="radio" id="maleRadio" name="jk" value="laki-laki">Laki - laki
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastName" class="col-sm-3 control-label">Kasus</label>
+                    <label for="lastName" class="col-sm-3 control-label" name ="kasus">Kasus</label>
                     <div class="col-sm-9">
                         <input type="text" id="lastName" placeholder="Kasus" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label">Jadwal Sidang</label>
+                    <label for="birthDate" class="col-sm-3 control-label" name="sidang">Jadwal Sidang</label>
                     <div class="col-sm-9">
                         <input type="date" id="birthDate" placeholder="Jadwal Sidang" class="form-control">
                     </div>
@@ -65,6 +68,6 @@
                         <span class="help-block">*Required fields</span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <button type="submit" class="btn btn-primary btn-block" value = "tambah">Register</button>
             </form> <!-- /form -->
         </div> <!-- ./container -->
