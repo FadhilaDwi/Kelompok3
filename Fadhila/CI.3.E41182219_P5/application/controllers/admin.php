@@ -1,9 +1,12 @@
 <?php 
  
 class admin extends CI_Controller{
+
+	
  
     function __construct(){
-		parent::__construct();		
+		parent::__construct();	
+			
 		$this->load->model('mdata');
                 $this->load->helper('url');
 	}
