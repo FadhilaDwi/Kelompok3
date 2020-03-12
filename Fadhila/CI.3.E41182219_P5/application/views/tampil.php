@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2 style="text-align: center;margin-bottom: 30px">Data Kasus</h2>
-            <center><?php echo anchor('admin/tambah','Tambah Data'); ?></center>
+            <center><h2> <?php echo anchor('admin/tambah','Tambah Data'); ?></h2></center>
             <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%" >
               <thead>
                 <tr>
