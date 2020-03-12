@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title>
+	<title>Data Perkara</title>
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-
-</head>
 </head>
 <body> 
 <div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-12">
             <h2 style="text-align: center;margin-bottom: 30px">Data Kasus</h2>
-            <center><h2> <?php echo anchor('admin/tambah','Tambah Data'); ?></h2></center>
+            <h4 style="text-align: left"> <?php echo anchor('admin/tambah','Tambah Data'); ?></h4>
             <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%" >
               <thead>
                 <tr>
-                    <th>no</th>
-			        <th> id pendaftaran</th>
-			        <th>id admin</th>
-                    <th>nama pendaftar</th>
-                    <th>jenis kelamin</th>
-                    <th width = "100px">kasus</th>
-                    <th>jadwal sidang</th>
+                    <th>No</th>
+			        <th>Id pendaftaran</th>
+			        <th>Id admin</th>
+                    <th>Terdakwa</th>
+                    <th>Kenis Kelamin</th>
+                    <th >Kasus</th>
+                    <th>Jadwal Sidang</th>
                     <th>Action</th>               
                 </tr>
               </thead>
@@ -41,8 +39,8 @@
 			                <td ><?php echo $u->kasus ?></td>
                             <td format ="dd-mm-yyyy" ><?php echo $u->sidang ?></td>
                             <td style="text-align: center;">
-                                <button class="btn btn-sm btn-primary" onclick="edit_book(<?php echo $u->idpendaftaran;?>)"><i class="glyphicon glyphicon-pencil"></i></button>
-                                <button class="btn btn-sm btn-danger" onclick="delete_book(<?php echo $u->idpendaftaran;?>)"><i class="glyphicon glyphicon-trash"></i></button>
+                                 <?php echo anchor('admin/edit/'.$u->idpendaftaran,'Edit'); ?>
+                                 <?php echo anchor('admin/hapus/'.$u->idpendaftaran,'Hapus'); ?>
                             </td>
                         </tr>
                     <?php }?>
