@@ -8,9 +8,10 @@ class admin extends CI_Controller{
 		parent::__construct();	
 			
 		$this->load->model('mdata');
-                $this->load->helper('url');
+				$this->load->helper('url');
+
 	}
- 
+
 	function index(){
 		$data['pendaftaran'] = $this->mdata->tampil_data()->result();
         $this->load->view('tampil',$data);
@@ -43,7 +44,7 @@ class admin extends CI_Controller{
 	function hapus($idpendaftaran){
 		$where = array('idpendaftaran' => $idpendaftaran);
 		$this->mdata->hapus_data($where,'pendaftaran');
-		redirect('admin/index');
+		redirect('admin/iindex');
     }
 	
 	function edit($idpendaftaran){
@@ -74,5 +75,8 @@ class admin extends CI_Controller{
      
         $this->mdata->update_data($where,$data,'pendaftaran');
         redirect('admin/index');
+	}
+	public function cancel(){ /*menampilakan Vbelajar */
+		redirect ('admin/index');
     }
 }

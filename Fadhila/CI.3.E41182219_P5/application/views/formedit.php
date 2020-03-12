@@ -10,16 +10,8 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
-<?php
-$provinsi = array(
-                  '1'  => 'Nanggro Aceh Darussalam',
-                  '2'    => 'Sumatera Utara',
-                  '3'   => 'Sumatera Barat',
-                  '4'   => 'Riau',
-                  '5'   => 'Kepulauan Riau',
-                  '6'   => 'Jambi',
-                );
-?>
+
+
 <div class="container">
 
 
@@ -72,6 +64,8 @@ $provinsi = array(
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" value = "tambah">Kirim</button>
+                <button type="submit" class="btn btn-primary btn-block" action="<?php echo base_url(). 'admin/cancel'; ?>" >Cancel</button>
                 <?php } ?>
-            </form> <!-- /form -->
+            </form>
+           <!-- /form -->
         </div> <!-- ./container -->
