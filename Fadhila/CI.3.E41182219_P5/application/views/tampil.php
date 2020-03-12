@@ -2,11 +2,16 @@
 <html>
 <head> 
 	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title>
+
+	
+</head>
 </head>
 <body> 
-	<center><h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1></center>
-	<center><?php echo anchor('admin/tambah','Tambah Data'); ?></center>
-	<table style="margin:20px auto;" border="1">
+
+<center><h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1></center>
+<center><?php echo anchor('admin/tambah','Tambah Data'); ?></center>
+
+	<table style="margin:20px auto;" border="1" >
 		<tr>
             <th>no</th>
 			<th> id pendaftaran</th>
@@ -37,5 +42,36 @@
 		</tr>
 		<?php } ?>
 	</table>
+
+<style type="text/css">
+    .sui-button-cell
+    {
+        text-align: center;
+    }
+
+    .sui-checkbox
+    {
+        font-size: 17px !important;
+        padding-bottom: 4px !important;
+    }
+
+    .deleteButton img
+    {
+        margin-right: 3px;
+        vertical-align: bottom;
+    }
+
+    .bigicon
+    {
+        color: #5CB85C;
+        font-size: 20px;
+    }
+</style>
+
+<!-- Editable Table - END -->
+
+</div>
+
+	
 </body>
 </html>
