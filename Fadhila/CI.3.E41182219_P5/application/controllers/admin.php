@@ -12,9 +12,12 @@ class admin extends CI_Controller{
 
 	}
 
-	
-	
 	function index(){
+		
+        $this->load->view('masuk');
+	}
+	
+	function tampil(){
 		$data['pendaftaran'] = $this->mdata->tampil_data()->result();
         $this->load->view('tampil',$data);
 	}
@@ -41,12 +44,12 @@ class admin extends CI_Controller{
 
 			);
 		$this->mdata->input_data($data,'pendaftaran');
-		redirect('admin/index');
+		redirect('admin/tampil');
 	}
 	function hapus($idpendaftaran){
 		$where = array('idpendaftaran' => $idpendaftaran);
 		$this->mdata->hapus_data($where,'pendaftaran');
-		redirect('admin/iindex');
+		redirect('admin/tampil');
     }
 	
 	function edit($idpendaftaran){
@@ -76,10 +79,10 @@ class admin extends CI_Controller{
         );
      
         $this->mdata->update_data($where,$data,'pendaftaran');
-        redirect('admin/index');
+        redirect('admin/tampil');
 	}
 	public function cancel(){ /*menampilakan Vbelajar */
-		redirect ('admin/index');
+		redirect ('admin/tampil');
 	}
 	
 	/*untuk mengetahui user login dengan benar atau tidak. user harus mengisi username dan password, kemudain sistem akan melakukan cek ke database apakah username dan pass yg dimasukkan sudah sesuai. jika sesuai maka akan diijinan login. jika tidak maka username dan pass yg dimasukkan salah*/
@@ -94,13 +97,13 @@ class admin extends CI_Controller{
 		if($cek > 0){
  
 			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
+				'username' => $username,
+				
 				);
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("tampil"));
+			redirect(base_url("session"));
  
 		}else{
 			echo "Username dan password salah !";
