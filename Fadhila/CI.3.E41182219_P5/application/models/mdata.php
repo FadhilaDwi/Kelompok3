@@ -23,5 +23,9 @@ class mdata extends CI_Model{
 		$this->db->where($where);
 		$this->db->update($table,$data);
   }
+
+  function cek_login($table,$where){		
+		return $this->db->get_where($table,$where);
+	}	
  
 }

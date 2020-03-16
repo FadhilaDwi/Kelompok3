@@ -12,6 +12,8 @@ class admin extends CI_Controller{
 
 	}
 
+	
+	
 	function index(){
 		$data['pendaftaran'] = $this->mdata->tampil_data()->result();
         $this->load->view('tampil',$data);
@@ -78,5 +80,35 @@ class admin extends CI_Controller{
 	}
 	public function cancel(){ /*menampilakan Vbelajar */
 		redirect ('admin/index');
-    }
+	}
+	
+	/*untuk mengetahui user login dengan benar atau tidak. user harus mengisi username dan password, kemudain sistem akan melakukan cek ke database apakah username dan pass yg dimasukkan sudah sesuai. jika sesuai maka akan diijinan login. jika tidak maka username dan pass yg dimasukkan salah*/
+	function aksi_login(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+			'username' => $username,
+			'password' => md5($password)
+			);
+		$cek = $this->mdata->cek_login("admin",$where)->num_rows();
+		if($cek > 0){
+ 
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login"
+				);
+ 
+			$this->session->set_userdata($data_session);
+ 
+			redirect(base_url("tampil"));
+ 
+		}else{
+			echo "Username dan password salah !";
+		}
+	}
+ 
+	function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('index'));
+	}
 }
