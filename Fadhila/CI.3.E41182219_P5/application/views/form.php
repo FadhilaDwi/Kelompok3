@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Id Admin</label>
+                    <label for="firstName" class="col-sm-3 control-label" value = "<?php echo $this->session->userdata("idadmin"); ?>">Id Admin</label>
                     <div class="col-sm-9">
                         <input type="text" id="firstName"  name = "idadmin" class="form-control" autofocus>
                     </div>
