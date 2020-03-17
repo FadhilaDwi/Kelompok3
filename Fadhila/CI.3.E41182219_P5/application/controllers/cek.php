@@ -9,7 +9,7 @@ class cek extends CI_Controller{
 			redirect(base_url("admin"));
 		}
 	}
- /*jika admin berhasil login maka akan di alihkan ke halaman admin */
+ //.jika admin berhasil login maka akan di alihkan ke halaman admin 
 	function index(){
 		redirect('admin/tampil');
 	}

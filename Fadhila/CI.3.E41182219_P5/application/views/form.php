@@ -1,3 +1,7 @@
+<!-- form tambah data -->
+
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,7 +24,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label" value = "<?php echo $this->session->userdata("idadmin"); ?>">Id Admin</label>
+                    <label for="firstName" class="col-sm-3 control-label" value = "<?php echo $this->session->userdata('idadmin'); ?>">Id Admin</label>
                     <div class="col-sm-9">
                         <input type="text" id="firstName"  name = "idadmin" class="form-control" autofocus>
                     </div>
@@ -69,5 +73,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" value = "tambah">Register</button>
-            </form> <!-- /form -->
+                </form>
+                
+            <!-- /form -->
         </div> <!-- ./container -->
