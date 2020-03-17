@@ -14,6 +14,7 @@
         <div class="col-md-12">
             <h2 style="text-align: center;margin-bottom: 30px">Data Kasus</h2>
             <h2 style = "text-align : right">Hai, <?php echo $this->session->userdata("nama"); ?></h2>
+            <a href="<?php echo base_url('admin/logout'); ?>">Logout</a>
             <h4 style="text-align: left"> <?php echo anchor('admin/tambah','Tambah Data'); ?></h4>
             
             <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%" >

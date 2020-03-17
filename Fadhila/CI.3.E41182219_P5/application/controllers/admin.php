@@ -45,7 +45,7 @@ class admin extends CI_Controller{
  //fungsi logout
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('index'));
+		redirect(base_url('admin'));
 	}
 	
 	//untuk menampilkan data dari database

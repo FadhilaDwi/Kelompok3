@@ -18,7 +18,7 @@
 
             <form class="form-horizontal" role="form" action="<?php echo base_url(). 'admin/update'; ?>" method="post">
             <?php foreach($pendaftaran as $u){ ?>
-                <h2>Pendaftaran</h2>
+                <h2>Edit Data</h2>
                 
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">No Pendaftaran</label>
