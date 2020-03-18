@@ -36,7 +36,7 @@ class Crud extends CI_Controller{
 		$this->m_data->hapus_data($where,'user');
 		redirect('crud/index');
     }
-    /*digunakan untuk mengambil ata berdasarkan id dengan dungtion edit data pada m_data kemudian akan ditampilkan pada v_edit*/
+    /*digunakan untuk mengambil data berdasarkan id dengan fungtion edit data pada m_data kemudian akan ditampilkan pada v_edit*/
     function edit($id){
 		$where = array('id' => $id);
 		$data['user'] = $this->m_data->edit_data($where,'user')->result();
