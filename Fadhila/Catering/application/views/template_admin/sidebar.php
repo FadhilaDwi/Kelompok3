@@ -28,9 +28,14 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('admin/data_hewan') ?>">
           <i class="fas fa-fw fa-database"></i>
-          <span>Data Hewan</span></a>
+          <span>Data Admin</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('admin/data_mitra') ?>">
+          <i class="fas fa-fw fa-database"></i>
+          <span>Data Mitra</span></a>
+      </li>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('admin/coba') ?>">

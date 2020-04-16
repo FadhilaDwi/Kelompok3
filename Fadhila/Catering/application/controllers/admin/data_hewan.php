@@ -1,16 +1,24 @@
 <?php  
 
-    class Data_hewan extends CI_Controller {
+    class data_hewan extends CI_Controller {
 
+function __construct(){
+		parent::__construct();	
+		
+		$this->load->model('model_hewan'); //untuk menjalankan perintah yang ada pada mdata
+		
+		$this->load->helper('url'); //untuk mengambil data yang disimpan sementara melalui url
+
+	}
         public function index()
         {
-        $data['hewan'] = $this->model_hewan->tampil_data()->result();   
+        $data['admin'] = $this->model_hewan->tampil_data()->result();   
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/data_hewan', $data);
         $this->load->view('template_admin/footer');
         }
-
+       
         public function tambah_aksi()
         {
             $jenis_hewan    = $this->input->post('jenis_hewan');

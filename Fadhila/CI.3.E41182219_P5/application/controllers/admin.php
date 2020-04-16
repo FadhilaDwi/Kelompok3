@@ -22,7 +22,7 @@ class admin extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => md5($password)
+			'password' => md5 ($password)
 			);
 		$cek = $this->mdata->cek_login("admin",$where)->num_rows();
 		if($cek > 0){

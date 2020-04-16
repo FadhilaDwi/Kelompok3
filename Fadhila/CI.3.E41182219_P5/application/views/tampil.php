@@ -24,7 +24,7 @@
 			        <th>Id pendaftaran</th>
 			        <th>Id admin</th>
                     <th>Terdakwa</th>
-                    <th>Kenis Kelamin</th>
+                    
                     <th >Kasus</th>
                     <th>Jadwal Sidang</th>
                     <th>Action</th>               
@@ -40,7 +40,7 @@
                             <td><?php echo $u->idpendaftaran ?></td>
                             <td><?php echo $u->idadmin ?></td>
 			                <td><?php echo $u->nama_pen ?></td>
-			                <td><?php echo $u->jk ?></td>
+			                
 			                <td ><?php echo $u->kasus ?></td>
                             <td format ="dd-mm-yyyy" ><?php echo $u->sidang ?></td>
                             <td style="text-align: center;">
