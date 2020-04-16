@@ -1,14 +1,17 @@
 <?php 
 
-	class Dashboard extends Ci_Controller{
-
-		public function index()
-		{
-				$this->load->view('templates_admin/header');
-				$this->load->view('templates_admin/sidebar');
-				$this->load->view('admin/dashboard');
-				$this->load->view('templates_admin/footer');
+	class dashboard extends Ci_Controller{
+		function __construct(){
+			parent::__construct();	
+			
+			
+			$this->load->helper('url'); //untuk mengambil data yang disimpan sementara melalui url
+	
 		}
+		function index(){
+			$this->load->view('index.html'); //tampilan uutama untuk login
+		}
+		
 	}
 
 ?>

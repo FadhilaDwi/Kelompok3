@@ -1,7 +1,8 @@
+<!-- form login --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,16 +39,16 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form"  method="post">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<input class="input100" type="text"  placeholder="Enter username" name = "username">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<input class="input100" type="password"  placeholder="Enter password" name = "password">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -67,7 +68,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type = "submit" value = "Login">
 							Login
 						</button>
 					</div>
