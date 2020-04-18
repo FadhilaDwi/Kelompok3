@@ -1,9 +1,6 @@
 <?php
 
 class model_hewan extends CI_Model{
-    
-
-   
 
     public function tampil_data(){
 
