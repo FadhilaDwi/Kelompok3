@@ -1,7 +1,7 @@
 <?php
 
 class model_hewan extends CI_Model{
-    public $kode_barang;
+    
 
    
 
