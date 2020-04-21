@@ -47,7 +47,7 @@
 
             <div class="for-group">
                 <label>Password</label><br>
-                    <input type="text" name="password" class="form-control" value = "<?php echo $u->password?>">
+                    <input type="password" name="password" class="form-control" value = "<?php echo $u->password?>">
             </div>
 
             

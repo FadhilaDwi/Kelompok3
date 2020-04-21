@@ -27,10 +27,10 @@
             <td> <?php echo $b->foto_lokasi ?> </td>
 
 
-            <td><div class="btn btn-success btn-sm"> <i class="fas fa-search-plus"></i> </div></td>
+           
 
-            <td ><?php echo anchor ('admin/data_mitra/edit/'.$b->id_mitra , '<div class="btn btn-primary btn-sm"> <i class="fas fa-edit"   ></i> </div>') ?></td>
-
+            <td data-toggle="modal" data-target="#tambah_mitra"><?php echo anchor ('admin/data_mitra/edit/'.$b->id_mitra , '<div class="btn btn-primary btn-sm" > <i class="fas fa-edit"   ></i> </div>') ?></td>
+            
             <td><?php echo anchor ('admin/data_mitra/hapus/' .$b->id_mitra, '<div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div>') ?></td>
         </tr>
 
@@ -97,7 +97,7 @@
 
                 <div class="form-group">
                     <label>Password</label><br>
-                    <input type="text" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
                 </div>
         
       </div>
@@ -113,12 +113,12 @@
   </div>
 </div>
 
-<div class="modal fade" id="edit_mitra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambah_mitra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
-        <p class="text-danger" >edit Mitra</p>
+        <p class="text-danger" >Data Mitra</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -154,11 +154,11 @@
                     <label>No. Telp </label>
                     <input type="text" name="no_telepon" class="form-control">
                 </div>
-<!--
+
                 <div class="form-group">
                     <label>Foto Lokasi</label><br>
                     <input type="file" name="foto_lokasi" class="form-control">
-                </div>-->
+                </div>
 
                   
                 <div class="form-group">
@@ -168,7 +168,7 @@
 
                 <div class="form-group">
                     <label>Password</label><br>
-                    <input type="text" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
                 </div>
         
       </div>
@@ -183,3 +183,6 @@
     </div>
   </div>
 </div>
+
+
+      
