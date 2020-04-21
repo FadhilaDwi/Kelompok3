@@ -88,7 +88,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" >Kirim</button>
                 <?php } ?>
-                <button  class="btn btn-primary btn-block" action="<?php echo base_url(). 'data_mitra/cancel'; ?>" >Cancel</button>
+                <button   class="btn btn-primary btn-block" action="<?php echo base_url(). 'data_mitra/cancel';?>" >Cancel</button>
                 
             </form>
            <!-- /form -->
