@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>You Login Template</title>
+	<title>Selamat datang</title>
 	<!-- Site favicon -->
 	<link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/favicon.ico">
 	<!-- Mobile Specific Metas -->
@@ -80,13 +80,13 @@
 									<div class="d-flex height-100-percentage max-width-400 margin-0-auto padding-10px">
 										<div class="align-self-center width-100-percentage">
 											<h2>Sign in to You Login </h2>
-											<form class="floating-form">
+											<form action = "<?php echo base_url('login') ?>" class="floating-form">
 												<div class="form-group">
-													<input type="text" class="form-control">
-													<label class="label">Enter Your Email</label>
+													<input type="text" name="username" class="form-control">
+													<label class="label">Enter Your Usename</label>
 												</div>
 												<div class="form-group">
-													<input type="password" class="form-control">
+													<input type="password" name="password" class="form-control">
 													<label class="label">Password</label>
 												</div>
 												<div class="row">
@@ -97,7 +97,7 @@
 													</div>
 													<div class="col-6">
 														<div class="form-group text-right">
-															<input type="submit" class="submit" value="Login">
+															<input type="submit" class="submit" >
 														</div>
 													</div>
 												</div>
