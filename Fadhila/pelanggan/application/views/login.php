@@ -80,7 +80,7 @@
 									<div class="d-flex height-100-percentage max-width-400 margin-0-auto padding-10px">
 										<div class="align-self-center width-100-percentage">
 											<h2>Sign in to You Login </h2>
-											<form action = "<?php echo base_url('login') ?>" class="floating-form">
+											<form action = "<?php echo base_url('login/aksi_login') ?>" class="floating-form">
 												<div class="form-group">
 													<input type="text" name="username" class="form-control">
 													<label class="label">Enter Your Usename</label>

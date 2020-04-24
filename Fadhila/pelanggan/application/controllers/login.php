@@ -10,6 +10,8 @@
 
 		{
 			$this->load->view('login');
+		}
+		public function aksi_login(){
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			//mengubah data string pada database menjadi bentuk array
