@@ -3,7 +3,7 @@
 <head>
 	<title>You Login Template</title>
 	<!-- Site favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/favicon.ico">
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Google Font -->
@@ -11,15 +11,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <!-- Icon Font -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>fonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/fonts/ionicons/css/ionicons.css">
 	<!-- Text Font -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>fonts/font.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/fonts/font.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/bootstrap.css">
     <!-- Normal style CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/style.css">
     <!-- Normal media CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>css/media.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/media.css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 	<div class="header-wrap">
 		<div class="clearfix">
 			<div class="logo">
-				<a href="index.php"><img src="<?php echo base_url('assets/') ?>images/logo.svg" alt=""></a>
+				<a href="index.php"><img src="<?php echo base_url('assets/') ?>login/images/logo.svg" alt=""></a>
 			</div>
 			<div class="menu">
 				<div class="dropdown">
@@ -40,13 +40,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<ul>
-							<li><a class="dropdown-item" href="index.php">Login Style 1</a></li>
-							<li><a class="dropdown-item" href="index2.php">Login Style 2</a></li>
-							<li><a class="dropdown-item" href="index3.php">Login Style 3</a></li>
-							<li><a class="dropdown-item" href="index4.php">Login Style 4</a></li>
-							<li><a class="dropdown-item selected" href="index5.php">Login Style 5</a></li>
-							<li><a class="dropdown-item" href="index6.php">Login Style 6</a></li>
-							<li><a class="dropdown-item" href="index7.php">Login Style 7</a></li>
+							<li><a class="dropdown-item" href="#">drop a</a></li>
+							<li><a class="dropdown-item" href="#">drop b</a></li>
+							<li><a class="dropdown-item" href="#">drop c</a></li>
+							<li><a class="dropdown-item" href="#">drop d</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -195,11 +193,11 @@
 
 	<div id="cd-loading-bar" data-scale="1" class="index"></div>
 	<!-- JS File -->
-	<script src="<?php echo base_url('assets/') ?>js/modernizr.js"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/') ?>js/jquery.js"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/') ?>js/popper.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/') ?>js/bootstrap.js"></script>
-	<script src="<?php echo base_url('assets/') ?>js/velocity.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/') ?>js/script.js"></script>
+	<script src="<?php echo base_url('assets/') ?>login/js/modernizr.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/popper.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/bootstrap.js"></script>
+	<script src="<?php echo base_url('assets/') ?>login/js/velocity.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/script.js"></script>
 </body>
 </html>
