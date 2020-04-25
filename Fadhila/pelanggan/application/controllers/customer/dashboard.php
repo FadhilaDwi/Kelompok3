@@ -9,5 +9,6 @@
 				$this->load->view('templates_customer/footer');
 		}
 	}
+	
 
 ?>

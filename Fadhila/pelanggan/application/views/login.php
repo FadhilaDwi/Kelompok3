@@ -113,45 +113,66 @@
 									</div>
 									<div class="d-flex height-100-percentage padding-40px">
 										<div class="align-self-center width-100-percentage">
-											<h2>Create An Account</h2>
-											<form class="floating-form">
+											<h2>Buat Akun</h2>
+											<form class="floating-form" action="<?php echo base_url(). 'login/registrasi' ?>" method="post">
 												<div class="row">
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
-															<label class="label">First Name</label>
-															<input type="text" class="form-control">
+															<label class="label">Id Pelanggan</label>
+															<input type="text" class="form-control" name="id_pelanggan">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
-															<label class="label">Last Name</label>
-															<input type="text" class="form-control">
+															<label class="label">Username</label>
+															<input type="text" class="form-control" name="username">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
-															<label class="label">Email</label>
-															<input type="text" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-6 col-sm-12">
-														<div class="form-group">
-															<label class="label">Phone</label>
-															<input type="text" class="form-control">
+															<label class="label">Nama Lengkap</label>
+															<input type="text" class="form-control" name="nama_pelanggan">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
 															<label class="label">Password</label>
-															<input type="password" class="form-control">
+															<input type="text" class="form-control" name="password">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
-															<label class="label">Confirm Password</label>
-															<input type="password" class="form-control">
+															<label class="label">Email</label>
+															<input type="text" class="form-control" name="email">
 														</div>
 													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Foto</label>
+															<input type="file" class="form-control" placeholder="Foto" name="foto">
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Alamat</label>
+															<input type="text" class="form-control" name="alamat">
+														</div>
+													</div>
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label" hidden></label>
+															<input type="text" class="form-control" hidden>
+														</div>
+													</div>
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">No. Telepon</label>
+															<input type="text" class="form-control" name="no_telepon">
+														</div>
+													</div>
+
 												</div>
 												<div class="form-group text-right">
 													<input type="submit" class="submit" value="Register">
@@ -168,7 +189,7 @@
 											<form class="floating-form">
 												<label class="label">Enter your email address to reset your password</label>
 												<div class="form-group user-name-field">
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name='email'>
 													<label class="label">Email</label>
 												</div>
 												<div class="form-group text-right">
