@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link " href="#">Home
+            <a class="nav-link " href="">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -25,6 +25,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Pembayaran</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link " href="<?php echo base_url(). 'login/logout' ?>">Logout
+              <span class="sr-only"></span>
+            </a>
           </li>
         </ul>
       </div>
