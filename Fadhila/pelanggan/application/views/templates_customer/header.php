@@ -11,9 +11,9 @@
   <title>Cari Makanan Sehat Yuk</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="<?php echo base_url('assets/assets_shop/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="<?php echo base_url('assets/assets_shop/') ?>css/shop-homepage.css" rel="stylesheet">
+  <link href="<?php echo base_url('assets/') ?>css/shop-homepage.css" rel="stylesheet">
 
 </head>
