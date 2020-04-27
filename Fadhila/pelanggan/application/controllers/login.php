@@ -9,10 +9,12 @@
 		public function index()
 
 		{
+			
 			$this->load->view('login');
 		}
 		public function registrasi(){
-			$id_pelanggan = $this->input->post('id_pelanggan');
+			
+			
 			$username = $this->input->post('username');
 			$nama_pelanggan = $this->input->post('nama_pelanggan');
 			$alamat = $this->input->post('alamat');
@@ -33,7 +35,7 @@
 						}
 					}
 			$data = array(
-				'id_pelanggan' => $id_pelanggan,
+				
 				'username' => $username,
 				'nama_pelanggan' => $nama_pelanggan,
 				'alamat' => $alamat,
@@ -44,6 +46,7 @@
 	
 				);
 			$this->M_login->buatakun($data,'pelanggan');
+			$data['kodeunik'] = $this->M_login->buat_kode();
 			redirect('login/index');
 		}
 		public function aksi_login(){
