@@ -54,7 +54,7 @@ class Admin extends CI_Controller {
 	function hapus($id){
 		$where = array('idpengurus' => $id); // mengubah id menjadi bentuk array
 		$this->m_dashboard->hapus_data($where,'pengurus_masjid'); //perintah untuk menghapus data sesuai dengan tabel dan id yang diinginkan
-		redirect('dashboard/index');
+		redirect('admin/index');
 	}
 	function edit($id_admin){
 		$id_admin       = $this->input->post('id_admin');
