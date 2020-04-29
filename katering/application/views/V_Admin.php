@@ -87,7 +87,7 @@
           </button>
         </div>
         <div class="modal-body">
-        <form action="<?php echo base_url('dashboard/tambah_data'); ?>" method="post">
+        <form action="<?php echo base_url('admin/tambah_data'); ?>" method="post">
             <h6>Username</h6>
             <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan Username" name="username">
             <h6 class="mt-2">Nama Admin</h6>
