@@ -19,7 +19,7 @@
 			//mengubah data string pada database menjadi bentuk array
 			$where = array(
 				'username' => $username,
-				'password' => md5 ($password)
+				'password' => $password
 			);
 			$cek = $this->m_login->cek_login("admin", $where)->num_rows(); //melakukan cek tabel user berdasarkan id
 			//jika terdapat id maka melakukan cek data yang diinput dengan database, jika cocok membuka controller dashboard admin.
@@ -29,7 +29,7 @@
 					'status' => "login"
 				);
 				$this->session->set_userdata($data_session);
-				redirect(base_url('Dashboard'));
+				redirect(base_url('dashboard'));
 			
 			}else{
 				echo "maaf username dan password salah";
