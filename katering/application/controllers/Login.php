@@ -29,7 +29,7 @@
 					'status' => "login"
 				);
 				$this->session->set_userdata($data_session);
-				redirect(base_url('dashboard'));
+				redirect(base_url('Dashboard'));
 			
 			}else{
 				echo "maaf username dan password salah";
