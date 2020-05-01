@@ -18,13 +18,10 @@ class Pelanggan extends REST_Controller{
 
     public function register_post(){
 
-            $username = $this->input->post('username');
-			$nama_pelanggan = $this->input->post('nama_pelanggan');
-			$alamat = $this->input->post('alamat');
-			$no_telepon = $this->input->post('no_telepon');
-			$email = $this->input->post('email');
-			//$foto_lokasi = $this->input->post('foto_lokasi');
-			$password = $this->input->post('password');
+            $username = $this->post('username');
+			$nama_pelanggan = $this->post('nama_pelanggan');
+			$email = $this->post('email');
+			$password = $this->post('password');
 			// $foto      = $_FILES['gambar']['name'];
 			// 		if ($foto =''){}else{
 			// 			$confiq ['upload_path'] = './uploads';
@@ -38,23 +35,21 @@ class Pelanggan extends REST_Controller{
 			// 			}
 			// 		}
 			$data = array(
-				
 				'username' => $username,
-				'nama_pelanggan' => $nama_pelanggan,
-				'alamat' => $alamat,
-				'no_telepon' => $no_telepon,
+				'nama_pelanggan' => $nama_pelanggan,				
 				'email'=>  $email,
-				// 'foto'=>$foto,
 				'password' => md5 ($password)			
 	
 				);
 			$hasil = $this->M_login->buatakun($data,'pelanggan');
             // $data['kodeunik'] = $this->M_login->buat_kode();
             
-            if($hasil == true){
-                $this->response(array('status' => $hasil, 'message' => 'Register success'), REST_Controller::HTTP_OK);
+            if($hasil==true){
+				$response["value"] = 1;
+				$response["message"] = "sukses daftar bos ";
+				echo json_encode($response);
             }else{
-                $this->response(array('status' => $hasil, 'message' => 'Register gagal'), REST_Controller::HTTP_BAD_REQUEST); 
+				echo "gagal daftar bos" ;
             }
 
             }
@@ -66,7 +61,7 @@ class Pelanggan extends REST_Controller{
 				//mengubah data string pada database menjadi bentuk array
 				$where = array(
 					'username' => $username,
-					'password' => ($password)
+					'password' => md5 ($password)
 				);
 				$cek = $this->M_login->cek_login("pelanggan", $where)->num_rows();
 				if(	!$cek){

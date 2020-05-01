@@ -25,9 +25,9 @@ class M_login extends CI_Model{
         $kodejadi = "P".$kodemax;    // hasilnya ODJ-9921-0001 dst.
         return $kodejadi;  
   }
-    public function buatakun($data,$table){
+    function buatakun($data,$table){    
 
-        $this->db->insert($table,$data);
+       return $this->db->insert($table,$data);
     }
    
 }
