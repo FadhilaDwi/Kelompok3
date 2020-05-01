@@ -69,10 +69,14 @@ class Pelanggan extends REST_Controller{
 					'password' => ($password)
 				);
 				$cek = $this->M_login->cek_login("pelanggan", $where)->num_rows();
-				if(!$cek){
-					$this->response(array('status' => false, 'message' => 'Username dan password salah'), REST_Controller::HTTP_OK);
-				}else{
-					$this->response(array('status' => true, 'message' => 'Silahkan masuk', 'response'=>$cek), REST_Controller::HTTP_BAD_REQUEST); 
+				if(	!$cek){
+					
+     echo"Gagal login bos";
+
+}else{
+     $response["value"] = 1;
+     $response["message"] = "sukses login bos ";
+     echo json_encode($response); //merubah respone menjadi JsonObject  
 				}
         	}
     }
