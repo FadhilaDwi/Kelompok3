@@ -29,6 +29,9 @@ class M_login extends CI_Model{
 
        return $this->db->insert($table,$data);
     }
+  function cekuser($table,$where){
+      return $this->db->get_where($table,$where);
+  }  
    
 }
    
