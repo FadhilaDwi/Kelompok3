@@ -35,9 +35,11 @@
 				echo "maaf username dan password salah";
 			}
 		}
-		function logout(){
-			$this->session->sess_destroy(); //perintah untuk menghentikan session
-			redirect(base_url('login')); // pindah ke halaman login
+		public function logout(){
+			$this->session->unset_userdata('nama'); //perintah untuk menghentikan session
+			$this->session->unset_userdata('status'); //perintah untuk menghentikan session
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> anda telah crot!</div>');
+			redirect(base_url()); // pindah ke halaman login
 		}
 	}
 
