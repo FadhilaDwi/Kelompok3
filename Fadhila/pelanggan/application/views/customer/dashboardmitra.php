@@ -26,9 +26,15 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Pembayaran</a>
           </li>
-
           <li class="nav-item active">
-            <a class="nav-link " href="<?php echo base_url(). 'login/logout' ?>">Logout
+            <a class="nav-link" ><?php echo $this->session->userdata('nama'); ?>
+            <span class="sr-only"></span>
+          </a>
+            
+          </li>
+          
+          <li class="nav-item active">
+              <a class="nav-link " href="<?php echo base_url(). 'loginmitra/logout' ?>">Logout
               <span class="sr-only"></span>
             </a>
           </li>
