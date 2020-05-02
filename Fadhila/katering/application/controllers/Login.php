@@ -19,7 +19,7 @@
 			//mengubah data string pada database menjadi bentuk array
 			$where = array(
 				'username' => $username,
-				'password' => $password
+				'password' => md5($password)
 			);
 			$cek = $this->m_login->cek_login("admin", $where)->num_rows(); //melakukan cek tabel user berdasarkan id
 			//jika terdapat id maka melakukan cek data yang diinput dengan database, jika cocok membuka controller dashboard admin.

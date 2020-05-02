@@ -4,7 +4,10 @@
 
 function __construct(){
 		parent::__construct();	
-		
+		if(!$this->session->userdata('nama'))
+		{
+			redirect(base_url());
+		}
 		$this->load->model('model_hewan'); //untuk menjalankan perintah yang ada pada mdata
 		
 		$this->load->helper('url'); //untuk mengambil data yang disimpan sementara melalui url
@@ -98,7 +101,7 @@ function __construct(){
             'no_telepon' => $no_telepon,
             'email'=>  $email,
 			//'foto_lokasi'=>$foto_lokasi,
-			'password' => $password	
+			
         );
      /*dan where yang menjadi penentu id yg mana untuk di update */
         $where = array(

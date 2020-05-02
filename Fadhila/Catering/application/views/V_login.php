@@ -37,7 +37,7 @@
 						Login
 					</span>
 
-					
+					<?= $this->session->flashdata('massage');?>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>

@@ -5,6 +5,10 @@ class Pelanggan extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		if(!$this->session->userdata('nama'))
+		{
+			redirect(base_url());
+		}
 		$this->load->model('m_pelanggan'); //digunakan untuk memanggil model m_dashboard
 		$this->load->helper('url');
 	}
