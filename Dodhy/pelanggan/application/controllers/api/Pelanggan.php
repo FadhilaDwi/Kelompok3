@@ -9,7 +9,7 @@ class Pelanggan extends REST_Controller{
     function __construct(){
         parent::__construct();
         $this->load->database();
-        $this->load->model('M_login');
+		$this->load->model('M_login');
     
     }
 
@@ -100,14 +100,45 @@ public function register_post(){
 				$cek = $this->M_login->cek_login("pelanggan", $where)->num_rows();
 				if(	!$cek){
 					
-     echo"Gagal login bos";
+     			echo"Gagal login bos";
 
-}else{
-     $response["value"] = 1;
-     $response["message"] = "sukses login bos ";
-     echo json_encode($response); //merubah respone menjadi JsonObject  
+				}else{
+					$response["value"] = 1;
+					$response["message"] = "sukses login bos ";
+					echo json_encode($response); //merubah respone menjadi JsonObject  
+								}
+							}
+			
+			public function lihat_get(){
+				// ($this->db->get_where('pelanggan', ['username' => $this->session->userdata('username')])->result();) kode ini pake session bosque, ga bisa di test di postman
+				$username = $this->get('username');
+				
+				// $this->db->where('username', $username);
+				// $hasil = $this->db->get('pelanggan')->result();
+				$hasil = $this->db->get_where('pelanggan', ['username' => $username])->result();
+				$this->response($hasil, 200);
+			}
+
+			public function ubah_put(){
+				$username = $this->put('username');
+				$data = array(
+					'username' => $this->put('username'),
+					'nama_pelanggan' => $this->put('nama_pelanggan'),
+					'email' => $this->put('email'),
+					'alamat' => $this->put('alamat'),
+					'no_telepon' => $this->put('no_telepon')
+				);
+				$where = array(
+					'username' => $username
+				);
+				$update = $this->M_login->update($where,$data,'pelanggan');
+
+				if ($update) {
+					$this->response(array('status' => 'success', 200));
+				} else {
+					$this->response(array('status' => 'fail', 502));
 				}
-        	}
+			}
     }
 
 ?>
