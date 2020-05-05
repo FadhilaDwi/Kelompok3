@@ -72,8 +72,7 @@
 						<!-- login style5 right side start -->
 						<div class="col-md-8 col-sm-12 style5-right">
 							<div class="login-form-slider">
-
-								<!-- INI BUAT LOGINNYA -->
+								<!-- login slide start -->
 								<div class="login-slide slide">
 									<div class="sign-up-txt">
 										Don't have an account? <a href="javascript:;" class="sign-up-click">Register Now</a>
@@ -107,9 +106,7 @@
 									</div>
 								</div>
 								<!-- login slide end -->
-
-
-								<!-- INI BUAT PENDAFTARANNYA BOSQUE -->
+								<!-- signup slide start -->
 								<div class="signup-slide slide">
 									<div class="sign-up-txt">
 										if you have an account? <a href="javascript:;" class="login-click">login</a>
@@ -184,8 +181,7 @@
 										</div>
 									</div>
 								</div>
-								<!-- SAMPEK SINI AJE -->
-
+								<!-- signup slide end -->
 								<!-- forgot password slide start -->
 								<div class="forgot-password-slide slide">
 									<div class="d-flex height-100-percentage style4-left">
