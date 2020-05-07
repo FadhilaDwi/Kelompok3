@@ -30,20 +30,21 @@ class Mitra extends CI_Controller {
 		$alamat = $this->input->post('alamat');
         $no_telepon = $this->input->post('no_telepon');
         $email = $this->input->post('email');
-        $foto_lokasi        = $_FILES['foto_lokasi']['name'];
+		$foto_lokasi     = $_FILES['foto_lokasi']['name'];
+		if ($foto_lokasi =''){}else{
+			$confiq ['upload_path'] = './assets/img/mitra/';
+			$confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
+
+			$this->load->library('upload', $confiq);
+			if (!$this->upload->do_upload('foto_lokasi')){
+				echo "Foto Yang Anda Upload Gagal Rek!!";
+			}else{
+				$foto_lokasi=$this->upload->data('file_name');
+			}
+		}
         $password    = $this->input->post('password');
 
-            if ($foto_lokasi =''){}else{
-                $confiq ['upload_path'] = './uploads';
-                $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
-
-                $this->load->library('upload', $confiq);
-                if (!$this->upload->do_upload('foto_lokasi')){
-                    echo "Foto Yang Anda Upload Gagal Rek!!";
-                }else{
-                    $foto_lokasi=$this->upload->data('file_name');
-                }
-            }
+            
         $data = array(
 			'username' => $username,
 			'nama_katering' => $nama_katering,
@@ -52,7 +53,7 @@ class Mitra extends CI_Controller {
             'no_telepon' => $no_telepon,
             'email'=>  $email,
             'foto_lokasi' => $foto_lokasi,
-            'password'    => $password 
+            'password'    => md5($password) 
         );
 
         $this->m_mitra->tambah_data($data, 'mitra');

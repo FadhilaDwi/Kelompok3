@@ -15,6 +15,10 @@
 
   <!-- Custom styles for this template -->
   <link href="<?php echo base_url('assets/') ?>css/shop-homepage.css" rel="stylesheet">
+  <link href="<?php echo base_url('assets/') ?>css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">  -->
+  <link href="https://fonts.googleapis.com/css?family=DM+Mono&display=swap" rel="stylesheet">  
 
 </head>
 
@@ -29,9 +33,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link " href="">Home
-              <span class="sr-only">(current)</span>
+          <li class="nav-item">
+            <a class="nav-link " href="<?php echo base_url('customer/dashboardpelanggan');?>">Beranda
             </a>
           </li>
           <li class="nav-item">
@@ -43,18 +46,32 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Pembayaran</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('customer/profil')?>"><?php echo $this->session->userdata('nama'); ?>
-            <span class="sr-only"></span>
-          </a>
+          <?php if($this->session->has_userdata('nama')){ 
             
-          </li>
+            ?>
           
-          <li class="nav-item active">
-              <a class="nav-link " href="<?php echo base_url(). 'login/logout' ?>">Logout
-              <span class="sr-only"></span>
+              <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo $this->session->userdata('nama'); ?>
             </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<?php echo base_url(). 'login/logout' ?>" >Keluar</a>
+              <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
+            </div>
           </li>
+
+          <?php }else{ ?>
+          <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Masuk
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="<?php echo base_url(). 'login' ?>" >Masuk Sebagai Customer</a>
+                    <!-- <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalLoginForm">Masuk Sebagai Barbershop</a> -->
+                    </div>
+          </li>
+          <?php } ?>
+          
         </ul>
       </div>
     </div>
