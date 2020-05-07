@@ -20,8 +20,8 @@
 			$where = array(
 				'username' => $username,
 				'password' => md5 ($password)
-			);
-			$cek = $this->m_login->cek_login("admin", $where)->num_rows(); //melakukan cek tabel user berdasarkan id
+						);
+			$cek = $this->m_login->cek_login("mitra", $where)->num_rows(); //melakukan cek tabel user berdasarkan id
 			//jika terdapat id maka melakukan cek data yang diinput dengan database, jika cocok membuka controller dashboard admin.
 			if($cek > 0){
 				$data_session = array(
@@ -29,7 +29,7 @@
 					'status' => "login"
 				);
 				$this->session->set_userdata($data_session);
-				redirect(base_url('admin/dashboard_admin'));
+				redirect(base_url('dashboard'));
 			
 			}else{
 				echo "maaf username dan password salah";

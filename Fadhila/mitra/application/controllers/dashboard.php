@@ -1,23 +1,25 @@
-<?php
+<?php 
 
 class dashboard extends CI_Controller{
-
+    public function __construct()
+    {
+		parent::__construct();	
+		if(!$this->session->userdata('nama'))
+		{
+			redirect(base_url());
+        }
+        
+        $this->load->model('model_hewan'); //untuk menjalankan perintah yang ada pada mdata
+    }
     public function index()
     {
-        $data['hewan'] = $this->model_hewan->tampil_data()->result();
-
-        $this->load->view('template/header');
-        $this->load->view('template/sidebar');
-        $this->load->view('dashboard', $data);
-        $this->load->view('template/footer');
-
         
-
-        
-
-        
-
-      
+	
+		$this->load->helper('url');
+        $this->load->view('template_admin/header');
+        $this->load->view('template_admin/sidebar');
+        $this->load->view('dashboardmitra');
+        $this->load->view('template_admin/footer');
 
     }
 
