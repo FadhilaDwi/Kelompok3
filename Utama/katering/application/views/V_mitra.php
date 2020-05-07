@@ -61,7 +61,7 @@
                       <td><?php echo $m->no_telepon ?></td>
                       <td><?php echo $m->email ?></td>
                       <td>
-                        <img src="<?php echo base_url(); ?>uploads/<?php echo $m->foto_lokasi; ?>" width="90" height="100">
+                        <img src="<?php echo base_url(); ?>assets/img/mitra/<?php echo $m->foto_lokasi; ?>" width="90" height="100">
                       </td>
                       <td><a href="<?php echo base_url('mitra/hapus/'.$m->id_mitra); ?>" class="btn btn-danger" onclick="return confirm('Anda Yakin?')">Hapus</a></td>
                     </tr>

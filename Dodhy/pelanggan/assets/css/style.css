@@ -1,0 +1,33 @@
+.navbar{
+    font-family: 'Quicksand', sans-serif;
+    font-size: larger;
+}
+
+.btn{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.card{
+    font-family: 'Quicksand', sans-serif;
+    font-size: smaller;
+}
+
+.jumbotron, .list-group{
+    width: auto;
+    margin-top: 20px;
+}
+
+/* .list-group:hover{
+    content: '';
+    display: block;
+    background: red;
+} */
+
+#list-tab{
+    margin-top: 20px;
+}
+
+.detil{
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'DM Mono', monospace;
+}
