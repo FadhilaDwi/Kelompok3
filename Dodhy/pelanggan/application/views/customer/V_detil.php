@@ -1,18 +1,18 @@
 
-<div class="container detil">
-
+<div class="container ">
+<?php foreach ($detail_menu as $dm){?>
   <div class="row">
 
-    <div class="col-lg-9">
+    <div class="col-lg-9 detil">
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-4 text-center">Fluid jumbotron</h1>
+          <h1 class="display-4 text-center"><?= $dm->nama_katering?></h1>
         </div>
       </div>
 
       <h5 class="mb-3">Menu Hari Ini</h5>
     </div>
-
+   
     <div class="col-lg-3 ">
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home"
@@ -28,7 +28,7 @@
   </div>
 
     <div class="row mb-4">
-      <?php foreach ($detail_menu as $dm){?>
+      
       <div class="col-lg-4 ">
       
         <div class="card text-center" style="width: 18rem;">
@@ -36,7 +36,7 @@
           <div class="card-body">
             <h5 class="card-title"><?= $dm->nama_menu ?></h5>
             <span class="badge badge-pill badge-success"><?= $dm->harga_menu?></span></br>
-            <a href="#" class="btn btn-primary mt-2">Masukkan Ke Keranjang</a>
+            <?= anchor('customer/dashboardpelanggan/tambah_keranjang/'.$dm->id_menu,'<div class="btn btn-sm btn-primary mt-2">Tambahkan Keranjang</div>')?>
           </div>
         </div>
         

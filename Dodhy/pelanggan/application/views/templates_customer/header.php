@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Menu Catering</a>
+            <a class="nav-link" href="<?=  base_url('customer/dashboardpelanggan/detail_tgl');?>">Menu Catering</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Info Pembayaran</a>
@@ -57,6 +57,8 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php echo base_url(). 'login/logout' ?>" >Keluar</a>
               <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
+              <?php $keranjang = $this->cart->total_items()?>
+              <a class="dropdown-item" href="" >Keranjang <span class="badge badge-danger"><?php $keranjang = $this->cart->total_items()?><?= $keranjang?></span></a>
             </div>
           </li>
 

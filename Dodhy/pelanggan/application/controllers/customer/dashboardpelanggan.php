@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('m_pelanggan');
+			$this->load->library('cart');
 			if(!$this->session->userdata('nama'))
 			{
 				redirect (base_url());
@@ -25,6 +26,13 @@
 				$this->load->view('templates_customer/header');
 				$this->load->view('customer/v_detil', $data);
 				$this->load->view('templates_customer/footer');
+		}
+
+		public function detail_tgl(){
+			$data['detail_menu'] = $this->m_pelanggan->tampil_menu(['date(tgl_set)'=>date("Y-m-d",strtotime('now'))], 'detail_menu')->result();
+			$this->load->view('templates_customer/header');
+			$this->load->view('customer/v_menu', $data);
+			$this->load->view('templates_customer/footer');
 		}
 }
 	

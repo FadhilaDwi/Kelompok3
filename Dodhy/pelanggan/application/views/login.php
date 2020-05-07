@@ -29,26 +29,6 @@
 			<div class="logo">
 				<a href="index.php"><img src="<?php echo base_url('assets/') ?>login/images/logo.svg" alt=""></a>
 			</div>
-			<div class="menu">
-				<div class="dropdown">
-					<a class="dropdown-toggle hamburgler" href="#" role="button" data-toggle="dropdown">
-						<span class="menu-icon">
-							<div class="bun top"></div>
-							<div class="meat"></div>
-							<div class="bun bottom"></div>
-						</span>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right">
-						<ul>
-							<li><a class="dropdown-item" href="#">drop a</a></li>
-							<li><a class="dropdown-item" href="#">drop b</a></li>
-							<li><a class="dropdown-item" href="#">drop c</a></li>
-							<li><a class="dropdown-item" href="#">drop d</a></li>
-							
-						</ul>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- Header end -->
