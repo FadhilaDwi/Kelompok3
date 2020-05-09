@@ -157,7 +157,8 @@
       <!-- Nav Item - User Information -->
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            <?php
 
 use PhpParser\Node\Stmt\Echo_;
 
@@ -205,79 +206,22 @@ echo $this->session->userdata('nama'); ?></span>
 
       <!-- Earnings (Monthly) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <!-- Earnings (Monthly) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <!-- Earnings (Monthly) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                <div class="row no-gutters align-items-center">
-                  <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                  </div>
-                  <div class="col">
-                    <div class="progress progress-sm mr-2">
-                      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
 
       <!-- Pending Requests Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
 
@@ -307,38 +251,86 @@ echo $this->session->userdata('nama'); ?></span>
           <!-- Card Body -->
           <div class="card-body">
             <div class="chart-area">
-            <table class="table table-bordered">
-
-<tr>
-    <th style="text-align : center">No</th>
-    <th style="text-align : center">ID Mitra</th>
-    <th style="text-align : center">Username</th>
-    <th style="text-align : center">Nama Catering</th>
-    <th style="text-align : center">Nama Pemilik</th>
-    <th style="text-align : center">Foto Lokasi</th>
-    <th colspan="3" style="text-align : center"> Aksi</th>
-</tr>
-
-
-
-<tr>
-    <td>    </td>
-    <td> </td>
-
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+            <div class="container mt-3">
+<?= form_open_multipart('profil') ?>
+  <div class="row">
     
-    
-    <td ><div class="btn btn-primary btn-sm"> <i class="fas fa-edit"></i> </div></td>
-    
-    <td><div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i> </div></td>
-</tr>
+        <div class="col-4">
+            
+            <div class="file-field">
+                <div class="z-depth-1-half mb-4 ml-2">
+                <img src="<?= base_url('assets/img/profil/') . $pelanggan['foto']; ?>" class=" z-depth-1-half avatar-pic"
+                    alt="example placeholder" width="300" height="250">
+                </div>
+                <div class="d-flex justify-content-center">
+                <div class="btn btn-mdb-color btn-rounded float-left">
+                    <input type="file" name="foto">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+        <div class="form-row">
+    <!-- Grid column -->
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label for="username" hidden></label>
+        <input type="text" class="form-control" id="username" value="<?php echo $pelanggan['username']?>" name="username" readonly>
+      </div>
+    </div>
+    <!-- Grid column -->
 
+    <!-- Grid column -->
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+      <label for="name" hidden>Nama Lengkap</label>
+        <input type="text" class="form-control" id="nama" value="<?php echo $pelanggan['nama_pelanggan']?>" name="nama_pelanggan">
+        <?=form_error('nama_pelanggan', '<small class="text-danger pl-3">', '</small>') ?>
+      </div>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
 
+  <!-- Grid row -->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-12">
+      <!-- Material input -->
+      <div class="md-form form-group">
+      <label for="email" hidden></label>
+        <input type="email" class="form-control" id="email" value="<?php echo $pelanggan['email']?>" name="email">
+      </div>
+    </div>
+    <!-- Grid column -->
 
-</table>
+    <!-- Grid column -->
+    <div class="col-md-12">
+      <!-- Material input -->
+      <div class="md-form form-group">
+      <label for="alamat" hidden></label>
+        <input type="textarea" class="form-control" id="alamat" value="<?php echo $pelanggan['alamat']?>" name="alamat">
+      </div>
+    </div>
+    <!-- Grid column -->
+  <div class="col-md-12">
+      <!-- Material input -->
+      <div class="md-form form-group">
+      <label for="no_telepon" hidden></label>
+        <input type="text" class="form-control" id="no_telepon" value="<?php echo $pelanggan['no_telepon']?>" name="no_telepon">
+      </div>
+    </div>
+    <!-- Grid column -->
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-md mb-2">Ganti</button>
+
+        </div>  
+  </div>
+  </form>
+</div>
 
             </div>
           </div>
@@ -397,7 +389,7 @@ echo $this->session->userdata('nama'); ?></span>
 </div>
 </div>
 
-<div class="modal fade" id="tambah_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -428,10 +420,10 @@ echo $this->session->userdata('nama'); ?></span>
                     <label>Harga Menu</label>
                     <input type="text" name="Harga Menu" class="form-control">
                 </div>
-                
+
                 <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="text" name="foto" class="form-control">
+                    <input type="date" name="tanggal_set" class="form-control">
                 </div>
 
                 <div class="form-group">

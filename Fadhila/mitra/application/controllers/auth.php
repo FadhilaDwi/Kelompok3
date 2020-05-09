@@ -113,6 +113,7 @@ function __construct(){
 	}
 	//ini untuk menyimpan data yang sudah di edit ke dalam database. data yang sudah di update akan ditampilkan kembali ke dalam halaman tampil
 	
+	
 	function cancel(){ //untuk button cancel yang diarahkan ke halaman tampil
 		redirect ('admin/data_mitra/index');
 	}
