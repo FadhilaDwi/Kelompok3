@@ -197,7 +197,7 @@ echo $this->session->userdata('nama'); ?></span>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Dashboard Mitra</h1>
-      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#tambah_menu"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#tambah_menu"><i class="fas fa-download fa-sm text-white-50"></i> Tambah menu</a>
     </div>
 
     <!-- Content Row -->
@@ -415,46 +415,30 @@ echo $this->session->userdata('nama'); ?></span>
                     <input type="text" class="form-control"  name="id_mitra"   readonly>
                 </div>
                 <div class="form-group">
-                    <label>Nama Usaha</label>
-                    <input type="text" name="nama_katering" class="form-control" >
+                    <label>Id Menu</label>
+                    <input type="text" name="id_menu" class="form-control" >
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Pemilik</label>
-                    <input type="text" name="nama_pemilik" class="form-control">
+                    <label>Nama Menu</label>
+                    <input type="text" name="nama_menu" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label>Alamat Usaha</label>
-                    <input type="text" name="alamat" class="form-control">
+                    <label>Harga Menu</label>
+                    <input type="text" name="Harga Menu" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label>Email </label>
-                    <input type="text" name="email" class="form-control">
+                    <label>Jadwal Menu </label>
+                    <input type="date" name="tanggal_set" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label>No. Telp </label>
-                    <input type="text" name="no_telepon" class="form-control">
+                    <label>Gambar Menu </label>
+                    <input type="text" name="foto" class="form-control">
                 </div>
 
-                <div class="form-group">
-                    <label>Foto Lokasi</label><br>
-                    <input type="file" name="foto_lokasi" class="form-control">
-                </div>
-
-                  
-                <div class="form-group">
-                    <label>Username</label><br>
-                    <input type="text" name="username" class="form-control">
-                </div> 
-
-                <div class="form-group">
-                    <label>Password</label><br>
-                    <input type="password" name="password" class="form-control">
-                </div>
-        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
