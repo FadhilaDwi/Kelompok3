@@ -198,7 +198,7 @@ echo $this->session->userdata('nama'); ?></span>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Dashboard Mitra</h1>
-      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#tambah_menu"><i class="fas fa-download fa-sm text-white-50"></i> Tambah menu</a>
+     
     </div>
 
     <!-- Content Row -->
@@ -258,7 +258,7 @@ echo $this->session->userdata('nama'); ?></span>
         <div class="col-4">
             
             <div class="file-field">
-                <div class="z-depth-1-half mb-4 ml-2">
+                <div class="z-depth-3-half mb-2 ml-2">
                 <img src="<?= base_url('assets/img/profil/') . $mitra ['foto_lokasi']; ?>" class=" z-depth-1-half avatar-pic"
                     alt="example placeholder" width="300" height="250">
                 </div>
