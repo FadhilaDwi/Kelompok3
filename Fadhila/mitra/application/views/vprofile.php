@@ -167,7 +167,7 @@ echo $this->session->userdata('nama'); ?></span>
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="authmitra">
+          <a class="dropdown-item" href="Profil">
             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
             Profile
           </a>
@@ -252,19 +252,19 @@ echo $this->session->userdata('nama'); ?></span>
           <div class="card-body">
             <div class="chart-area">
             <div class="container mt-3">
-<?= form_open_multipart('profil') ?>
+<?= form_open_multipart('Profil') ?>
   <div class="row">
     
         <div class="col-4">
             
             <div class="file-field">
                 <div class="z-depth-1-half mb-4 ml-2">
-                <img src="<?= base_url('assets/img/profil/') . $pelanggan['foto']; ?>" class=" z-depth-1-half avatar-pic"
+                <img src="<?= base_url('assets/img/profil/') . $mitra ['foto_lokasi']; ?>" class=" z-depth-1-half avatar-pic"
                     alt="example placeholder" width="300" height="250">
                 </div>
                 <div class="d-flex justify-content-center">
                 <div class="btn btn-mdb-color btn-rounded float-left">
-                    <input type="file" name="foto">
+                    <input type="file" name="foto_lokasi">
                 </div>
                 </div>
             </div>
@@ -276,7 +276,7 @@ echo $this->session->userdata('nama'); ?></span>
       <!-- Material input -->
       <div class="md-form form-group">
         <label for="username" hidden></label>
-        <input type="text" class="form-control" id="username" value="<?php echo $pelanggan['username']?>" name="username" readonly>
+        <input type="text" class="form-control" id="username" value="<?php echo $mitra['username']?>" name="username" readonly>
       </div>
     </div>
     <!-- Grid column -->
@@ -286,8 +286,8 @@ echo $this->session->userdata('nama'); ?></span>
       <!-- Material input -->
       <div class="md-form form-group">
       <label for="name" hidden>Nama Lengkap</label>
-        <input type="text" class="form-control" id="nama" value="<?php echo $pelanggan['nama_pelanggan']?>" name="nama_pelanggan">
-        <?=form_error('nama_pelanggan', '<small class="text-danger pl-3">', '</small>') ?>
+        <input type="text" class="form-control" id="nama" value="<?php echo $mitra['nama_katering']?>" name="nama_katering">
+        <?=form_error('nama_katering', '<small class="text-danger pl-3">', '</small>') ?>
       </div>
     </div>
     <!-- Grid column -->
@@ -301,7 +301,7 @@ echo $this->session->userdata('nama'); ?></span>
       <!-- Material input -->
       <div class="md-form form-group">
       <label for="email" hidden></label>
-        <input type="email" class="form-control" id="email" value="<?php echo $pelanggan['email']?>" name="email">
+        <input type="email" class="form-control" id="email" value="<?php echo $mitra['email']?>" name="email">
       </div>
     </div>
     <!-- Grid column -->
@@ -311,7 +311,7 @@ echo $this->session->userdata('nama'); ?></span>
       <!-- Material input -->
       <div class="md-form form-group">
       <label for="alamat" hidden></label>
-        <input type="textarea" class="form-control" id="alamat" value="<?php echo $pelanggan['alamat']?>" name="alamat">
+        <input type="textarea" class="form-control" id="alamat" value="<?php echo $mitra['alamat']?>" name="alamat">
       </div>
     </div>
     <!-- Grid column -->
@@ -319,7 +319,7 @@ echo $this->session->userdata('nama'); ?></span>
       <!-- Material input -->
       <div class="md-form form-group">
       <label for="no_telepon" hidden></label>
-        <input type="text" class="form-control" id="no_telepon" value="<?php echo $pelanggan['no_telepon']?>" name="no_telepon">
+        <input type="text" class="form-control" id="no_telepon" value="<?php echo $mitra['no_telepon']?>" name="no_telepon">
       </div>
     </div>
     <!-- Grid column -->
@@ -387,59 +387,4 @@ echo $this->session->userdata('nama'); ?></span>
   </div>
 </div>
 </div>
-</div>
-
-<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
-        <p class="text-danger" >Tambah Menu</p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="<?php echo base_url(). 'admin/data_mitra/tambah_aksi' ?>" method="post" enctype="multipart/form-data" >
-       
-                <div class="form-group">
-                    <label>Id Mitra</label>
-                    <input type="text" class="form-control"  name="id_mitra"   readonly>
-                </div>
-                <div class="form-group">
-                    <label>Id Menu</label>
-                    <input type="text" name="id_menu" class="form-control" >
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Menu</label>
-                    <input type="text" name="nama_menu" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Harga Menu</label>
-                    <input type="text" name="Harga Menu" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Jadwal Menu </label>
-                    <input type="date" name="tanggal_set" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Gambar Menu </label>
-                    <input type="text" name="foto" class="form-control">
-                </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
-      </div>
-
-
-      </form>
-      
-    </div>
-  </div>
 </div>

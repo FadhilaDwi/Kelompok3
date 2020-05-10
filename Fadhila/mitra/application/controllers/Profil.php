@@ -15,23 +15,25 @@
 
 		public function index()
 		{
-                $data['pelanggan'] = $this->db->get_where('pelanggan', ['username' => $this->session->userdata('nama')])->row_array();
+                $data['mitra'] = $this->db->get_where('mitra', ['username' => $this->session->userdata('nama')])->row_array();
 
-                $this->form_validation->set_rules('nama_pelanggan', 'Nama Lengkap', 'required');
+                $this->form_validation->set_rules('nama_katering', 'Nama Lengkap', 'required');
 
                 if($this->form_validation->run() == false ){
-                    $this->load->view('templates_customer/header');
-                    $this->load->view('customer/v_profil', $data);
-                    $this->load->view('templates_customer/footer');
+                    $this->load->helper('url');
+                    $this->load->view('template_admin/header');
+                    $this->load->view('template_admin/sidebar');
+                    $this->load->view('vprofile', $data);
+                    $this->load->view('template_admin/footer');
 
                 }else{ 
                 $username = $this->input->post('username');
-                $nama_pelanggan = $this->input->post('nama_pelanggan');
+                $nama_katering = $this->input->post('nama_katering');
                 $email = $this->input->post('email');
                 $alamat = $this->input->post('alamat');
                 $no_telepon = $this->input->post('no_telepon');
 
-                $foto = $_FILES['foto']['name'];
+                $foto = $_FILES['foto_lokasi']['name'];
                 if ($foto =''){}else{
                     $confiq ['upload_path'] = './assets/img/profil/';
                     $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -45,18 +47,18 @@
                 }
 
                 $data = array(
-                    'nama_pelanggan' => $nama_pelanggan,
+                    'nama_katering' => $nama_katering,
                     'alamat' => $alamat,
                     'no_telepon ' => $no_telepon,
                     'email' => $email,
-                    'foto' => $foto
+                    'foto_lokasi' => $foto
                 );
                 $where = array(
                     'username' => $username
                 );
 
-                $this->m_profil->update($where,$data, 'pelanggan');
-                redirect('customer/profil');
+                $this->m_profil->update($where,$data, 'mitra');
+                redirect(base_url('Profil'));
                 }
                 
 		}
