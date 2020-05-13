@@ -1,3 +1,4 @@
+
  <!-- Content Wrapper -->
  <div id="content-wrapper" class="d-flex flex-column">
 
@@ -407,13 +408,20 @@ echo $this->session->userdata('nama'); ?></span>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+    
       <div class="modal-body">
-        <form action="<?php echo base_url(). 'admin/data_mitra/tambah_aksi' ?>" method="post" enctype="multipart/form-data" >
+        <form action="<?php echo base_url(). 'tambahmenu' ?>" method="post" enctype="multipart/form-data" >
        
                 <div class="form-group">
                     <label>Id Mitra</label>
-                    <input type="text" class="form-control"  name="id_mitra"   readonly>
+                    <input type="text" class="form-control"  name="id_mitra" value="<?php echo $mitra['id_mitra']?>" readonly>
                 </div>
+
+                <div class="form-group">
+                    <label>Nama Usaha</label>
+                    <input type="text" class="form-control"  value="<?php echo $mitra['nama_katering']?>" readonly>
+                </div>
+
                 <div class="form-group">
                     <label>Id Menu</label>
                     <input type="text" name="id_menu" class="form-control" >
@@ -426,23 +434,23 @@ echo $this->session->userdata('nama'); ?></span>
 
                 <div class="form-group">
                     <label>Harga Menu</label>
-                    <input type="text" name="Harga Menu" class="form-control">
+                    <input type="text" name="harga_menu" class="form-control">
                 </div>
                 
                 <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="text" name="foto" class="form-control">
+                    <input type="date" name="tgl_set" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
-                    <input type="text" name="foto" class="form-control">
+                    <input type="file" name="foto" class="form-control">
                 </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary" clear-data>Simpan</button>
       </div>
 
 
