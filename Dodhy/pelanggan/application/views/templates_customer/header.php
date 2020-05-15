@@ -50,16 +50,15 @@
             
             ?>
           
-              <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <?php echo $this->session->userdata('nama'); ?>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="<?php echo base_url(). 'login/logout' ?>" >Keluar</a>
-              <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
-              <?php $keranjang = $this->cart->total_items()?>
-              <a class="dropdown-item" href="" >Keranjang <span class="badge badge-danger"><?php $keranjang = $this->cart->total_items()?><?= $keranjang?></span></a>
-            </div>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $this->session->userdata('nama'); ?>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<?php echo base_url(). 'login/logout' ?>" >Keluar</a>
+                <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
+                <a class="dropdown-item" href="<?= base_url().'customer/dashboardpelanggan/keranjang'?>" >Keranjang <span class="badge badge-danger"><?php echo $this->cart->total_items();?></span></a>
+              </div>
           </li>
 
           <?php }else{ ?>

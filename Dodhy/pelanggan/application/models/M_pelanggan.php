@@ -14,6 +14,12 @@
         public function tampil_baru(){
             return $this->db->get('detail_menu');
         }
+
+        public function find($where, $table){
+            $this->db->limit(1);
+            // $this->db->order_by('id_mitra', 'desc');
+            return $this->db->get_where($table, $where);
+        }
     }
 
 

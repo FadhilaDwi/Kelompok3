@@ -31,3 +31,8 @@
     /* font-family: 'Ubuntu', sans-serif; */
     font-family: 'DM Mono', monospace;
 }
+
+.makanan{
+    background-image: url(../img/makanan.jpg);
+    background-size: cover;
+}
