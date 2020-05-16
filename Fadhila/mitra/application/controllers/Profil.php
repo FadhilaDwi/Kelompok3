@@ -39,7 +39,7 @@
                     $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
     
                     $this->load->library('upload', $confiq);
-                    if (!$this->upload->do_upload('foto')){
+                    if (!$this->upload->do_upload('foto_lokasi')){
                         echo "Foto Yang Anda Upload Gagal Rek!!";
                     }else{
                         $foto=$this->upload->data('file_name');
