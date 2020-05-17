@@ -16,8 +16,10 @@
 			//perintah ini digunakan untuk memasukkan data sesuai dengan kolom pada tabel database
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
+			$id_mitra = $this->input->post('id_mitra');
 			//mengubah data string pada database menjadi bentuk array
 			$where = array(
+				
 				'username' => $username,
 				'password' => md5 ($password)
 						);

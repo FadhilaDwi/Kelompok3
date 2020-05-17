@@ -308,24 +308,29 @@ echo $this->session->userdata('nama'); ?></span>
           <!-- Card Body -->
           <div class="card-body">
             <div class="chart-area">
-            <table class="table table-bordered">
+<table class="table table-bordered">
 
 <tr>
     <th style="text-align : center">No</th>
     <th style="text-align : center">ID Mitra</th>
-    <th style="text-align : center">Username</th>
+    <th style="text-align : center">ID Menu</th>
     <th style="text-align : center">Nama Catering</th>
-    <th style="text-align : center">Nama Pemilik</th>
-    <th style="text-align : center">Foto Lokasi</th>
+    <th style="text-align : center">Nama Menu</th>
+    <th style="text-align : center">Harga Menu</th>
+    <th style="text-align : center">Gambar Menu</th>
+    <th style="text-align : center">Tanggal</th>
     <th colspan="3" style="text-align : center"> Aksi</th>
 </tr>
 
-
+<?php 
+$no=1;
+foreach ($detail_menu as $b) ?>
 
 <tr>
-    <td>    </td>
+    <td><?php echo $no++  ?></td>
     <td> </td>
-
+    <td> </td>
+    <td> </td>
     <td> </td>
     <td> </td>
     <td> </td>
