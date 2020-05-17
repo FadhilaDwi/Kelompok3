@@ -14,7 +14,12 @@ class M_profil extends CI_Model{
     public function tampil($where, $table){
         return $this->db->get_where($table, $where);
     }
+    
+    public function hapus_data($where,$table){
 
+        $this->db->where($where);
+        $this->db->delete($table);        
+    }
 }
 
 ?>

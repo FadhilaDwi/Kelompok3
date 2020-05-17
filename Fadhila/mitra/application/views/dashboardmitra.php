@@ -308,7 +308,8 @@ echo $this->session->userdata('nama'); ?></span>
           <!-- Card Body -->
           <div class="card-body">
             <div class="chart-area">
-<table class="table table-bordered">
+            <form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
+<table class="table table-bordered" >
 
 <tr>
     <th style="text-align : center">No</th>
@@ -324,28 +325,26 @@ echo $this->session->userdata('nama'); ?></span>
 
 <?php 
 $no=1;
-foreach ($detail_menu as $b) ?>
+foreach ($daftarmenu as $b) {?>
 
 <tr>
     <td><?php echo $no++  ?></td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td><?php echo $b['id_mitra']?></td>
+    <td><?php echo $b['id_menu']?> </td>
+    <td><?php echo $b['nama_katering']?> </td>
+    <td><?php echo $b['nama_menu']?> </td>
+    <td><?php echo $b['harga_menu']?> </td>
+    <td><?php echo $b['foto']?> </td>
+    <td> <?php echo $b['tgl_set']?></td>
     
     
     <td ><div class="btn btn-primary btn-sm"> <i class="fas fa-edit"></i> </div></td>
     
-    <td><div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i> </div></td>
+    <td><?php echo anchor ('tambahmenu/hapus/' .$b ['id_menu'], '<div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div>') ?></td>
 </tr>
-
-
-
+<?php } ?>
 </table>
-
+</form>
             </div>
           </div>
         </div>
@@ -383,6 +382,25 @@ foreach ($detail_menu as $b) ?>
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>
 </a>
+
+<!-- Logout Hapus-->
+<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Hapus Menu?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">Apakah anda akan menghapus menu?</div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    <a class="btn btn-primary" href="<?php echo base_url("tambahmenu/hapus") ?>">Hapus</a>
+  </div>
+</div>
+</div>
+</div>
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
