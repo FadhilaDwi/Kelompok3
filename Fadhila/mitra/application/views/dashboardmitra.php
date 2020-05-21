@@ -312,8 +312,8 @@ echo $this->session->userdata('nama'); ?></span>
 <table class="table table-bordered" >
 
 <tr>
-    <th style="text-align : center" hidden>No</th>
-    <th style="text-align : center">ID Mitra</th>
+    <th style="text-align : center" >No</th>
+    <th style="text-align : center"hidden>ID Mitra</th>
     <th style="text-align : center">ID Menu</th>
     <th style="text-align : center">Nama Catering</th>
     <th style="text-align : center">Nama Menu</th>
@@ -328,8 +328,8 @@ $no=1;
 foreach ($daftarmenu as $b) {?>
 
 <tr>
-    <td hidden><?php echo $no++  ?></td>
-    <td><?php echo $b['id_mitra']?></td>
+    <td><?php echo $no++  ?></td>
+    <td hidden><?php echo $b['id_mitra']?></td>
     <td><?php echo $b['id_menu']?> </td>
     <td><?php echo $b['nama_katering']?> </td>
     <td><?php echo $b['nama_menu']?> </td>
