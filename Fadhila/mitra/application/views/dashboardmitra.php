@@ -337,9 +337,8 @@ foreach ($daftarmenu as $b) {?>
     <td><?php echo $b['foto']?> </td>
     <td> <?php echo $b['tgl_set']?></td>
     
-    
-    <td ><div class="btn btn-primary btn-sm"> <i class="fas fa-edit"></i> </div></td>
-    
+    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> </div></td>
+
     <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div></td>
 </tr>
 <?php } ?>
@@ -383,7 +382,7 @@ foreach ($daftarmenu as $b) {?>
 <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Hapus-->
+<!-- modal Hapus-->
 <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -397,6 +396,25 @@ foreach ($daftarmenu as $b) {?>
   <div class="modal-footer">
     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
     <?php echo anchor('tambahmenu/hapus/'.$b ['id_menu'],'<button class="btn btn-primary">Hapus</button>'); ?>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- modal edit-->
+<div class="modal fade" id="editmenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit Menu?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">Apakah anda ingin mengubah data menu?</div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+    <?php echo anchor('tambahmenu/editmenu/'.$b ['id_menu'],'<button class="btn btn-primary" data-toggle="modal" data-target="#formedit">Ubah</button>'); ?>
   </div>
 </div>
 </div>
@@ -468,6 +486,69 @@ foreach ($daftarmenu as $b) {?>
                 <div class="form-group">
                     <label>Gambar Menu </label>
                     <input type="file" name="foto" class="form-control">
+                </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" clear-data>Simpan</button>
+      </div>
+
+
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
+        <p class="text-danger" >Edit Menu</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+      <div class="modal-body">
+        <form action="<?php echo base_url(). 'tambahmenu/editmenu' ?>" method="post" enctype="multipart/form-data" >
+       
+                <div class="form-group">
+                    <label>Id Mitra</label>
+                    <input type="text" class="form-control"  name="id_mitra" value="<?php echo $b['id_mitra']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Usaha</label>
+                    <input type="text" class="form-control"  value="<?php echo $b['nama_katering']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Id Menu</label>
+                    <input type="text" name="id_menu" class="form-control" value="<?php echo $b['id_menu']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Menu</label>
+                    <input type="text" name="nama_menu" class="form-control" value="<?php echo $b['nama_menu']?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Harga Menu</label>
+                    <input type="text" name="harga_menu" class="form-control"value="<?php echo $b['harga_menu']?>">
+                </div>
+                
+                <div class="form-group">
+                    <label>Jadwal Menu </label>
+                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['tgl_set']?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Gambar Menu </label>
+                    <input type="file" name="foto" class="form-control"value="<?php echo $b['foto']?>">
                 </div>
 
       </div>

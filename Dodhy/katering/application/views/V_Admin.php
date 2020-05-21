@@ -132,7 +132,7 @@
   <!-- Modal Edit Data -->
   <?php 
     $no = 0;
-    foreach($admin as $a){ $no++?>
+    foreach($admin as $a){ ?>
   <div class="modal fade" id="editModal<?=$a->id_admin ?>" tabindex="-1" role="dialog" 
   aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
