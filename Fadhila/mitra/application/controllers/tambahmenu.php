@@ -52,6 +52,6 @@ class tambahmenu extends CI_Controller{
     public function hapus($id_menu){
 		$where = array('id_menu' => $id_menu);
 		$this->m_profil->hapus_data($where,'detail_katering');
-		redirect('dashboard');
+        redirect('dashboard');
     }
 }

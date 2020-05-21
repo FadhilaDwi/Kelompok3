@@ -340,7 +340,7 @@ foreach ($daftarmenu as $b) {?>
     
     <td ><div class="btn btn-primary btn-sm"> <i class="fas fa-edit"></i> </div></td>
     
-    <td><?php echo anchor ('tambahmenu/hapus/' .$b ['id_menu'], '<div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div>') ?></td>
+    <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div></td>
 </tr>
 <?php } ?>
 </table>
@@ -396,7 +396,7 @@ foreach ($daftarmenu as $b) {?>
   <div class="modal-body">Apakah anda akan menghapus menu?</div>
   <div class="modal-footer">
     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-    <a class="btn btn-primary" href="<?php echo base_url("tambahmenu/hapus") ?>">Hapus</a>
+    <?php echo anchor('tambahmenu/hapus/'.$b ['id_menu'],'<button class="btn btn-primary">Hapus</button>'); ?>
   </div>
 </div>
 </div>
