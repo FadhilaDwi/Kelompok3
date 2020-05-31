@@ -7,33 +7,17 @@
 		}
 
 		public function index()
-
 		{
 			
 			$this->load->view('login');
 		}
 		public function registrasi(){
-			
-			
 			$username = $this->input->post('username');
 			$nama_pelanggan = $this->input->post('nama_pelanggan');
 			$alamat = $this->input->post('alamat');
 			$no_telepon = $this->input->post('no_telepon');
 			$email = $this->input->post('email');
-			//$foto_lokasi = $this->input->post('foto_lokasi');
 			$password = $this->input->post('password');
-			$foto      = $_FILES['gambar']['name'];
-					if ($foto =''){}else{
-						$confiq ['upload_path'] = './uploads';
-						$confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
-	
-						$this->load->library('upload', $confiq);
-						if (!$this->upload->do_upload('foto')){
-							echo "Gambar Yang Anda Upload Gagal Rek!!";
-						}else{
-							$foto=$this->upload->data('file_name');
-						}
-					}
 			$data = array(
 				
 				'username' => $username,
@@ -41,13 +25,13 @@
 				'alamat' => $alamat,
 				'no_telepon' => $no_telepon,
 				'email'=>  $email,
-				'foto'=>$foto,
+				'foto' => 'default.png',
 				'password' => md5 ($password)			
 	
 				);
 			$this->M_login->buatakun($data,'pelanggan');
 			$data['kodeunik'] = $this->M_login->buat_kode();
-			redirect('login/index');
+			redirect('customer/login/index');
 		}
 		public function aksi_login(){
 			$username = $this->input->post('username');

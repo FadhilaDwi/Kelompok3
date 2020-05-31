@@ -1,6 +1,5 @@
 
 
-
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
@@ -8,54 +7,6 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Dashboard Mitra</h1>
       <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#tambah_menu"><i class="fas fa-download fa-sm text-white-50"></i> Tambah menu</a>
-    </div>
-
-    <!-- Content Row -->
-    <div class="row">
-
-
-      <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pesanan Masuk</div>
-                <div class="row no-gutters align-items-center">
-                  <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                  </div>
-                  <div class="col">
-                    <div class="progress progress-sm mr-2">
-                      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pending Requests Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pesanan Diterima</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Content Row -->
@@ -71,41 +22,42 @@
           </div>
           <!-- Card Body -->
           <div class="card-body">
-            <div class="chart-area">
-            <table class="table table-bordered">
+            <form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
+<table class="table table-bordered" >
 
 <tr>
-    <th style="text-align : center">No</th>
-    <th style="text-align : center">ID Mitra</th>
-    <th style="text-align : center">Username</th>
+    <th style="text-align : center" >No</th>
+    <th style="text-align : center"hidden>ID Mitra</th>
+    <th style="text-align : center">ID Menu</th>
     <th style="text-align : center">Nama Catering</th>
-    <th style="text-align : center">Nama Pemilik</th>
-    <th style="text-align : center">Foto Lokasi</th>
+    <th style="text-align : center">Nama Menu</th>
+    <th style="text-align : center">Harga Menu</th>
+    <th style="text-align : center">Gambar Menu</th>
+    <th style="text-align : center">Tanggal</th>
     <th colspan="3" style="text-align : center"> Aksi</th>
 </tr>
 
-
+<?php 
+$no=1;
+foreach ($daftarmenu as $b) {?>
 
 <tr>
-    <td>    </td>
-    <td> </td>
+    <td><?php echo $no++  ?></td>
+    <td hidden><?php echo $b['id_mitra']?></td>
+    <td><?php echo $b['id_menu']?> </td>
+    <td><?php echo $b['nama_katering']?> </td>
+    <td><?php echo $b['nama_menu']?> </td>
+    <td><?php echo $b['harga_menu']?> </td>
+    <td><?php echo $b['foto']?> </td>
+    <td> <?php echo $b['tgl_set']?></td>
+    
+    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> </div></td>
 
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    
-    
-    <td ><div class="btn btn-primary btn-sm"> <i class="fas fa-edit"></i> </div></td>
-    
-    <td><div class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i> </div></td>
+    <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div></td>
 </tr>
-
-
-
+<?php } ?>
 </table>
-
-            </div>
+</form>
           </div>
         </div>
       </div>
@@ -122,9 +74,6 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Footer -->
-
-<!-- End of Footer -->
 
 </div>
 <!-- End of Content Wrapper -->
@@ -137,7 +86,62 @@
 <i class="fas fa-angle-up"></i>
 </a>
 
+<!-- modal Hapus-->
+<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Hapus Menu?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">Apakah anda akan menghapus menu?</div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    <?php echo anchor('tambahmenu/hapus/'.$b ['id_menu'],'<button class="btn btn-primary">Hapus</button>'); ?>
+  </div>
+</div>
+</div>
+</div>
 
+<!-- modal edit-->
+<div class="modal fade" id="editmenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit Menu?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">Apakah anda ingin mengubah data menu?</div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+    <?php echo anchor('tambahmenu/editmenu/'.$b ['id_menu'],'<button class="btn btn-primary" data-toggle="modal" data-target="#formedit">Ubah</button>'); ?>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    <a class="btn btn-primary" href="<?php echo base_url("login/logout") ?>">Logout</a>
+  </div>
+</div>
+</div>
+</div>
 
 <div class="modal fade" id="tambah_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -186,6 +190,69 @@
                 <div class="form-group">
                     <label>Gambar Menu </label>
                     <input type="file" name="foto" class="form-control">
+                </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" clear-data>Simpan</button>
+      </div>
+
+
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
+        <p class="text-danger" >Edit Menu</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+      <div class="modal-body">
+        <form action="<?php echo base_url(). 'mitra/tambahmenu/editmenu' ?>" method="post" enctype="multipart/form-data" >
+       
+                <div class="form-group">
+                    <label>Id Mitra</label>
+                    <input type="text" class="form-control"  name="id_mitra" value="<?php echo $b['id_mitra']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Usaha</label>
+                    <input type="text" class="form-control"  value="<?php echo $b['nama_katering']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Id Menu</label>
+                    <input type="text" name="id_menu" class="form-control" value="<?php echo $b['id_menu']?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Menu</label>
+                    <input type="text" name="nama_menu" class="form-control" value="<?php echo $b['nama_menu']?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Harga Menu</label>
+                    <input type="text" name="harga_menu" class="form-control"value="<?php echo $b['harga_menu']?>">
+                </div>
+                
+                <div class="form-group">
+                    <label>Jadwal Menu </label>
+                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['tgl_set']?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Gambar Menu </label>
+                    <input type="file" name="foto" class="form-control"value="<?php echo $b['foto']?>">
                 </div>
 
       </div>

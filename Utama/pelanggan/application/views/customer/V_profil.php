@@ -1,5 +1,7 @@
 <div class="container mt-3">
 <?= form_open_multipart('customer/profil') ?>
+
+<?= $this->session->flashdata('message');?>
   <div class="row">
     
         <div class="col-4">
@@ -49,6 +51,7 @@
       <div class="md-form form-group">
       <label for="email" hidden></label>
         <input type="email" class="form-control" id="email" value="<?php echo $pelanggan['email']?>" name="email">
+        <?=form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
       </div>
     </div>
     <!-- Grid column -->
@@ -59,6 +62,7 @@
       <div class="md-form form-group">
       <label for="alamat" hidden></label>
         <input type="textarea" class="form-control" id="alamat" value="<?php echo $pelanggan['alamat']?>" name="alamat">
+        <?=form_error('alamat', '<small class="text-danger pl-3">', '</small>') ?>
       </div>
     </div>
     <!-- Grid column -->
@@ -67,6 +71,7 @@
       <div class="md-form form-group">
       <label for="no_telepon" hidden></label>
         <input type="text" class="form-control" id="no_telepon" value="<?php echo $pelanggan['no_telepon']?>" name="no_telepon">
+        <?=form_error('no_telepon', '<small class="text-danger pl-3">', '</small>') ?>
       </div>
     </div>
     <!-- Grid column -->

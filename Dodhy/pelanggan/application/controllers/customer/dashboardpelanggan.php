@@ -36,15 +36,16 @@
 			$this->load->view('templates_customer/footer');
 		}
 
-		public function tambah_keranjang($id_menu){
-			$menu = $this->m_pelanggan->find(['id_menu' => $id_menu], 'detail_menu')->row();
+		public function tambah_keranjang($id_mitra,$id_menu){
+			$menu = $this->m_pelanggan->find(['id_menu' => $id_menu, 'id_mitra' => $id_mitra], 'detail_menu')->row();
 
 			$data = array(
 				'id' => $menu->id_menu,
 				'qty' => 1,
 				'price' => $menu->harga_menu,
 				'name' => $menu->nama_menu,
-				'shop' => $menu->nama_katering
+				'shop' => $menu->nama_katering,
+				'shop_id' => $menu->id_mitra
 			);
 
 			$this->cart->insert($data);

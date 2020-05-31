@@ -94,7 +94,7 @@
 									<div class="d-flex height-100-percentage padding-40px">
 										<div class="align-self-center width-100-percentage">
 											<h2>Buat Akun</h2>
-											<form class="floating-form" action="<?php echo base_url(). 'login/registrasi' ?>" method="post" enctype="multipart/form-data">
+											<form class="floating-form" action="<?php echo base_url(). 'customer/login/registrasi' ?>" method="post" enctype="multipart/form-data">
 												<div class="row">
 												<div class="col-md-6 col-sm-12">
 														<div class="form-group">
@@ -128,13 +128,6 @@
 														<div class="form-group">
 															<label class="label">Email</label>
 															<input type="text" class="form-control" name="email">
-														</div>
-													</div>
-													
-													<div class="col-md-6 col-sm-12">
-														<div class="form-group">
-															<label class="label">Foto</label>
-															<input type="file" class="form-control" placeholder="Foto" name="foto">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">

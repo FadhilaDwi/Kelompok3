@@ -20,7 +20,7 @@ class tambahmenu extends CI_Controller{
 		$tgl_set = $this->input->post('tgl_set');
        	$foto        = $_FILES['foto']['name'];
                 if ($foto =''){}else{
-                    $confiq ['upload_path'] = './assets/img/mitra';
+                    $confiq ['upload_path'] = './assets/img/profil/';
                     $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
 
                     $this->load->library('upload', $confiq);
@@ -45,7 +45,59 @@ class tambahmenu extends CI_Controller{
     );
       $this->m_profil->add($data,'menu');
       $this->m_profil->add($data1,'detail_katering');
-      redirect(base_url('dashboard'));
+      redirect(base_url('mitra/dashboard'));
 
+    }
+
+    public function editmenu()
+    {
+        $id_mitra = $this->input->post('id_mitra');
+        $id_menu = $this->input->post('id_menu');
+		$nama_menu = $this->input->post('nama_menu');
+		$harga_menu = $this->input->post('harga_menu');
+		$tgl_set = $this->input->post('tgl_set');
+       	$foto        = $_FILES['foto']['name'];
+                if ($foto =''){}else{
+                    $confiq ['upload_path'] = './uploads';
+                    $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
+
+                    $this->load->library('upload', $confiq);
+                    if (!$this->upload->do_upload('foto')){
+                        echo "Gambar Yang Anda Upload Gagal Rek!!";
+                    }else{
+                        $foto=$this->upload->data('file_name');
+                    }
+                }
+        
+    $data = array(
+          'id_menu' =>$id_menu ,
+          'nama_menu' =>$nama_menu ,
+          'foto' => $foto
+      );
+      //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
+      $data1 = array(
+        'id_mitra' =>$id_mitra,
+        'id_menu' =>$id_menu ,
+        'harga_menu' =>$harga_menu ,
+        'tgl_set' => $tgl_set
+    );
+
+    $where1 = array(
+        'id_menu' => $id_menu
+    );
+
+    $where2= array(
+        'id_menu' => $id_menu,
+        'id_mitra'=> $id_mitra
+    );
+      $this->m_profil->update($where1,$data,'menu');
+      $this->m_profil->update($where2,$data1,'detail_katering');
+      redirect(base_url('mitra/dashboard'));
+
+    }
+    public function hapus($id_menu){
+		$where = array('id_menu' => $id_menu);
+		$this->m_profil->hapus_data($where,'detail_katering');
+        redirect('mitra/dashboard');
     }
 }
