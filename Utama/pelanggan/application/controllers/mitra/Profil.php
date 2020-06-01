@@ -52,7 +52,7 @@
                         }
                         
                         $foto = $this->upload->data('file_name');
-                        //untuk foto tidak disatukan kedalam data array dibawah untuk menghindari tampilan foto kosong ketika mengubah data
+                        //untuk foto tidak disatukan kedalam data array dibawah untuk menghindari tampilan foto kosong ketika mengubah data 
                         $this->db->set('foto_lokasi', $foto);
                     }else{
                         echo $this->upload->display_errors();

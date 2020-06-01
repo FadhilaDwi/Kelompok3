@@ -43,7 +43,7 @@ jQuery(document).ready(function(){
 	});
 
 
-	// floating form
+// 	// floating form
 	var refresh = function() {
 		jQuery('.floating-form .form-group .form-control').each(function(index, el) {
 			var text_val = jQuery(this).val();

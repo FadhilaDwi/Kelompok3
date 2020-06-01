@@ -4,6 +4,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->model('M_login');
+			$this->load->library('form_validation');
 		}
 
 		public function index()
@@ -12,6 +13,17 @@
 			$this->load->view('login');
 		}
 		public function registrasi(){
+
+			$this->form_validation->set_rules('nama_pelanggan', 'Full Name', 'required|trim');
+			$this->form_validation->set_rules('alamat', 'Address', 'required|trim');
+			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[pelanggan.username]');
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+			$this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[pelanggan.email]|valid_email');
+			$this->form_validation->set_rules('no_telepon', 'Number phone', 'required|trim|min_length[11]|max_length[13]');
+
+			if ($this->form_validation->run() == False) {
+				$this->load->view('login');
+			}else{
 			$username = $this->input->post('username');
 			$nama_pelanggan = $this->input->post('nama_pelanggan');
 			$alamat = $this->input->post('alamat');
@@ -32,6 +44,7 @@
 			$this->M_login->buatakun($data,'pelanggan');
 			$data['kodeunik'] = $this->M_login->buat_kode();
 			redirect('customer/login/index');
+			}
 		}
 		public function aksi_login(){
 			$username = $this->input->post('username');
