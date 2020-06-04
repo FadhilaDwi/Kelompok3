@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=  base_url('customer/dashboardpelanggan/detail_tgl');?>">Menu Catering</a>
+            <a class="nav-link" href="<?=  base_url('customer/dashboardpelanggan/mitra');?>">Mitra Kami</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Info Pembayaran</a>

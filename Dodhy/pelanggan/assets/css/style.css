@@ -12,10 +12,10 @@
     font-size: smaller;
 }
 
-.jumbotron, .list-group{
+/* .jumbotron, .list-group{
     width: auto;
     margin-top: 20px;
-}
+} */
 
 /* .list-group:hover{
     content: '';
@@ -35,4 +35,24 @@
 .makanan{
     background-image: url(../img/makanan.jpg);
     background-size: cover;
+}
+
+.utama{
+    background-image: url(../img/02.jpg);
+    background-size: cover;
+    height: 640px;
+    width: auto;
+    text-align: center;
+}
+
+.utama .display-4{
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    margin-top: 150px;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.html{
+    scroll-behavior: smooth;
 }

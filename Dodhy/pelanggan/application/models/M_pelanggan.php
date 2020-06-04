@@ -21,6 +21,10 @@
             // $this->db->order_by('id_mitra', 'desc');
             return $this->db->get_where($table, $where);
         }
+        
+        public function tampil($where,$table){
+            return $this->db->get_where($table, $where);
+        }
     }
 
 
