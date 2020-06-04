@@ -30,7 +30,7 @@
           <div class="card-body">
             <h5 class="card-title"><?= $dm->nama_menu ?></h5>
             <span class="badge badge-pill badge-success">Rp. <?= number_format($dm->harga_menu,0,',','.')?></span></br>
-            <?= anchor('customer/dashboardpelanggan/tambah_keranjang/'.$dm->id_mitra.'/'.$dm->id_menu,'<div class="btn btn-sm btn-primary mt-2">Tambahkan Keranjang</div>')?>
+            <?= anchor('customer/dashboardpelanggan/tambah_keranjang/'.$dm->id_menu,'<div class="btn btn-sm btn-primary mt-2">Tambahkan Keranjang</div>')?>
           </div>
         </div>
         

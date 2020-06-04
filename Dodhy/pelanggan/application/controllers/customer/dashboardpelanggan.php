@@ -16,7 +16,7 @@
 		public function index()
 		{
 				// $data['mitra'] = $this->m_pelanggan->tampil_data()->result();
-				$data['detail_menu'] = $this->m_pelanggan->tampil_menu(['date(tgl_set)'=>date("Y-m-d",strtotime('now'))], 'detail_menu')->result();
+				$data['detail_menu'] = $this->m_pelanggan->tampil_menu(['date(hari)'=>date("Y-m-d",strtotime('now'))], 'detail_menu')->result();
 				$this->load->view('templates_customer/header');
 				$this->load->view('customer/dashboardpelanggan', $data);
 				$this->load->view('templates_customer/footer');
@@ -37,8 +37,8 @@
 			$this->load->view('templates_customer/footer');
 		}
 
-		public function tambah_keranjang($id_mitra,$id_menu){
-			$menu = $this->m_pelanggan->find(['id_menu' => $id_menu, 'id_mitra' => $id_mitra], 'detail_menu')->row();
+		public function tambah_keranjang($id_menu){
+			$menu = $this->m_pelanggan->find(['id_menu' => $id_menu], 'detail_menu')->row();
 
 			$data = array(
 				'id' => $menu->id_menu,

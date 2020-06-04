@@ -1,53 +1,28 @@
 <div class="container mt-3">
-    <?php
-    $no = 1;
+  <?php if($this->cart->total_items() == 0) {?>
 
+    <center><img src="<?php echo base_url('assets/img/keranjang.png')?>" alt=""></center>
+  <?php }else{ ?>
+    <?php
     foreach($this->cart->contents() as $items) :
-            // if($this->cart->product_options($items['shop_id']) as $barang => $items['shop_id']) :
     ?>
-            <div class="card mb-3" >
-                <div class="card-header">
-                    <?= $items['shop_id']?>
+                <div class="card mb-3">
+                  <h5 class="card-header"><?= $items['shop']?></h5>
+                  <div class="card-body">
+                    <h5 class="card-title"><?= $items['name']?></h5>
+                    <p class="card-text"><?= $items['qty']?> x Rp. <?= number_format($items['price'], 0, ',', '.')?> </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
                 </div>
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Nama Menu</th>
-                      <th>Harga</th>
-                      <th>Jumlah</th>
-                      <th>Subtotal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><?= $no++?></td>
-                      <td><?= $items['name']?></td>
-                      <td><?= $items['qty']?></td>
-                      <td>Rp. <?= number_format($items['price'], 0, ',', '.')?></td>
-                      <td>Rp. <?= number_format($items['subtotal'], 0, ',', '.')?></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- <div class="row no-gutters">
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <div class="row">
-                                <input type="text"  name="jumlah" id="jumlah" readonly value="">
-                                <p class="card-text ml-2">x Rp. ?></p>
-                            </div>
-                            <div class="row mt-2">
-                                <p class="card-text ">Total Harga</p>
-                                <p class="card-text ml-4">Rp. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
     <?php
-    // endif; 
-endforeach;?>
+endforeach;
+}?>
     
 
 
