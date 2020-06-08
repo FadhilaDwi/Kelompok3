@@ -17,7 +17,6 @@ class tambahmenu extends CI_Controller{
         $id_menu = $this->input->post('id_menu');
 		$nama_menu = $this->input->post('nama_menu');
 		$harga_menu = $this->input->post('harga_menu');
-		$tgl_set = $this->input->post('tgl_set');
        	$foto        = $_FILES['foto']['name'];
                 if ($foto =''){}else{
                     $confiq ['upload_path'] = './uploads';
@@ -32,19 +31,14 @@ class tambahmenu extends CI_Controller{
                 }
         
     $data = array(
-          'id_menu' =>$id_menu ,
-          'nama_menu' =>$nama_menu ,
-          'foto' => $foto
+          'id_menu' =>$id_menu,
+          'id_mitra' =>$id_mitra,
+          'nama_menu' =>$nama_menu,
+          'foto' => $foto,
+          'harga_menu' =>$harga_menu
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
-      $data1 = array(
-        'id_mitra' =>$id_mitra,
-        'id_menu' =>$id_menu ,
-        'harga_menu' =>$harga_menu ,
-        'tgl_set' => $tgl_set
-    );
       $this->m_profil->add($data,'menu');
-      $this->m_profil->add($data1,'detail_katering');
       redirect(base_url('dashboard'));
 
     }
@@ -55,7 +49,6 @@ class tambahmenu extends CI_Controller{
         $id_menu = $this->input->post('id_menu');
 		$nama_menu = $this->input->post('nama_menu');
 		$harga_menu = $this->input->post('harga_menu');
-		$tgl_set = $this->input->post('tgl_set');
        	$foto        = $_FILES['foto']['name'];
                 if ($foto =''){}else{
                     $confiq ['upload_path'] = './uploads';
@@ -70,34 +63,25 @@ class tambahmenu extends CI_Controller{
                 }
         
     $data = array(
-          'id_menu' =>$id_menu ,
-          'nama_menu' =>$nama_menu ,
-          'foto' => $foto
+        'id_menu' =>$id_menu,
+        'id_mitra' =>$id_mitra,
+        'nama_menu' =>$nama_menu,
+        'foto' => $foto,
+        'harga_menu' =>$harga_menu
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
-      $data1 = array(
-        'id_mitra' =>$id_mitra,
-        'id_menu' =>$id_menu ,
-        'harga_menu' =>$harga_menu ,
-        'tgl_set' => $tgl_set
-    );
-
     $where1 = array(
         'id_menu' => $id_menu
     );
 
-    $where2= array(
-        'id_menu' => $id_menu,
-        'id_mitra'=> $id_mitra
-    );
+  
       $this->m_profil->update($where1,$data,'menu');
-      $this->m_profil->update($where2,$data1,'detail_katering');
       redirect(base_url('dashboard'));
 
     }
     public function hapus($id_menu){
 		$where = array('id_menu' => $id_menu);
-		$this->m_profil->hapus_data($where,'detail_katering');
+		$this->m_profil->hapus_data($where,'menu');
         redirect('dashboard');
     }
 }

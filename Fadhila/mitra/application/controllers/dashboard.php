@@ -14,8 +14,8 @@ class dashboard extends CI_Controller{
     public function index()
     {
         $data['mitra'] = $this->db->get_where('mitra', ['username' => $this->session->userdata('nama')])->row_array();
-       
-        $data['daftarmenu'] = $this->db->get_where('daftarmenu', ['username' => $this->session->userdata('nama')])->result_array();
+        $data['menu'] = $this->db->get_where('menu, mitra', ['menu.id_mitra', 'mitra.username' => $this->session->userdata('nama')])->result_array();
+        
 		$this->load->helper('url');
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');

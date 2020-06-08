@@ -319,13 +319,13 @@ echo $this->session->userdata('nama'); ?></span>
     <th style="text-align : center">Nama Menu</th>
     <th style="text-align : center">Harga Menu</th>
     <th style="text-align : center">Gambar Menu</th>
-    <th style="text-align : center">Tanggal</th>
+   
     <th colspan="3" style="text-align : center"> Aksi</th>
 </tr>
 
 <?php 
 $no=1;
-foreach ($daftarmenu as $b) {?>
+foreach ($menu as $b) {?>
 
 <tr>
     <td><?php echo $no++  ?></td>
@@ -335,7 +335,7 @@ foreach ($daftarmenu as $b) {?>
     <td><?php echo $b['nama_menu']?> </td>
     <td><?php echo $b['harga_menu']?> </td>
     <td><?php echo $b['foto']?> </td>
-    <td> <?php echo $b['tgl_set']?></td>
+    
     
     <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> </div></td>
 
@@ -461,10 +461,10 @@ foreach ($daftarmenu as $b) {?>
                     <input type="text" name="harga_menu" class="form-control">
                 </div>
                 
-                <div class="form-group">
+               <!-- <div class="form-group">
                     <label>Jadwal Menu </label>
                     <input type="date" name="tgl_set" class="form-control">
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
@@ -524,10 +524,10 @@ foreach ($daftarmenu as $b) {?>
                     <input type="text" name="harga_menu" class="form-control"value="<?php echo $b['harga_menu']?>">
                 </div>
                 
-                <div class="form-group">
+               <!-- <div class="form-group">
                     <label>Jadwal Menu </label>
                     <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['tgl_set']?>">
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
