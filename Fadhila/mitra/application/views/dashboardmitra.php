@@ -337,7 +337,7 @@ foreach ($menu as $b) {?>
     <td><?php echo $b['foto']?> </td>
     
     
-    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> </div></td>
+    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'];?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> </div></td>
 
     <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> <i class="fas fa-trash"></i></div></td>
 </tr>
@@ -485,6 +485,8 @@ foreach ($menu as $b) {?>
 </div>
 
 
+<?php 
+    foreach($menu as $b){ ?>
 <div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -546,3 +548,5 @@ foreach ($menu as $b) {?>
     </div>
   </div>
 </div>
+<?php 
+} ?>
