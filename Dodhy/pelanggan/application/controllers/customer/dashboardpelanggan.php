@@ -50,11 +50,58 @@
 			);
 
 			$this->cart->insert($data);
+			redirect(base_url('customer/dashboardpelanggan/keranjang'));
 
 		}
 		public function keranjang(){
+			$data['pelanggan'] = $this->db->get_where('pelanggan', ['username' => $this->session->userdata('nama')])->row_array();
+			// $data['pemesanan'] = $this->db->get_where('pemesanan, pelanggan', ['pelanggan.id_pelanggan', 'username' => $this->session->userdata('nama')])->row_array();
 			$this->load->view('templates_customer/header');
-			$this->load->view('customer/v_keranjang');
+			$this->load->view('customer/v_keranjang', $data);
+			$this->load->view('templates_customer/footer');
+		}
+
+		public function beli(){
+			$id_pelanggan = $this->input->post('id_pelanggan');
+			$total = $this->cart->total();
+			$alamat = $this->input->post('alamat');
+			// $bayar = $this->input->post('metode_pembayaran');
+			$foto = $_FILES['bukti_pembayaran']['name'];
+                if ($foto =''){}else{
+                    $config ['upload_path'] = './assets/img/profil/';
+					$config ['allowed_types'] = 'jpg|jpeg|png|gif';
+					$config ['max_size'] = '2048';
+    
+                    $this->load->library('upload', $config);
+                    if (!$this->upload->do_upload('foto')){
+                        echo "Foto Yang Anda Upload Gagal Rek!!";
+                    }else{
+                        $foto=$this->upload->data('file_name');
+                    }
+                }
+
+			$invoice = array(
+				'id_pelanggan' => $id_pelanggan,
+				'total_harga' => $total
+			);
+				$this->db->insert('pemesanan', $invoice);
+				$id_pesan = $this->db->insert_id();
+
+				foreach ($this->cart->contents() as $items) {
+					$data = array(
+						'id_pesan' => $id_pesan,
+						'id_menu' => $items['id'],
+						'jumlah_pesanan' => $items['qty'],
+						'alamat_pesanan' => $alamat,
+						'status_pesanan' => 'belum membayar',
+						'bukti_pembayaran' => $foto
+					);
+					$this->db->insert('detail_pemesanan', $data);
+				}
+			$this->cart->destroy();
+			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->row_array();
+			$this->load->view('templates_customer/header');
+			$this->load->view('customer/v_invoice', $p);
 			$this->load->view('templates_customer/footer');
 		}
 }

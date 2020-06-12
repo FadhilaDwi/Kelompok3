@@ -57,6 +57,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="<?php echo base_url(). 'login/logout' ?>" >Keluar</a>
                 <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
+                <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Riwayat Belanja</a>
                 <a class="dropdown-item" href="<?= base_url().'customer/dashboardpelanggan/keranjang'?>" >Keranjang <span class="badge badge-danger"><?php echo $this->cart->total_items();?></span></a>
               </div>
           </li>
