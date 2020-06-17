@@ -87,4 +87,26 @@ class tambahmenu extends CI_Controller{
 		$this->m_profil->hapus_data($where,'menu');
         redirect('dashboard');
     }
+
+    public function terimapesanan()
+    {
+        $id_pesan = $this->input->post('id_pesan');
+        $status_pesanan = $this->input->post('status_pesanan');
+       
+        
+    $data = array(
+        'id_pesan' =>$id_pesan,
+        'status_pesanan' =>$status_pesanan
+      );
+      //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
+    $where1 = array(
+        'id_pesan' => $id_pesan
+
+    );
+      $this->m_profil->update($where1,$data,'detail_pemesanan');
+      redirect(base_url('daftartransaksi'));
+
+    }
+
+    
 }

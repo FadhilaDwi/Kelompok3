@@ -205,75 +205,6 @@ echo $this->session->userdata('nama'); ?></span>
     <div class="row">
 
       <!-- Area Chart -->
-      <div class="col-xl-8 col-lg-7">
-        <div class="card shadow mb-4">
-          <!-- Card Header - Dropdown -->
-          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Data Pesanan</h6>
-            <div class="dropdown no-arrow">
-              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-          <!-- Card Body -->
-          <div class="card-body">
-            <div class="chart-area">
-            <form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
-<table class="table table-bordered" >
-
-<tr>
-    <th style="text-align : center" >No</th>
-    <th style="text-align : center"hidden>ID Mitra</th>
-    <th style="text-align : center">ID Menu</th>
-    <th style="text-align : center">Nama Catering</th>
-    <th style="text-align : center">Nama Menu</th>
-    <th style="text-align : center">Harga Menu</th>
-    <th style="text-align : center">Gambar Menu</th>
-   
-    <th colspan="3" style="text-align : center"> Aksi</th>
-</tr>
-
-<?php 
-$no=1;
-foreach ($menu as $b) {?>
-
-<tr>
-    <td><?php echo $no++  ?></td>
-    <td hidden><?php echo $b['id_mitra']?></td>
-    <td><?php echo $b['id_menu']?> </td>
-    <td><?php echo $b['nama_katering']?> </td>
-    <td><?php echo $b['nama_menu']?> </td>
-    <td><?php echo $b['harga_menu']?> </td>
-    <td><?php echo $b['foto']?> </td>
-    
-    
-    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
-
-    <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> Tolak </div></td>
-</tr>
-<?php } ?>
-</table>
-</form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pie Chart -->
-      
-    </div>
-
-    <div class="row">
-
-      <!-- Area Chart -->
       <div class="col">
         <div class="card shadow mb-4">
           <!-- Card Header - Dropdown -->
@@ -300,31 +231,37 @@ foreach ($menu as $b) {?>
 
 <tr>
     <th style="text-align : center" >No</th>
-    <th style="text-align : center"hidden>ID Mitra</th>
-    <th style="text-align : center">ID Menu</th>
-    <th style="text-align : center">Nama Catering</th>
+    <th style="text-align : center">ID Pesan</th>
+    <th style="text-align : center" hidden>ID Pelanggan</th>
+    <th style="text-align : center">Nama Pelanggan</th>
     <th style="text-align : center">Nama Menu</th>
-    <th style="text-align : center">Harga Menu</th>
-    <th style="text-align : center">Gambar Menu</th>
+    <th style="text-align : center">jumlah Pesanan</th>
+    <th style="text-align : center">Total Harga</th>
+    <th style="text-align : center">Status Pesanan</th>
+    <th style="text-align : center">Bukti Pembayaran</th>
+    <th style="text-align : center">Alamat Pemesanan</th>
    
     <th colspan="3" style="text-align : center"> Aksi</th>
 </tr>
 
 <?php 
 $no=1;
-foreach ($menu as $b) {?>
+foreach ($pesanan as $b) {?>
 
 <tr>
     <td><?php echo $no++  ?></td>
-    <td hidden><?php echo $b['id_mitra']?></td>
-    <td><?php echo $b['id_menu']?> </td>
-    <td><?php echo $b['nama_katering']?> </td>
+    <td ><?php echo $b['id_pesan']?></td>
+    <td hidden><?php echo $b['id_pelanggan']?> </td>
+    <td><?php echo $b['nama_pelanggan']?> </td>
     <td><?php echo $b['nama_menu']?> </td>
-    <td><?php echo $b['harga_menu']?> </td>
-    <td><?php echo $b['foto']?> </td>
+    <td><?php echo $b['jumlah_pesanan']?> </td>
+    <td><?php echo $b['total_harga']?> </td>
+    <td><?php echo $b['status_pesanan']?> </td>
+    <td><?php echo $b['bukti_pembayaran']?> </td>
+    <td><?php echo $b['alamat_pesanan']?> </td>
+      
     
-    
-    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
+    <td> <div data-toggle="modal" data-target="#lihat<?=$b['id_pesan'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
 
     <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> Tolak </div></td>
 </tr>
@@ -340,7 +277,7 @@ foreach ($menu as $b) {?>
       
     </div>
 
-    
+
 
   </div>
   <!-- /.container-fluid -->
@@ -348,9 +285,6 @@ foreach ($menu as $b) {?>
 </div>
 <!-- End of Main Content -->
 
-<!-- Content Row -->
-
-<!-- Content Row -->
 
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
@@ -475,69 +409,76 @@ foreach ($menu as $b) {?>
   </div>
 </div>
 
-
-<?php 
-    foreach($menu as $b){ ?>
-<div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php  foreach($pesanan as $b){ ?>
+<div class="modal fade" id="lihat<?=$b['id_pesan'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
-        <p class="text-danger" >Edit Menu</p>
+        <p class="text-danger" >Tambah Menu</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
     
       <div class="modal-body">
-        <form action="<?php echo base_url(). 'tambahmenu/editmenu' ?>" method="post" enctype="multipart/form-data" >
-       
-                <div class="form-group">
-                    <label>Id Mitra</label>
-                    <input type="text" class="form-control"  name="id_mitra" value="<?php echo $b['id_mitra']?>" readonly>
-                </div>
+        <form action="<?php echo base_url(). 'tambahmenu/terimapesanan' ?>" method="post" enctype="multipart/form-data" >
 
                 <div class="form-group">
-                    <label>Nama Usaha</label>
-                    <input type="text" class="form-control"  value="<?php echo $b['nama_katering']?>" readonly>
+                    <label>ID Pesan</label>
+                    <input type="text" class="form-control"  name="id_pesan" value="<?php echo $b['id_pesan']?>"  readonly>
                 </div>
-
                 <div class="form-group">
-                    <label>Id Menu</label>
-                    <input type="text" name="id_menu" class="form-control" value="<?php echo $b['id_menu']?>" readonly>
+                    <label>Nama Pelanggan</label>
+                    <input type="text" class="form-control"  name="nama_pelanggan" value="<?php echo $b['nama_pelanggan']?>"  readonly>
                 </div>
 
                 <div class="form-group">
                     <label>Nama Menu</label>
-                    <input type="text" name="nama_menu" class="form-control" value="<?php echo $b['nama_menu']?>">
+                    <input type="text" class="form-control" name="nama_menu"  value="<?php echo $b['nama_menu']?>" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label>Harga Menu</label>
-                    <input type="text" name="harga_menu" class="form-control"value="<?php echo $b['harga_menu']?>">
+                    <label>Total Harga</label>
+                    <input type="text" name="total_harga" value="<?php echo $b['total_harga']?>" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label>Status Pesanan</label>
+                    <input type="text" value="<?php echo $b['status_pesanan']?>" value class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Bukti Pembayaran</label>
+                    <input type="file" name="bukti_pembayaran" value="<?php echo $b['bukti_pembayaran']?>"class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Alamat Pemesan</label>
+                    <input type="text" name="alamat_pesanan" value="<?php echo $b['alamat_pesanan']?>"class="form-control">
+                </div>
+
+               <!-- <div class="form-group"> 
+                    <label>Status Pesanan</label>
+                    <input type="text"  class="form-control">
                 </div>
                 
-               <!-- <div class="form-group">
+                <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['tgl_set']?>">
+                    <input type="date" name="tgl_set" class="form-control">
                 </div> -->
 
-                <div class="form-group">
-                    <label>Gambar Menu </label>
-                    <input type="file" name="foto" class="form-control"value="<?php echo $b['foto']?>">
-                </div>
+               
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" clear-data>Simpan</button>
+        <button type="submit" name="status_pesanan" value="Sedang Proses" class="btn btn-primary" clear-data>Terima</button>
       </div>
-
-
-      </form>
+</form>
       
     </div>
   </div>
 </div>
-<?php 
-} ?>
+<?php }?>
+
