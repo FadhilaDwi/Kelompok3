@@ -72,10 +72,10 @@ endforeach;?>
 
                 <div class="form-group">
                     <label>Metode Pembayaran</label>
-                    <select name="mbayar" class="form-control">
-                      <option value="">-- Pilih Metode Pembayaran --</option>
-                      <option value="">Bayar Ditempat</option>
-                      <option value="">Bank</option>
+                    <select name="metode_bayar" class="form-control">
+                      <option>-- Pilih Metode Pembayaran --</option>
+                      <option value="bayar ditempat">Bayar Ditempat</option>
+                      <option >Bank</option>
                     </select>
                 </div>
 
