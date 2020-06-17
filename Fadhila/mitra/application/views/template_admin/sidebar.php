@@ -24,6 +24,12 @@
           <span>Dashboard</span></a>
       </li>
 
+      <li class="nav-item active">
+        <a class="nav-link" href="daftartransaksi">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Pesanan</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 

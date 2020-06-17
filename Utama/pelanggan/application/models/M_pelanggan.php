@@ -7,7 +7,7 @@
         }
 
         public function tampil_menu($where, $table){
-            $this->db->where('date(tgl_set)' , date("Y-m-d",strtotime('now')));
+            $this->db->where('date(hari)' , date("Y-m-d",strtotime('now')));
             return $this->db->get_where($table, $where);
         }
 

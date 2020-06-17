@@ -8,7 +8,7 @@
         </div>
 
 
-<?php if($this->db->get_where('detail_menu', 'tgl_set') != null){?>
+<?php if($this->db->get_where('detail_menu', 'hari') != null){?>
     <div class="row mb-3">
     <?php foreach($detail_menu as $dm) {?>
         <div class="col-lg-4 col-md-5 ">

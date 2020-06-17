@@ -37,8 +37,11 @@ class tambahmenu extends CI_Controller{
           'foto' => $foto,
           'harga_menu' =>$harga_menu
       );
+
+      
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
       $this->m_profil->add($data,'menu');
+     
       redirect(base_url('dashboard'));
 
     }

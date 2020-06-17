@@ -30,7 +30,7 @@
 		}
 
 		public function detail_tgl(){
-			$data['detail_menu'] = $this->m_pelanggan->tampil_menu(['date(tgl_set)'=>date("Y-m-d",strtotime('now'))], 'detail_menu')->result();
+			$data['detail_menu'] = $this->m_pelanggan->tampil_menu(['date(hari)'=>date("Y-m-d",strtotime('now'))], 'detail_menu')->result();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_menu', $data);
 			$this->load->view('templates_customer/footer');
