@@ -271,6 +271,75 @@ foreach ($menu as $b) {?>
       
     </div>
 
+    <div class="row">
+
+      <!-- Area Chart -->
+      <div class="col">
+        <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Data Pesanan</h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+            <div class="chart-area">
+            <form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
+<table class="table table-bordered" >
+
+<tr>
+    <th style="text-align : center" >No</th>
+    <th style="text-align : center"hidden>ID Mitra</th>
+    <th style="text-align : center">ID Menu</th>
+    <th style="text-align : center">Nama Catering</th>
+    <th style="text-align : center">Nama Menu</th>
+    <th style="text-align : center">Harga Menu</th>
+    <th style="text-align : center">Gambar Menu</th>
+   
+    <th colspan="3" style="text-align : center"> Aksi</th>
+</tr>
+
+<?php 
+$no=1;
+foreach ($menu as $b) {?>
+
+<tr>
+    <td><?php echo $no++  ?></td>
+    <td hidden><?php echo $b['id_mitra']?></td>
+    <td><?php echo $b['id_menu']?> </td>
+    <td><?php echo $b['nama_katering']?> </td>
+    <td><?php echo $b['nama_menu']?> </td>
+    <td><?php echo $b['harga_menu']?> </td>
+    <td><?php echo $b['foto']?> </td>
+    
+    
+    <td> <div data-toggle="modal" data-target="#formedit<?=$b['id_menu'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
+
+    <td><div data-toggle="modal" data-target="#hapus" class="btn btn-danger  btn-sm"> Tolak </div></td>
+</tr>
+<?php } ?>
+</table>
+</form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie Chart -->
+      
+    </div>
+
     
 
   </div>
@@ -280,7 +349,7 @@ foreach ($menu as $b) {?>
 <!-- End of Main Content -->
 
 <!-- Content Row -->
-   
+
 <!-- Content Row -->
 
 <!-- Footer -->
