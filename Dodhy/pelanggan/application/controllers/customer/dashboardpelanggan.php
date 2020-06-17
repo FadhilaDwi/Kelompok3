@@ -31,7 +31,7 @@
 		}
 
 		public function mitra(){
-			$data['mitra'] = $this->m_pelanggan->tampil_data()->result();
+			$data['mitra'] = $this->m_pelanggan->tampil_data('mitra')->result();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_menu', $data);
 			$this->load->view('templates_customer/footer');
@@ -65,24 +65,26 @@
 			$id_pelanggan = $this->input->post('id_pelanggan');
 			$total = $this->cart->total();
 			$alamat = $this->input->post('alamat');
+			$metode_bayar = $this->input->post('metode_bayar');
 			// $bayar = $this->input->post('metode_pembayaran');
-			$foto = $_FILES['bukti_pembayaran']['name'];
-                if ($foto =''){}else{
-                    $config ['upload_path'] = './assets/img/profil/';
-					$config ['allowed_types'] = 'jpg|jpeg|png|gif';
-					$config ['max_size'] = '2048';
+			// $foto = $_FILES['bukti_pembayaran']['name'];
+            //     if ($foto =''){}else{
+            //         $config ['upload_path'] = './assets/img/profil/';
+			// 		$config ['allowed_types'] = 'jpg|jpeg|png|gif';
+			// 		$config ['max_size'] = '2048';
     
-                    $this->load->library('upload', $config);
-                    if (!$this->upload->do_upload('foto')){
-                        echo "Foto Yang Anda Upload Gagal Rek!!";
-                    }else{
-                        $foto=$this->upload->data('file_name');
-                    }
-                }
+            //         $this->load->library('upload', $config);
+            //         if (!$this->upload->do_upload('foto')){
+            //             echo "Foto Yang Anda Upload Gagal Rek!!";
+            //         }else{
+            //             $foto=$this->upload->data('file_name');
+            //         }
+            //     }
 
 			$invoice = array(
 				'id_pelanggan' => $id_pelanggan,
-				'total_harga' => $total
+				'total_harga' => $total,
+				'metode_bayar' => $metode_bayar
 			);
 				$this->db->insert('pemesanan', $invoice);
 				$id_pesan = $this->db->insert_id();
@@ -94,7 +96,7 @@
 						'jumlah_pesanan' => $items['qty'],
 						'alamat_pesanan' => $alamat,
 						'status_pesanan' => 'belum membayar',
-						'bukti_pembayaran' => $foto
+						'bukti_pembayaran' => 'kosong'
 					);
 					$this->db->insert('detail_pemesanan', $data);
 				}
@@ -102,6 +104,13 @@
 			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->row_array();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_invoice', $p);
+			$this->load->view('templates_customer/footer');
+		}
+
+		public function riwayat(){
+			$data['pemesanan'] = $this->m_pelanggan->tampil_data('pemesanan')->result();
+			$this->load->view('templates_customer/header');
+			$this->load->view('customer/v_riwayat', $data);
 			$this->load->view('templates_customer/footer');
 		}
 }

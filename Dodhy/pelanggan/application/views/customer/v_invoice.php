@@ -1,4 +1,3 @@
-
 <center><a href="<?= base_url('customer/dashboardpelanggan/index')?>"><button class="add btn btn-success mt-2">Beli Lagi</button></a></center>
 <?= form_open_multipart('customer/dashboardpelanggan/beli')?>
 <div class="row justify-content-md-center">
@@ -17,7 +16,6 @@
                         <!-- akhir -->
                         <?php }else if(($pesanan['status_pesanan']) == 'belum membayar'){?>
                         <h6 class="verifikasi">Belum Membayar</h6>
-                        <?php }?>
                         <?php }else if(($pesanan['status_pesanan']) == 'menunggu'){?>
                         <h6 class="verifikasi">Menunggu Konfirmasi</h6>
                         <?php }?>
@@ -42,12 +40,12 @@
                             <div class="col">
                                 <p class="card-text">Nama Menu</p>
                                 <!-- Perulangan mulai dari sini -->
-                                <p class="card-text produk"><?= $pesanan['nama_menu']?></p>
+                                <p class="card-text produk"><?=  $pesanan['nama_menu']?></p>
                                 <!-- akhir -->
                             </div>
                             <div class="col">
                                 <p class="card-text">Jumlah</p>
-                                <p class="card-text"><?= $pesanan['jumlah_pesanan']?></p>
+                                <p class="card-text"><?=  $pesanan['jumlah_pesanan']?></p>
                             </div>
                             <div class="col">
                                 <p class="card-text">Subtotal</p>
@@ -67,7 +65,9 @@
                                 <p class="card-text">Metode Pembayaran</p>
                             </div>
                             <div class="col-4 ml-5">
-                                <p class="card-text tanggal">Cash</p>
+                                <?php if ($pesanan['metode_bayar'] == 'bayar ditempat') {?>
+                                    <p class="card-text tanggal">Bayar Ditempat</p>
+                                <?php }?>
                             </div>
                             
                         </div>

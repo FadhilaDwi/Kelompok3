@@ -21,10 +21,9 @@
 
     
   <h5 class="mt-3">Menu Hari Ini</h5>
-  <?php foreach ($detail_menu as $dm){?>
     <div class="row mb-4">
-      
-      <div class="col-lg-4 ml-3">
+  <?php foreach ($detail_menu as $dm){?>
+      <div class="col-lg-3 ">
         <div class="card text-center" style="width: 18rem;">
           <img src="<?= base_url('assets/img/mitra/').$dm->foto?>" class="card-img-top" alt="...">
           <div class="card-body">
@@ -36,7 +35,7 @@
         
       </div>
       
-    </div>
     <?php } ?>
+    </div>
 
 </div>
