@@ -168,8 +168,8 @@ foreach ($menu as $b) {?>
                 </div>
 
                 <div class="form-group">
-                    <label>Id Menu</label>
-                    <input type="text" name="id_menu" class="form-control" >
+                    <label hidden>Id Menu</label>
+                    <input type="text" name="id_menu" class="form-control" hidden>
                 </div>
 
                 <div class="form-group">
@@ -182,10 +182,10 @@ foreach ($menu as $b) {?>
                     <input type="text" name="harga_menu" class="form-control">
                 </div>
                 
-               <!-- <div class="form-group">
+               <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control">
-                </div> -->
+                    <input type="date" name="hari" class="form-control">
+                </div>
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
@@ -233,8 +233,8 @@ foreach ($menu as $b) {?>
                 </div>
 
                 <div class="form-group">
-                    <label>Id Menu</label>
-                    <input type="text" name="id_menu" class="form-control" value="<?php echo $b['id_menu']?>" readonly>
+                    <label hidden>Id Menu</label>
+                    <input type="text" name="id_menu" class="form-control" value="<?php echo $b['id_menu']?>" readonly hidden>
                 </div>
 
                 <div class="form-group">
@@ -247,14 +247,14 @@ foreach ($menu as $b) {?>
                     <input type="text" name="harga_menu" class="form-control"value="<?php echo $b['harga_menu']?>">
                 </div>
                 
-               <!-- <div class="form-group">
+               <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['tgl_set']?>">
-                </div> -->
+                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['hari']?>">
+                </div>
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
-                    <input type="file" name="foto" class="form-control"value="<?php echo $b['foto']?>">
+                    <input type="char" name="foto" class="form-control"value="<?php echo $b['foto']?>">
                 </div>
 
       </div>

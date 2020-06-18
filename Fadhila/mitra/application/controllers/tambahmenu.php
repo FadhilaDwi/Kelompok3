@@ -14,7 +14,7 @@ class tambahmenu extends CI_Controller{
     public function index()
     {
         $id_mitra = $this->input->post('id_mitra');
-        $id_menu = $this->input->post('id_menu');
+        //$id_menu = $this->input->post('id_menu');
 		$nama_menu = $this->input->post('nama_menu');
 		$harga_menu = $this->input->post('harga_menu');
        	$foto        = $_FILES['foto']['name'];
@@ -29,12 +29,14 @@ class tambahmenu extends CI_Controller{
                         $foto=$this->upload->data('file_name');
                     }
                 }
+        $hari = $this->input->post('hari');
         
     $data = array(
-          'id_menu' =>$id_menu,
+          //'id_menu' =>$id_menu,
           'id_mitra' =>$id_mitra,
           'nama_menu' =>$nama_menu,
           'foto' => $foto,
+          'hari' => $hari,
           'harga_menu' =>$harga_menu
       );
 
@@ -64,12 +66,14 @@ class tambahmenu extends CI_Controller{
                         $foto=$this->upload->data('file_name');
                     }
                 }
+        $hari = $this->input->post('hari');
         
     $data = array(
         'id_menu' =>$id_menu,
         'id_mitra' =>$id_mitra,
         'nama_menu' =>$nama_menu,
         'foto' => $foto,
+        'hari' => $hari,
         'harga_menu' =>$harga_menu
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang

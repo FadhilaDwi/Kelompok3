@@ -30,12 +30,14 @@ class tambahmenu extends CI_Controller{
                         $foto=$this->upload->data('file_name');
                     }
                 }
+        $hari = $this->input->post('hari');
         
     $data = array(
           'id_mitra' =>$id_mitra,
           'id_menu' =>$id_menu,
           'nama_menu' =>$nama_menu,
           'harga_menu' =>$harga_menu,
+          'hari' =>$hari,
           'foto' => $foto
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
@@ -62,12 +64,14 @@ class tambahmenu extends CI_Controller{
                         $foto=$this->upload->data('file_name');
                     }
                 }
-        
+        $hari = $this->input->post('hari');
+
     $data = array(
         'id_mitra' =>$id_mitra,
         'id_menu' =>$id_menu,
         'nama_menu' =>$nama_menu,
         'harga_menu' =>$harga_menu,
+        'hari' =>$hari,
         'foto' => $foto
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
