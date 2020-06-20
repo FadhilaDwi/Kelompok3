@@ -249,12 +249,12 @@ foreach ($menu as $b) {?>
                 
                <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['hari']?>">
+                    <input type="date" name="hari" class="form-control" value="<?php echo $b['hari']?>">
                 </div>
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
-                    <input type="char" name="foto" class="form-control"value="<?php echo $b['foto']?>">
+                    <input type="file" name="foto" class="form-control"value="<?php echo $b['foto']?>">
                 </div>
 
       </div>

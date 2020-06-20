@@ -51,7 +51,6 @@ class tambahmenu extends CI_Controller{
         $id_menu = $this->input->post('id_menu');
 		$nama_menu = $this->input->post('nama_menu');
 		$harga_menu = $this->input->post('harga_menu');
-		//$tgl_set = $this->input->post('tgl_set');
        	$foto        = $_FILES['foto']['name'];
                 if ($foto =''){}else{
                     $confiq ['upload_path'] = './uploads';
@@ -71,8 +70,9 @@ class tambahmenu extends CI_Controller{
         'id_menu' =>$id_menu,
         'nama_menu' =>$nama_menu,
         'harga_menu' =>$harga_menu,
-        'hari' =>$hari,
-        'foto' => $foto
+        'foto' => $foto,
+        'hari' =>$hari
+        
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
     $where1 = array(

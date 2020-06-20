@@ -263,7 +263,7 @@ foreach ($pesanan as $b) {?>
     
     <td> <div data-toggle="modal" data-target="#lihat<?=$b['id_pesan'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
 
-    <td><div data-toggle="modal" data-target="#tolak" class="btn btn-danger  btn-sm"> Tolak </div></td>
+    <td><div data-toggle="modal" data-target="#tolak<?=$b['id_pesan'];?>" class="btn btn-danger  btn-sm"> Tolak </div></td>
 </tr>
 <?php } ?>
 </table>
@@ -308,11 +308,10 @@ foreach ($pesanan as $b) {?>
 </a>
 
 <?php  foreach($pesanan as $b){ ?><!-- modal Hapus-->
-<div class="modal fade" id="tolak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tolak<?=$b['id_pesan'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Tolak Pesanan?</h5>
     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">×</span>
     </button>
@@ -322,16 +321,16 @@ foreach ($pesanan as $b) {?>
        
                 <div class="form-group">
                     <label hidden>Id Pesan</label>
-                    <input type="text" class="form-control"  name="id_pesan" value="<?php echo $b['id_pesan']?>" readonly>
+                    <input type="text" class="form-control"  name="id_pesan" value="<?php echo $b['id_pesan']?>" readonly hidden>
                 </div>
                 <div class="form-group">
-                    <label>status pesan</label>
-                    <input type="text" class="form-control"  value="<?php echo $b['status_pesanan']?>" readonly>
+                    <label hidden>status pesan</label>
+                    <input type="text" class="form-control"  value="<?php echo $b['status_pesanan']?>" readonly hidden>
                 </div>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-   <button class="btn btn-primary" name="status_pesanan" value="ditolak">Hapus</button>
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+   <button class="btn btn-primary" name="status_pesanan" value="ditolak">Ya</button>
   </div>
 </form>
 </div>
@@ -364,8 +363,7 @@ foreach ($pesanan as $b) {?>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
-        <p class="text-danger" >Tambah Menu</p>
+        <h5 class="modal-title" id="exampleModalLabel"> Tambah Menu </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
