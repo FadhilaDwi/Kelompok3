@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".TambahAkun">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="22dp"
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:src="@drawable/logo" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <TextView
+            android:textAlignment="center"
+            android:text="Silahkan Daftar Akun Anda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="@drawable/bg_gradasi"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#FFFFFF"
+            android:text="Daftar"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/reg_user"
+            android:background="@drawable/form"
+            android:drawableStart="@drawable/user"
+            android:hint=" Masukkan Username"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:drawableLeft="@drawable/user" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/reg_nama"
+            android:background="@drawable/form"
+            android:drawableStart="@drawable/user"
+            android:hint=" Masukkan Nama"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:drawableLeft="@drawable/user" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/reg_email"
+            android:background="@drawable/form"
+            android:drawableStart="@drawable/user"
+            android:hint=" Masukkan Email"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:drawableLeft="@drawable/user" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/reg_pass"
+            android:background="@drawable/form"
+            android:drawableStart="@drawable/key"
+            android:inputType="textPassword"
+            android:hint=" Masukkan Password"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:drawableLeft="@drawable/key" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+        <Button
+            android:textStyle="bold"
+            android:id="@+id/btn_reg"
+            android:textColor="#384EF3"
+            android:background="@drawable/form"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="Register"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

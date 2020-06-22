@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".TampilProfil">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="22dp"
+        android:layout_weight="3.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:src="@drawable/logoprofil" />
+        <TextView
+            android:textAlignment="center"
+            android:text="Layanan Catering Siap Melayani Setulus Hati"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_below="@+id/relatif1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll1">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="@drawable/bg_gradasiprofil"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#FFFFFF"
+            android:text="Profil"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="17dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:onClick="upload"
+            android:clickable="true"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="17dp"/>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="17dp"/>
+        <Button
+            android:id="@+id/btn_ubah"
+            android:textStyle="bold"
+            android:textColor="#384EF3"
+            android:background="@drawable/formprofil"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="Ubah Profil"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="17dp"/>
+        <Button
+            android:id="@+id/btn_logout"
+            android:textStyle="bold"
+            android:textColor="#384EF3"
+            android:background="@drawable/formprofil"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="Logout"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
