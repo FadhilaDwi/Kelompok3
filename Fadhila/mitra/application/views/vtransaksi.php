@@ -226,7 +226,7 @@ echo $this->session->userdata('nama'); ?></span>
           <!-- Card Body -->
           <div class="card-body">
             <div class="chart-area">
-            <form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
+            <form >
 <table class="table table-bordered" >
 
 <tr>
@@ -261,9 +261,9 @@ foreach ($pesanan as $b) {?>
     <td><?php echo $b['alamat_pesanan']?> </td>
       
     
-    <td> <div data-toggle="modal" data-target="#lihat<?=$b['id_pesan'];?>" class="btn btn-primary btn-sm"> Lihat</div></td>
-
-    <td><div data-toggle="modal" data-target="#tolak<?=$b['id_pesan'];?>" class="btn btn-danger  btn-sm"> Tolak </div></td>
+    <td> <div data-toggle="modal" data-target="#lihat<?=$b['id_pesan'];?>" class="btn btn-primary btn-sm" >  Lihat</div></td>
+   
+    <td><div data-toggle="modal" data-target="#tolak<?=$b['id_pesan'];?>"  class="btn btn-danger  btn-sm" > Tolak </div></td>
 </tr>
 <?php } ?>
 </table>
@@ -330,7 +330,7 @@ foreach ($pesanan as $b) {?>
   </div>
   <div class="modal-footer">
     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-   <button class="btn btn-primary" name="status_pesanan" value="ditolak">Ya</button>
+   <button class="btn btn-primary" name="status_pesanan" value="ditolak" <?php if ($b['status_pesanan'] == 'Sedang Proses'){ ?> disabled <?php   } ?>>Ya</button>
   </div>
 </form>
 </div>
@@ -484,7 +484,7 @@ foreach ($pesanan as $b) {?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-        <button type="submit" name="status_pesanan" value="Sedang Proses" class="btn btn-primary" clear-data>Terima</button>
+        <button type="submit" name="status_pesanan" value="Sedang Proses" class="btn btn-primary" <?php if ($b['status_pesanan'] == 'ditolak'){ ?> disabled <?php   } ?> clear-data>Terima</button>
       </div>
 </form>
       
