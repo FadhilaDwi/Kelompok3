@@ -1,153 +1,39 @@
-
-
-
-
-
   <!-- Page Content -->
-  <div class="container-fluid">
+  
 
 
       <!-- /.col-lg-3 -->
+      <div class="jumbotron utama">
+        <h1 class="display-4">PESAN MAKANAN SEHAT DAN TERJANGKAU DISINI</h1>
+        <center><a class="btn btn-primary btn-lg mt-2 text-white"  onClick="toTarget()" role="button" style="border-radius: 25px;" >Cari Makananmu disini</a></center>
+      </div>
 
 
-        <div class="container-fluid mt-4">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-         <ol class="carousel-indicators">
-         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-         </ol>
-        <div class="carousel-inner">
-         <div class="carousel-item active">
-             <img src="<?php echo base_url('assets/img/01.jpg') ?>" class="d-block w-100" alt="...">
-         </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url('assets/img/02.jpg') ?>" class="d-block w-100" alt="...">
-         </div>
-        <div class="carousel-item">
-            <img src="<?php echo base_url('assets/img/03.jpg') ?>" class="d-block w-100" alt="...">
-         </div>
+        <div class="container-fluid">
+      <center><h3 id="menu" style="font-family:'Quicksand', sans-serif;">Menu Hari Ini</h3></center>
+  <div class="row mt-4 text-center">
+
+        <?php foreach ($detail_menu as $dm){?>
+    <div class="row mb-4">
+      
+      <div class="col-lg-4 ml-3">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="<?= base_url('assets/img/mitra/').$dm->foto?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><?= $dm->nama_menu ?></h5>
+            <h6><?= $dm->nama_katering?></h6>
+            <span class="badge badge-pill badge-success">Rp. <?= number_format($dm->harga_menu,0,',','.')?></span></br>
+            <?= anchor('dashboardpelanggan/tambah_keranjang/'.$dm->id_menu,'<div class="btn btn-sm btn-primary mt-2">Tambahkan Keranjang</div>')?>
+          </div>
+        </div>
         
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
-        </div>
-        </div>
-
-        <div class="row mt-4 text-center">
-
-      <?php foreach ($mitra as $m) :?>
-        
-          <div class="col-lg-4 col-md-5 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<?= base_url('assets/img/mitra/').$m->foto_lokasi?>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a><?= $m->nama_katering ?></a>
-                </h4>
-                <h5><?= $m->alamat ?></h5>
-                <?= anchor('dashboardpelanggan/detail/'.$m->id_mitra,'<div class="btn btn-sm btn-success">Detail</div>')?>
-              </div>
-              
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-      <?php endforeach;?>
-          <!-- <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-        </div> -->
-        <!-- /.row -->
-
-
-
+      </div>
+      
+    </div>
+    <?php } ?>
   </div>
+  </div>
+
   <!-- /.container -->
 
   

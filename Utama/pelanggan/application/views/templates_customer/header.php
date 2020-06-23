@@ -38,13 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=  base_url('dashboardpelanggan/detail_tgl');?>">Menu Catering</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Info Pembayaran</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pembayaran</a>
+            <a class="nav-link" href="<?=  base_url('dashboardpelanggan/mitra');?>">Mitra Kami</a>
           </li>
           <?php if($this->session->has_userdata('nama')){ 
             
@@ -57,6 +51,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="<?php echo base_url(). 'customer/login/logout' ?>" >Keluar</a>
                 <a class="dropdown-item" href="<?php echo base_url(). 'customer/profil' ?>" >Lihat Profil</a>
+                <a class="dropdown-item" href="<?php echo base_url(). 'dashboardpelanggan/riwayat' ?>" >Riwayat Belanja</a>
                 <a class="dropdown-item" href="<?= base_url().'dashboardpelanggan/keranjang'?>" >Keranjang <span class="badge badge-danger"><?php echo $this->cart->total_items();?></span></a>
               </div>
           </li>
@@ -69,6 +64,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo base_url(). 'customer/login' ?>" >Masuk Sebagai Customer</a>
                     <a class="dropdown-item" href="<?php echo base_url(). 'mitra/loginmitra' ?>" >Masuk Sebagai Mitra</a>
+                    <!-- <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalLoginForm">Masuk Sebagai Barbershop</a> -->
                     </div>
           </li>
           <?php } ?>

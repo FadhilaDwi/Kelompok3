@@ -1,33 +1,32 @@
 <div class="container">
 
     
-        <div class="jumbotron jumbotron-fluid makanan">
+        <div class="jumbotron jumbotron-fluid makanan mt-2">
         <div class="container">
-            <h1 class="display-4 text-center text-white">Menu Hari Ini</h1>
+            <h1 class="display-4 text-center text-white">Mitra Kami</h1>
         </div>
         </div>
 
+    <div class="row mt-4 text-center">
 
-<?php if($this->db->get_where('detail_menu', 'hari') != null){?>
-    <div class="row mb-3">
-    <?php foreach($detail_menu as $dm) {?>
-        <div class="col-lg-4 col-md-5 ">
-            <div class="card h-100 text-center" >
-                <img src="<?= base_url('assets/img/mitra/').$dm->foto?>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $dm->nama_menu ?></h5>
-                    <a class="card-text"><?= $dm->nama_katering?></a><br>
-                    <span class="badge badge-pill badge-success">Rp. <?= number_format($dm->harga_menu,0,',','.')?></span></br>
-                    <?= anchor('customer/dashboardpelanggan/tambah_keranjang/'.$dm->id_menu,'<div class="btn btn-sm btn-primary mt-2">Tambahkan Keranjang</div>')?>
-                </div>
+      <?php foreach ($mitra as $m) :?>
+        
+          <div class="col-lg-4 col-md-5 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="<?= base_url().'assets/img/mitra/'.$m->foto_lokasi?>" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a><?= $m->nama_katering ?></a>
+                </h4>
+                <h5><?= $m->alamat ?></h5>
+                <?= anchor('dashboardpelanggan/detail/'.$m->id_mitra,'<div class="btn btn-sm btn-success">Detail</div>')?>
+              </div>
+              
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
             </div>
-        </div>
-    <?php } ?>
-    <?php }else{?>
-       <img class="container" src="<?= base_url('assets/img/menukosong.jpg');?>" alt=""  width="500px" height="500px" >
-    <?php }?>
-     
-  
+          </div>
+      <?php endforeach;?>
     </div>
-
 </div>

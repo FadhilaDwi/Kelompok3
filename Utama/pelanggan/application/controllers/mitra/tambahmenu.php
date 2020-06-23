@@ -14,13 +14,12 @@ class tambahmenu extends CI_Controller{
     public function index()
     {
         $id_mitra = $this->input->post('id_mitra');
-        $id_menu = $this->input->post('id_menu');
+        //$id_menu = $this->input->post('id_menu');
 		$nama_menu = $this->input->post('nama_menu');
 		$harga_menu = $this->input->post('harga_menu');
-		//$tgl_set = $this->input->post('tgl_set');
        	$foto        = $_FILES['foto']['name'];
                 if ($foto =''){}else{
-                    $confiq ['upload_path'] = './assets/img/profil/';
+                    $confiq ['upload_path'] = './uploads';
                     $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
 
                     $this->load->library('upload', $confiq);
@@ -33,16 +32,20 @@ class tambahmenu extends CI_Controller{
         $hari = $this->input->post('hari');
         
     $data = array(
+          //'id_menu' =>$id_menu,
           'id_mitra' =>$id_mitra,
-          'id_menu' =>$id_menu,
           'nama_menu' =>$nama_menu,
-          'harga_menu' =>$harga_menu,
-          'hari' =>$hari,
-          'foto' => $foto
+          'foto' => $foto,
+          'hari' => $hari,
+          'harga_menu' =>$harga_menu
       );
+
+      
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
       $this->m_profil->add($data,'menu');
-      redirect(base_url('mitra/dashboard'));
+     
+      redirect(base_url('dashboard'));
+
     }
 
     public function editmenu()
@@ -64,27 +67,70 @@ class tambahmenu extends CI_Controller{
                     }
                 }
         $hari = $this->input->post('hari');
-
-    $data = array(
-        'id_mitra' =>$id_mitra,
-        'id_menu' =>$id_menu,
-        'nama_menu' =>$nama_menu,
-        'harga_menu' =>$harga_menu,
-        'foto' => $foto,
-        'hari' =>$hari
         
+    $data = array(
+        'id_menu' =>$id_menu,
+        'id_mitra' =>$id_mitra,
+        'nama_menu' =>$nama_menu,
+        'foto' => $foto,
+        'hari' => $hari,
+        'harga_menu' =>$harga_menu
       );
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
     $where1 = array(
         'id_menu' => $id_menu
     );
-      $this->m_profil->update($where1,$data,'menu');
-      redirect(base_url('mitra/dashboard'));
-    }
 
+  
+      $this->m_profil->update($where1,$data,'menu');
+      redirect(base_url('dashboard'));
+
+    }
     public function hapus($id_menu){
 		$where = array('id_menu' => $id_menu);
 		$this->m_profil->hapus_data($where,'menu');
-        redirect('mitra/dashboard');
+        redirect('dashboard');
     }
+
+    public function terimapesanan()
+    {
+        $id_pesan = $this->input->post('id_pesan');
+        $status_pesanan = $this->input->post('status_pesanan');
+       
+        
+    $data = array(
+        'id_pesan' =>$id_pesan,
+        'status_pesanan' =>$status_pesanan
+      );
+      //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
+    $where1 = array(
+        'id_pesan' => $id_pesan
+
+    );
+      $this->m_profil->update($where1,$data,'detail_pemesanan');
+      redirect(base_url('daftartransaksi'));
+
+    }
+
+    public function tolakpesanan()
+    {
+        $id_pesan = $this->input->post('id_pesan');
+        $status_pesanan = $this->input->post('status_pesanan');
+       
+        
+    $data = array(
+        'id_pesan' =>$id_pesan,
+        'status_pesanan' =>$status_pesanan
+      );
+      //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
+    $where1 = array(
+        'id_pesan' => $id_pesan
+
+    );
+      $this->m_profil->update($where1,$data,'detail_pemesanan');
+      redirect(base_url('daftartransaksi'));
+
+    }
+
+    
 }

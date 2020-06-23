@@ -100,7 +100,6 @@
 														<div class="form-group">
 															<label class="label">Nama Lengkap</label>
 															<input type="text" class="form-control" name="nama_pelanggan">
-															<?=form_error('nama_pelanggan', '<small class="text-danger pl-3">', '</small>') ?>
 														</div>
 													</div>
 
@@ -108,7 +107,6 @@
 														<div class="form-group">
 															<label class="label">Alamat</label>
 															<input type="text" class="form-control" name="alamat">
-															<?=form_error('alamat', '<small class="text-danger pl-3">', '</small>') ?>
 														</div>
 													</div>
 
@@ -116,7 +114,6 @@
 														<div class="form-group">
 															<label class="label">Username</label>
 															<input type="text" class="form-control" name="username">
-															<?=form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
 														</div>
 													</div>
 													
@@ -124,7 +121,6 @@
 														<div class="form-group">
 															<label class="label">Password</label>
 															<input type="password" class="form-control" name="password">
-															<?=form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
 														</div>
 													</div>											
 
@@ -132,14 +128,19 @@
 														<div class="form-group">
 															<label class="label">Email</label>
 															<input type="text" class="form-control" name="email">
-															<?=form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
+														</div>
+													</div>
+													
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Foto</label>
+															<input type="file" class="form-control" placeholder="Foto" name="foto">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-12">
 														<div class="form-group">
 															<label class="label">No. Telepon</label>
 															<input type="text" class="form-control" name="no_telepon">
-															<?=form_error('no_telepon', '<small class="text-danger pl-3">', '</small>') ?>
 														</div>
 													</div>
 

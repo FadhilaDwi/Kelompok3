@@ -4,32 +4,36 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->model('M_login');
-			$this->load->library('form_validation');
 		}
 
 		public function index()
+
 		{
 			
 			$this->load->view('login');
 		}
 		public function registrasi(){
-
-			$this->form_validation->set_rules('nama_pelanggan', 'Full Name', 'required|trim');
-			$this->form_validation->set_rules('alamat', 'Address', 'required|trim');
-			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[pelanggan.username]');
-			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-			$this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[pelanggan.email]|valid_email');
-			$this->form_validation->set_rules('no_telepon', 'Number phone', 'required|trim|min_length[11]|max_length[13]');
-
-			if ($this->form_validation->run() == False) {
-				$this->load->view('login');
-			}else{
+			
+			
 			$username = $this->input->post('username');
 			$nama_pelanggan = $this->input->post('nama_pelanggan');
 			$alamat = $this->input->post('alamat');
 			$no_telepon = $this->input->post('no_telepon');
 			$email = $this->input->post('email');
+			//$foto_lokasi = $this->input->post('foto_lokasi');
 			$password = $this->input->post('password');
+			// $foto      = $_FILES['gambar']['name'];
+			// 		if ($foto =''){}else{
+			// 			$confiq ['upload_path'] = './uploads';
+			// 			$confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
+	
+			// 			$this->load->library('upload', $confiq);
+			// 			if (!$this->upload->do_upload('foto')){
+			// 				echo "Gambar Yang Anda Upload Gagal Rek!!";
+			// 			}else{
+			// 				$foto=$this->upload->data('file_name');
+			// 			}
+			// 		}
 			$data = array(
 				
 				'username' => $username,
@@ -37,14 +41,13 @@
 				'alamat' => $alamat,
 				'no_telepon' => $no_telepon,
 				'email'=>  $email,
-				'foto' => 'default.png',
+				'foto'=>'default.png',
 				'password' => md5 ($password)			
 	
 				);
 			$this->M_login->buatakun($data,'pelanggan');
 			$data['kodeunik'] = $this->M_login->buat_kode();
 			redirect('customer/login/index');
-			}
 		}
 		public function aksi_login(){
 			$username = $this->input->post('username');
@@ -70,7 +73,7 @@
 		}
 		function logout(){
 			$this->session->sess_destroy(); //perintah untuk menghentikan session
-			redirect(base_url('dashboardpelanggan'));
+			redirect(base_url('login')); // pindah ke halaman login
 		}
 
 }
