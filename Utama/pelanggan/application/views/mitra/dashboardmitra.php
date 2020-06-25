@@ -118,7 +118,7 @@ foreach ($menu as $b) {?>
   <div class="modal-body">Apakah anda ingin mengubah data menu?</div>
   <div class="modal-footer">
     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-    <?php echo anchor('tambahmenu/editmenu/'.$b ['id_menu'],'<button class="btn btn-primary" data-toggle="modal" data-target="#formedit">Ubah</button>'); ?>
+    <?php echo anchor('mitra/tambahmenu/editmenu/'.$b ['id_menu'],'<button class="btn btn-primary" data-toggle="modal" data-target="#formedit">Ubah</button>'); ?>
   </div>
 </div>
 </div>
@@ -137,7 +137,7 @@ foreach ($menu as $b) {?>
   <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
   <div class="modal-footer">
     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-    <a class="btn btn-primary" href="<?php echo base_url("login/logout") ?>">Logout</a>
+    <a class="btn btn-primary" href="<?php echo base_url("mitra/login/logout") ?>">Logout</a>
   </div>
 </div>
 </div>

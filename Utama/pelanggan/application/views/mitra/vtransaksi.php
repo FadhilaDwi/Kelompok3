@@ -6,7 +6,6 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Dashboard Mitra</h1>
-      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#tambah_menu"><i class="fas fa-download fa-sm text-white-50"></i> Tambah menu</a>
     </div>
 
     
@@ -92,7 +91,7 @@
     </button>
   </div>
   <div class="modal-body">Apakah anda akan menolak pesanan?
-  <form action="<?php echo base_url(). 'tambahmenu/tolakpesanan' ?>" method="post" enctype="multipart/form-data" >
+  <form action="<?php echo base_url(). 'mitra/tambahmenu/tolakpesanan' ?>" method="post" enctype="multipart/form-data" >
        
                 <div class="form-group">
                     <label hidden>Id Pesan</label>
@@ -115,81 +114,20 @@
 
 
 
-<div class="modal fade" id="tambah_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Tambah Menu </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    
-      <div class="modal-body">
-        <form action="<?php echo base_url(). 'tambahmenu' ?>" method="post" enctype="multipart/form-data" >
-       
-                <div class="form-group">
-                    <label>Id Mitra</label>
-                    <input type="text" class="form-control"  name="id_mitra" value="<?php echo $mitra['id_mitra']?>" readonly>
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Usaha</label>
-                    <input type="text" class="form-control"  value="<?php echo $mitra['nama_katering']?>" readonly>
-                </div>
-
-                <div class="form-group">
-                    <label>Id Menu</label>
-                    <input type="text" name="id_menu" class="form-control" >
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Menu</label>
-                    <input type="text" name="nama_menu" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label>Harga Menu</label>
-                    <input type="text" name="harga_menu" class="form-control">
-                </div>
-                
-               <!-- <div class="form-group">
-                    <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control">
-                </div> -->
-
-                <div class="form-group">
-                    <label>Gambar Menu </label>
-                    <input type="file" name="foto" class="form-control">
-                </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" clear-data>Simpan</button>
-      </div>
-
-
-      </form>
-      
-    </div>
-  </div>
-</div>
-
 <?php  foreach($pesanan as $b){ ?>
 <div class="modal fade" id="lihat<?=$b['id_pesan'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel"></h5> -->
-        <p class="text-danger" >Tambah Menu</p>
+        <p class="text-danger" >Detail Pesanan</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
     
       <div class="modal-body">
-        <form action="<?php echo base_url(). 'tambahmenu/terimapesanan' ?>" method="post" enctype="multipart/form-data" >
+        <form action="<?php echo base_url(). 'mitra/tambahmenu/terimapesanan' ?>" method="post" enctype="multipart/form-data" >
 
                 <div class="form-group">
                     <label>ID Pesan</label>

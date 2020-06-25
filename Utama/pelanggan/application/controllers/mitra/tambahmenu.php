@@ -44,7 +44,7 @@ class tambahmenu extends CI_Controller{
       //pada prosess receive hanya ada 1 barang pada tiap receiver karena pada tiap satu kode receive hanya memiliki 1 kode barang
       $this->m_profil->add($data,'menu');
      
-      redirect(base_url('dashboard'));
+      redirect(base_url('mitra/dashboard'));
 
     }
 
@@ -83,13 +83,13 @@ class tambahmenu extends CI_Controller{
 
   
       $this->m_profil->update($where1,$data,'menu');
-      redirect(base_url('dashboard'));
+      redirect(base_url('mitra/dashboard'));
 
     }
     public function hapus($id_menu){
 		$where = array('id_menu' => $id_menu);
 		$this->m_profil->hapus_data($where,'menu');
-        redirect('dashboard');
+        redirect('mitra/dashboard');
     }
 
     public function terimapesanan()
@@ -108,7 +108,7 @@ class tambahmenu extends CI_Controller{
 
     );
       $this->m_profil->update($where1,$data,'detail_pemesanan');
-      redirect(base_url('daftartransaksi'));
+      redirect(base_url('mitra/daftartransaksi'));
 
     }
 
@@ -128,7 +128,7 @@ class tambahmenu extends CI_Controller{
 
     );
       $this->m_profil->update($where1,$data,'detail_pemesanan');
-      redirect(base_url('daftartransaksi'));
+      redirect(base_url('mitra/daftartransaksi'));
 
     }
 
