@@ -73,7 +73,7 @@
 		}
 		function logout(){
 			$this->session->sess_destroy(); //perintah untuk menghentikan session
-			redirect(base_url('login')); // pindah ke halaman login
+			redirect(base_url()); // pindah ke halaman login
 		}
 
 }
