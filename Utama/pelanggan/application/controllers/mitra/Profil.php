@@ -17,6 +17,7 @@
 		{
             // menampilkan data berdasarkan username mitra ketika melakukan login
                 $data['mitra'] = $this->db->get_where('mitra', ['username' => $this->session->userdata('nama')])->row_array();
+            
 
             //memberikan aturan atau syarat untuk mengubah data profil
                 $this->form_validation->set_rules('nama_katering', 'Full Name', 'required');

@@ -39,7 +39,7 @@
 
 <?php 
 $no=1;
-foreach ($menu as $b) {?>
+foreach ($detail_menu as $b) {?>
 
 <tr>
     <td><?php echo $no++  ?></td>
@@ -207,7 +207,7 @@ foreach ($menu as $b) {?>
 
 <?php 
 $no=1;
-foreach ($menu as $b) {?>
+foreach ($detail_menu as $b) {?>
 <div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

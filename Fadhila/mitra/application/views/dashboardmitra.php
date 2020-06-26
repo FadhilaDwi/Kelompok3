@@ -325,7 +325,7 @@ echo $this->session->userdata('nama'); ?></span>
 
 <?php 
 $no=1;
-foreach ($menu as $b) {?>
+foreach ($detail_menu as $b) {?>
 
 <tr>
     <td><?php echo $no++  ?></td>
@@ -486,7 +486,7 @@ foreach ($menu as $b) {?>
 
 
 <?php 
-    foreach($menu as $b){ ?>
+    foreach($detail_menu as $b){ ?>
 <div class="modal fade" id="formedit<?=$b['id_menu'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -528,7 +528,7 @@ foreach ($menu as $b) {?>
                 
                <div class="form-group">
                     <label>Jadwal Menu </label>
-                    <input type="date" name="tgl_set" class="form-control" value="<?php echo $b['hari']?>">
+                    <input type="date" name="hari" class="form-control" value="<?php echo $b['hari']?>">
                 </div> 
 
                 <div class="form-group">
