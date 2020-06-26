@@ -21,22 +21,14 @@ class tambahmenu extends CI_Controller{
 		$harga_menu = $this->input->post('harga_menu');
         $foto        = $_FILES['foto']['name'];
         if ($foto =''){}else{
-            $confiq ['upload_path'] = './assets/img/gambar_menu/';
+            $confiq ['upload_path'] = './uploads';
             $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config ['max_size'] = '2048';
 
             $this->load->library('upload', $confiq);
-
             if (!$this->upload->do_upload('foto')){
-                $foto_lama = $data['menu']['foto'];
-                if($foto_lama != 'default.png'){
-                    unlink(FCPATH.'/assets/img/gambar_menu/'.$foto_lama);
-                }
-                $foto = $this->upload->data('file_name');
-                $this->db->set('foto', $foto);
-              
+                echo "Gambar Yang Anda Upload Gagal Rek!!";
             }else{
-                echo $this->upload->display_errors();
+                $foto=$this->upload->data('file_name');
             }
         }
         $hari = $this->input->post('hari');
