@@ -23,4 +23,9 @@ class Pelanggan extends CI_Controller {
 		$this->load->view('templates/v_footer');
 	}
 
+	function hapus($id_pelanggan){
+		$where = array('id_pelanggan' => $id_pelanggan); // mengubah id menjadi bentuk array
+		$this->m_pelanggan->hapus_data($where,'pelanggan'); //perintah untuk menghapus data sesuai dengan tabel dan id yang diinginkan
+		redirect('pelanggan/index');
+	}
 }

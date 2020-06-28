@@ -46,9 +46,9 @@
           <span>Data Pelanggan</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('report');?>">
+        <a class="nav-link" href="<?php echo base_url('transaksi');?>">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Laporan Pelanggan</span></a>
+          <span>Data Transaksi</span></a>
       </li>
 
       <!-- Divider -->

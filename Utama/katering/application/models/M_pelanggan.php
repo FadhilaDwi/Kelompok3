@@ -6,6 +6,10 @@ class M_pelanggan extends CI_Model{
         return $this->db->get('pelanggan');
     }
 
+    function hapus_data($where, $table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }
 
 

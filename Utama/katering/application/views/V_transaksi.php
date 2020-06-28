@@ -24,40 +24,43 @@
             <div class="card-body">
                   </a></p>
               <div class="table-responsive">
-              <form action="<?php echo base_url('pelanggan/tampil_data'); ?>" method="post">
+              <form >
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Username</th>
+                      <th>ID Pesan</th>
+                      <th hidden>ID Pelanggan</th>
                       <th>Nama Pelanggan</th>
-                      <th>Email</th>
-                      <th>Alamat</th>
-                      <th>No Telepon</th>
-                      <th>Foto</th>
-                      <th>Aksi</th>
+                      <th>Nama Menu</th>
+                      <th>Nama Katering</th>
+                      <th>Jumlah Pesanan</th>
+                      <th>Total Harga</th>
+                      <th>Status Pesanan</th>
+                      <th>Bukti Pembayaran</th>
+                      <th>Alamat Pemesanan</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                  
-                    <tr>
                     <?php 
-                  $no = 1;
-                  foreach($pelanggan as $p){
-                  
-                  ?>
-                    <td><?php echo $no++ ?></td>
-                      <td><?php echo $p->username ?></td>
-                      <td><?php echo $p->nama_pelanggan ?></td>
-                      <td><?php echo $p->email ?></td>
-                      <td><?php echo $p->alamat ?></td>
-                      <td><?php echo $p->no_telepon ?></td>
-                      <td>
-                        <img src="<?php echo base_url(); ?>uploads/<?php echo $p->foto; ?>" width="90" height="100">
-                      </td>
-                      <td><a href="<?php echo base_url('pelanggan/hapus/'.$p->id_pelanggan); ?>" class="btn btn-danger" onclick="return confirm('Anda Yakin?')">Hapus</a></td>
-                    </tr>  
+                $no=1;
+                foreach ($pesanan as $b) {?>
+
+                <tr>
+                    <td><?php echo $no++  ?></td>
+                    <td ><?php echo $b['id_pesan']?></td>
+                    <td hidden><?php echo $b['id_pelanggan']?> </td>
+                    <td><?php echo $b['nama_pelanggan']?> </td>
+                    <td><?php echo $b['nama_menu']?> </td>
+                    <td><?php echo $b['nama_katering']?></td>
+                    <td><?php echo $b['jumlah_pesanan']?> </td>
+                    <td><?php echo $b['total_harga']?> </td>
+                    <td><?php echo $b['status_pesanan']?> </td>
+                    <td><?php echo $b['bukti_pembayaran']?> </td>
+                    <td><?php echo $b['alamat_pesanan']?> </td>
+
+                </tr>
                     <?php }?>
                   </tbody>
                 </table>

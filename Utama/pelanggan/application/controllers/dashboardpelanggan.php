@@ -101,14 +101,14 @@
 					$this->db->insert('detail_pemesanan', $data);
 				}
 			$this->cart->destroy();
-			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->result();
+			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->result_array();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_invoice', $p);
 			$this->load->view('templates_customer/footer');
 		}
 
 		public function riwayat(){
-			$data['pemesanan'] = $this->m_pelanggan->tampil_data('pemesanan')->result();
+			$data['pesanan'] = $this->db->get_where('pesanan', ['username' => $this->session->userdata('nama')])->result();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_riwayat', $data);
 			$this->load->view('templates_customer/footer');
