@@ -17,14 +17,14 @@ import androidx.annotation.Nullable;
 import java.io.InputStream;
 
 public class CustomListView extends ArrayAdapter<String> {
-
+    private String[] id_menu;
     private String[] nama_menu;
     private String[] harga_menu;
     private String[] gambar;
     private Activity context;
     Bitmap bitmap;
 
-    public CustomListView(Activity context,String[] nama_menu,String[] harga_menu,String[] gambar) {
+    public CustomListView(Activity context,String[]id_menu,String[] nama_menu,String[] harga_menu,String[] gambar) {
         super(context, R.layout.list_menu,nama_menu);
         this.context=context;
         this.nama_menu=nama_menu;

@@ -42,6 +42,7 @@ public class Ubah_profil extends AppCompatActivity implements View.OnClickListen
         editTextNo_Telp = (EditText) findViewById(R.id.editTextNo_Telp); //inisialisasi value editText
         editTextId_pelanggan = (EditText)findViewById(R.id.id_pelanggan); //inisialisasi value editText
         getEmployee(); //memanggil fungsi getEmployee()
+
     }
 
     private void getEmployee() {
@@ -84,6 +85,7 @@ public class Ubah_profil extends AppCompatActivity implements View.OnClickListen
             String email = c.getString(Konfigurasi.TAG_EMAIL);
             String alamat = c.getString(Konfigurasi.TAG_ALAMAT);
             String no_telp = c.getString(Konfigurasi.TAG_TELP);
+
             editTextId_pelanggan.setText(id);
             editTextUsername.setText(username);
             editTextName.setText(name);
@@ -93,8 +95,11 @@ public class Ubah_profil extends AppCompatActivity implements View.OnClickListen
 
         } catch (JSONException ex) {
             ex.printStackTrace();
+
         }
+
     }
+
     private void updateEmployee() {
         final String id = editTextId_pelanggan.getText().toString().trim();
         final String name = editTextName.getText().toString().trim();

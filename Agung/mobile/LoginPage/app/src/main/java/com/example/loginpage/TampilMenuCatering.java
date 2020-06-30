@@ -19,7 +19,8 @@ import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TampilMenuCatering extends AppCompatActivity implements ListView.OnItemClickListener {
+public class TampilMenuCatering extends AppCompatActivity  {
+    String[] id_menu;
     String[] nama_menu;
     String[] harga_menu;
     String[] gambar;
@@ -29,14 +30,15 @@ public class TampilMenuCatering extends AppCompatActivity implements ListView.On
 
     private String id;
 
-    SharedPrefManager sharedPrefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         listView = (ListView) findViewById(R.id.listView);
         Intent intent = getIntent();
-        id = intent.getStringExtra(Konfigurasi.EMP_ID);
+
+
+        id = intent.getStringExtra("empId");
         getJSON();
 
     }
@@ -47,22 +49,33 @@ public class TampilMenuCatering extends AppCompatActivity implements ListView.On
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
+            id_menu=new String[result.length()];
             nama_menu=new String[result.length()];
             harga_menu=new String[result.length()];
             gambar=new String[result.length()];
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
+                id_menu[i]= jo.getString(Konfigurasi.TAG_ID_MENU);
                 nama_menu[i] = jo.getString(Konfigurasi.TAG_NAMA_MENU);
                 harga_menu[i] = jo.getString(Konfigurasi.TAG_HARGA);
                 gambar[i] = jo.getString(Konfigurasi.TAG_GAMBAR);
+                CustomListView customListView = new CustomListView(this,id_menu, nama_menu, harga_menu, gambar);
+                listView.setAdapter(customListView);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                                                    @Override
+                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                        Intent intent = new Intent(getApplicationContext(),Pemesanan.class);
+                                                        intent.putExtra("nama",id_menu[position]);
+                                                        startActivity(intent);
+                                                    }
+                                                }
 
+                );
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        CustomListView customListView = new CustomListView(this, nama_menu, harga_menu, gambar);
-        listView.setAdapter(customListView);
 
     }
     private void getJSON() {
@@ -91,12 +104,5 @@ public class TampilMenuCatering extends AppCompatActivity implements ListView.On
         }
         GetJSON gj = new GetJSON();
         gj.execute();
-    }
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this,Halaman_Utama.class);
-
-
-        startActivity(intent);
     }
 }

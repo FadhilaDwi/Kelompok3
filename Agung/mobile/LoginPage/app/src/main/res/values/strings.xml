@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Login Page</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array
+
+        name="android_dropdown_arrays">
+
+        <item> -- Pilih Metode Pembayaran -- </item>
+
+        <item>Bayar Ditempat</item>
+
+        <item>Transfer Bank</item>
+
+
+    </string-array>
+
 </resources>

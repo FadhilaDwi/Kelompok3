@@ -55,7 +55,7 @@ public class TambahAkun extends AppCompatActivity {
 
         //koneksi ke API untuk register,kita menggunakan localhost seghingga kita gunakan ip sesuai dengan ip kita
 
-        AndroidNetworking.post("http://192.168.10.242/Kelompok3/Dodhy/pelanggan/api/pelanggan/register")
+        AndroidNetworking.post("http://192.168.10.242/Kelompok3/Utama/pelanggan/api/pelanggan/register")
 
                 .addBodyParameter("username",username) //mengirimkan data username yang akan diisi dengan varibel username
                 .addBodyParameter("nama_pelanggan",nama)//mengirimkan data nama_pelanggan yang akan diisi dengan varibel nama

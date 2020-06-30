@@ -84,12 +84,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lupa Password?"
-                android:textColor="#FFFFFF" />
             <TextView
                 android:onClick="Daftar"
                 android:clickable="true"
@@ -97,6 +91,9 @@
                 android:layout_height="wrap_content"
                 android:text="Belum Memiliki Akun?"
                 android:textColor="#FFFFFF" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="150dp"

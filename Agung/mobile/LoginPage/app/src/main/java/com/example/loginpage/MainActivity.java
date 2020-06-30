@@ -1,7 +1,10 @@
 package com.example.loginpage;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +16,9 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     private ImageButton ImgButton;
@@ -51,15 +57,17 @@ public class MainActivity extends AppCompatActivity {
                     //memunculkan toast saat terdapat form yang kosong
                 } else {
                     proses(username,password); //memanggil fungsi proses() proses di sini akan memproses stirng dari username dan password
+
                 }
             }
 
         });
 }
+
     public void proses(final String username, String password){
 
         //membuat koneksi ke API untuk Login, di sini kita menggunakan localhost sehingga kita menggunakan ip sesuai dengan ip pada ipconfig
-        AndroidNetworking.post("http://192.168.10.242/Kelompok3/Dodhy/pelanggan/api/pelanggan/login")
+        AndroidNetworking.post("http://192.168.10.242/Kelompok3/Utama/pelanggan/api/pelanggan/login")
                 .addBodyParameter("username",username) //mengirimkan data nim_mahasiswa yang akan diisi dengan varibel nim
                 .addBodyParameter("password", password) //mengirimkan data nama_mahasiswa yang akan diisi dengan varibel nama
                 .setPriority(Priority.MEDIUM)

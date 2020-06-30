@@ -6,9 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,22 +17,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TampilCatering extends AppCompatActivity {
-    String[] id_katering;
-    String[] nama_katering;
-    String[] alamat_katering;
-    String[] no_telp_katering;
-    String[] email_katering;
+public class History extends AppCompatActivity {
 
-    String[] gambar_katering;
-    private ListView listView;
+    String[] nama_katering;
+    String[] nama_menu;
+    String[] jumlah_pesan;
+    String[] sub_total;
+    String[] status;
+    String id;
+    private android.widget.ListView listView;
     private String JSON_STRING;
+    SharedPrefManager sharedPrefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.katering);
+        setContentView(R.layout.history);
         listView = (ListView) findViewById(R.id.listView);
-
+        sharedPrefManager = new SharedPrefManager(this);
+        id = (sharedPrefManager.getSpIdPelanggan());
         getJSON();
     }
     private void showEmployee(){
@@ -43,28 +43,26 @@ public class TampilCatering extends AppCompatActivity {
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
-            id_katering=new String[result.length()];
-          nama_katering=new String[result.length()];
-            alamat_katering=new String[result.length()];
-            no_telp_katering=new String[result.length()];
-            email_katering=new String[result.length()];
-            gambar_katering=new String[result.length()];
+            nama_menu=new String[result.length()];
+            nama_katering=new String[result.length()];
+            jumlah_pesan=new String[result.length()];
+           sub_total=new String[result.length()];
+            status=new String[result.length()];
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
-                 id_katering [i]= jo.getString(Konfigurasi.TAG_ID_KATERING);
-                 nama_katering [i] = jo.getString(Konfigurasi.TAG_NAMA_KATERING);
-                 alamat_katering [i]= jo.getString(Konfigurasi.TAG_ALAMAT_KATERING);
-                 no_telp_katering [i]= jo.getString(Konfigurasi.TAG_NO_TELP_KATERING);
-                 email_katering[i] = jo.getString(Konfigurasi.TAG_EMAIL_KATERING);
-                gambar_katering[i] = jo.getString(Konfigurasi.TAG_GAMBAR_KATERING);
+                nama_menu [i]= jo.getString(Konfigurasi.TAG_NAMA_MENU);
+                nama_katering [i] = jo.getString(Konfigurasi.TAG_NAMA_KATERING);
+                jumlah_pesan [i]= jo.getString(Konfigurasi.TAG_JUMLAH_PESAN);
+                sub_total [i]= jo.getString(Konfigurasi.TAG_SUB_TOTAL);
+                status[i] = jo.getString(Konfigurasi.TAG_STATUS);
 
-                ListViewCatering customListView = new ListViewCatering(this,id_katering, nama_katering, alamat_katering,no_telp_katering,email_katering, gambar_katering);
+                ListViewHistory customListView = new ListViewHistory(this,nama_katering, nama_menu, jumlah_pesan,sub_total,status);
                 listView.setAdapter(customListView);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(getApplicationContext(),TampilMenuCatering.class);
-                        intent.putExtra("empId",id_katering[position]);
+
                         startActivity(intent);
                     }}
                 );
@@ -73,8 +71,6 @@ public class TampilCatering extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
     private void getJSON(){
         class GetJSON extends AsyncTask<Void,Void,String> {
@@ -83,7 +79,7 @@ public class TampilCatering extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(TampilCatering.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(History.this,"Mengambil Data","Mohon Tunggu...",false,false);
             }
 
             @Override
@@ -97,12 +93,11 @@ public class TampilCatering extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(Konfigurasi.URL_GET_ALL);
+                String s = rh.sendGetRequestParam(Konfigurasi.URL_GET_HISTORY,id);
                 return s;
             }
         }
         GetJSON gj = new GetJSON();
         gj.execute();
     }
-
 }

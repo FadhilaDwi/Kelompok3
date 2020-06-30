@@ -15,6 +15,7 @@ import java.net.URL;
 
 public class TampilMenu extends AppCompatActivity {
     String urladdress="http://192.168.10.242/Kelompok3/Agung/API/tampilmenu.php";
+    String[] id_menu;
     String[] nama_menu;
     String[] harga_menu;
     String[] gambar;
@@ -33,7 +34,7 @@ public class TampilMenu extends AppCompatActivity {
 
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
         collectData();
-        CustomListView customListView=new CustomListView(this,nama_menu,harga_menu,gambar);
+        CustomListView customListView=new CustomListView(this,id_menu,nama_menu,harga_menu,gambar);
         listView.setAdapter(customListView);
 
     }

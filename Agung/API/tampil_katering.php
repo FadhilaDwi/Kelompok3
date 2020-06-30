@@ -21,7 +21,8 @@
 			"nama_katering"=>$row['nama_katering'],
 			"alamat_katering"=>$row['alamat'],
             "no_telp_katering"=>$row['no_telepon'],
-            "email_katering"=>$row['email']
+			"email_katering"=>$row['email'],
+			"gambar_katering"=>'http://192.168.10.242/Kelompok3/Utama/pelanggan/assets/img/mitra/'.strip_tags($row['foto_lokasi']),
 		));
 	}
 	

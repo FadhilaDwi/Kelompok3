@@ -1,30 +1,27 @@
 package com.example.loginpage;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.util.Calendar;
-import java.util.HashMap;
 
-import static com.androidnetworking.AndroidNetworking.get;
 
 public class Halaman_Utama extends AppCompatActivity {
     Intent intent = getIntent();
     ImageView greetImg;
     TextView greetText;
     SharedPrefManager sharedPrefManager;
-
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +34,9 @@ public class Halaman_Utama extends AppCompatActivity {
         greetText = findViewById(R.id.greeting_text);
         greeting();
         sharedPrefManager = new SharedPrefManager(this);
-
         final String tvUsername = (sharedPrefManager.getSpUsername());//string berupa data username yang di simpan meggunakan sharedpreferences
+        user  = (sharedPrefManager.getSpUsername());
+        getEmployee();
 
         showRide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,24 +55,62 @@ public class Halaman_Utama extends AppCompatActivity {
         showKatering.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick  (View view) { // saat tombol ditekan maka akan berpindah ke halaman tampil catering
-                if (sharedPrefManager.getSPSudahLogin()) {
-                    startActivity(new Intent(Halaman_Utama.this, TampilCatering.class));
-                } else {
-                    Intent intents = new Intent(Halaman_Utama.this, MainActivity.class);
-                    startActivity(intents);
+                   startActivity(new Intent(Halaman_Utama.this, TampilCatering.class));
                 }
-            }
+
         });
         showMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick  (View view) { // saat tombol ditekan maka akan berpindah ke halaman tampil catering
 
-                    startActivity(new Intent(Halaman_Utama.this, TampilMenu.class));
+                    startActivity(new Intent(Halaman_Utama.this, History.class));
                               }
 
         });
+
+    }
+    private void getEmployee() {
+        class GetEmployee extends AsyncTask<Void, Void, String> {
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(Halaman_Utama.this, "Fetching...", "Wait...", false, false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                showEmployee(s);
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                RequestHandler rh = new RequestHandler();
+                String s = rh.sendGetRequestParam(Konfigurasi.URL_GET_EMP, user);
+                return s;
+            }
+        }
+        GetEmployee ge = new GetEmployee();
+        ge.execute();
     }
 
+
+    private void showEmployee(String json) {
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
+            JSONObject c = result.getJSONObject(0);
+            String id = c.getString(Konfigurasi.TAG_ID_PELANGGAN);
+            sharedPrefManager.saveSPString(SharedPrefManager.SP_ID_PELANGGAN, id);
+
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+        }
+
+    }
     @SuppressLint("SetTextI18n")
     private void greeting() {
         Calendar calendar = Calendar.getInstance();
