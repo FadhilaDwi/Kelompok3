@@ -101,7 +101,7 @@
 					$this->db->insert('detail_pemesanan', $data);
 				}
 			$this->cart->destroy();
-			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->result_array();
+			$p['pesanan'] = $this->m_pelanggan->tampil(['id_pesan' => $data['id_pesan']], 'pesanan')->row_array();
 			$this->load->view('templates_customer/header');
 			$this->load->view('customer/v_invoice', $p);
 			$this->load->view('templates_customer/footer');
