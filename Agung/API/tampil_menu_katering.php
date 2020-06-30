@@ -18,6 +18,7 @@ $tgl=date('Y-m-d');
 		
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
+			"id_menu"=>$row['id_menu'],
 			"nama_menu"=>$row['nama_menu'],
 			"foto"=>$row['foto'],
 			"harga"=>$row['harga_menu'],

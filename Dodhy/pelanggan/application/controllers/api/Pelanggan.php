@@ -112,31 +112,29 @@ public function register_post(){
 			public function lihat_get(){
 				// ($this->db->get_where('pelanggan', ['username' => $this->session->userdata('username')])->result();) kode ini pake session bosque, ga bisa di test di postman
 				$username = $this->get('username');
+				$hasil = $this->db->get_where('pelanggan', ['username' => $username])->result_array();
 				
-				// $this->db->where('username', $username);
-				// $hasil = $this->db->get('pelanggan')->result();
-				$hasil = $this->db->get_where('pelanggan', ['username' => $username])->result();
-				$this->response($hasil, 200);
+				
+				
+				
+				echo json_encode($hasil,TRUE);
 			}
 
 			public function ubah_put(){
-				$username = $this->put('username');
+				$id = $this->put('id');
 				$data = array(
-					'username' => $this->put('username'),
-					'nama_pelanggan' => $this->put('nama_pelanggan'),
+					'id_pelanggan' => $this->put('id'),
+					'nama_pelanggan' => $this->put('name'),
 					'email' => $this->put('email'),
 					'alamat' => $this->put('alamat'),
-					'no_telepon' => $this->put('no_telepon')
-				);
-				$where = array(
-					'username' => $username
-				);
-				$update = $this->M_login->update($where,$data,'pelanggan');
-
+					'no_telepon' => $this->put('no_telp'));
+				$this->db->where ('id_pelanggan',$id);
+				$update = $this->db->update('pelanggan',$data);
 				if ($update) {
 					$this->response(array('status' => 'success', 200));
+					echo json_encode($update); 
 				} else {
-					$this->response(array('status' => 'fail', 502));
+					echo"Gagal ubah bos";
 				}
 			}
     }

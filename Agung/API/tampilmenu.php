@@ -1,11 +1,11 @@
 <?php 
 
-
+$id = $_GET['id_menu'];
 	//Import File Koneksi Database
 	require_once('koneksi2.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM menu where id_mitra = 3";
+	$sql = "SELECT * FROM menu where id_menu = '$id' ";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -17,6 +17,7 @@
 		
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
+			"id_menu"=>$row['id_menu'],
 			"nama_menu"=>$row['nama_menu'],
 			"foto"=>$row['foto'],
 			"harga"=>$row['harga_menu'],
@@ -26,7 +27,7 @@
 	}
 	
 	//Menampilkan Array dalam Format JSON
-	echo json_encode($result);
+	echo json_encode(array('result'=>$result));
 	
 	mysqli_close($con);
 ?>
