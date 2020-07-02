@@ -3,7 +3,7 @@
 <head>
 	<title>Selamat datang</title>
 	<!-- Site favicon -->
-	<link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/favicon.ico">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/logobaru.svg">
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Google Font -->
@@ -24,13 +24,7 @@
 <body>
 
 	<!-- Header start -->
-	<div class="header-wrap">
-		<div class="clearfix">
-			<div class="logo">
-				<a href="index.php"><img src="<?php echo base_url('assets/') ?>login/images/logo.svg" alt=""></a>
-			</div>
-		</div>
-	</div>
+	
 	<!-- Header end -->
 	<main class="cd-main">
 		<section class="cd-section index5 visible">

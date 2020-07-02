@@ -155,8 +155,12 @@
 
                 <div class="form-group">
                     <label>Bukti Pembayaran</label>
-                    <input type="file" name="bukti_pembayaran" value="<?php echo $b['bukti_pembayaran']?>"class="form-control">
                 </div>
+
+                <div class="form-group">
+                <img src="<?php echo base_url(); ?>./uploads/<?php echo $b['bukti_pembayaran']; ?>" width="300" height="400" >
+                </div>
+               
 
                 <div class="form-group">
                     <label>Alamat Pemesan</label>

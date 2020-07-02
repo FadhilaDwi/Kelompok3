@@ -251,6 +251,10 @@ foreach ($detail_menu as $b) {?>
                     <label>Jadwal Menu </label>
                     <input type="date" name="hari" class="form-control" value="<?php echo $b['hari']?>">
                 </div>
+                
+                <div class="form-group">
+                <img src="<?php echo base_url(); ?>./uploads/<?php echo $b['foto']; ?>" width="400" height="400">
+                </div>
 
                 <div class="form-group">
                     <label>Gambar Menu </label>
