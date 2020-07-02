@@ -46,15 +46,15 @@
 								<!-- login slide start -->
 								<div class="login-slide slide">
 									<div class="sign-up-txt">
-										Don't have an account? <a href="javascript:;" class="sign-up-click">Register Now</a>
+										Belum Punya Akun? <a href="javascript:;" class="sign-up-click">Daftar</a>
 									</div>
 									<div class="d-flex height-100-percentage max-width-400 margin-0-auto padding-10px">
 										<div class="align-self-center width-100-percentage">
-											<h2>Sign in to You Login </h2>
+											<h2>Login </h2>
 											<form action = "<?php echo base_url('customer/login/aksi_login') ?>" class="floating-form" method="post">
 												<div class="form-group">
 													<input type="text" name="username" class="form-control">
-													<label class="label">Enter Your Username</label>
+													<label class="label">Username</label>
 												</div>
 												<div class="form-group">
 													<input type="password" name="password" class="form-control">
@@ -78,7 +78,7 @@
 								<!-- signup slide start -->
 								<div class="signup-slide slide">
 									<div class="sign-up-txt">
-										if you have an account? <a href="javascript:;" class="login-click">login</a>
+										Sudah Punya Akun? <a href="javascript:;" class="login-click">login disini</a>
 									</div>
 									<div class="d-flex height-100-percentage padding-40px">
 										<div class="align-self-center width-100-percentage">
