@@ -41,7 +41,7 @@
 						
 						<!-- login style5 left side end -->
 						<!-- login style5 right side start -->
-						<div class="col-md-12 col-sm-12 style5-right">
+						<div class="col  style5-right">
 							<div class="login-form-slider">
 								<!-- login slide start -->
 								<div class="login-slide slide">
@@ -62,9 +62,7 @@
 												</div>
 												<div class="row">
 													<div class="col-6">
-														<div class="forgot-txt">
-															<a href="javascript:;" class="forgot-password-click">Forgot Password</a>
-														</div>
+														
 													</div>
 													<div class="col-6">
 														<div class="form-group text-right">

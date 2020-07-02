@@ -445,7 +445,7 @@ p {
 	position: absolute;
 	left: 50px;
 	top: 37%;
-	font-weight: 400;
+	font-weight: 200;
 	color: #222222;
 	font-size: 25px;
 }
@@ -453,8 +453,8 @@ p {
 	background: #ffffff no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-	width: 400px;
-	height: 600px;
+	width: 200px;
+	height: 3000px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -1020,7 +1020,7 @@ p {
 	08. Login Style 5
 ==============================================================*/
 .index5 .style5{
-	background: url(../images/banner5.jpg) no-repeat;
+	background: url(../images/bg.jpg) no-repeat;
 	background-size: cover;
 }
 .style5 .login-box{
