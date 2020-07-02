@@ -38,19 +38,10 @@
 				<div class="login-box">
 					<div class="row no-gutters height-100-percentage">
 						<!-- login style5 left side start -->
-						<div class="col-md-4 col-sm-12 style5-left">
-							<div class="d-flex height-100-percentage padding-30px">
-								<div class="align-self-center width-100-percentage">
-									<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
-								</div>
-							</div>
-						</div>
+						
 						<!-- login style5 left side end -->
 						<!-- login style5 right side start -->
-						<div class="col-md-8 col-sm-12 style5-right">
+						<div class="col-md-12 col-sm-12 style5-right">
 							<div class="login-form-slider">
 								<!-- login slide start -->
 								<div class="login-slide slide">
