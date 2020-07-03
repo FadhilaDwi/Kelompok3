@@ -29,7 +29,7 @@
             
             <div class="file-field">
                 <div class="z-depth-3-half mb-2 ml-2">
-                <img src="<?= base_url('assets/img/profil/') . $mitra ['foto_lokasi']; ?>" class=" z-depth-1-half avatar-pic"
+                <img src="<?= base_url('assets/img/mitra/') . $mitra ['foto_lokasi']; ?>" class=" z-depth-1-half avatar-pic"
                     alt="example placeholder" width="300" height="250">
                 </div>
                 <div class="d-flex justify-content-center">

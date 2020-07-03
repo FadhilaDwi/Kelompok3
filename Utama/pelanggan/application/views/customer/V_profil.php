@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<?= form_open_multipart('customer/profil') ?>
+<?= form_open_multipart('customer/Profil') ?>
   <div class="row">
     
         <div class="col-4">

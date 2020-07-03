@@ -49,7 +49,7 @@ class Admin extends CI_Controller {
             'alamat'      => $alamat,
             'no_telepon'  => $no_telepon,
             'foto'        => $foto,
-            'password'    => $password 
+            'password'    => md5 ($password) 
         );
 
         $this->m_dashboard->tambah_data($data, 'admin');
@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
                 'nama_admin'       => $nama_admin,
                 'alamat'              => $alamat,
                 'no_telepon'          => $no_telepon,
-                'password'          => $password
+                'password'          => md5 ($password)
             );
 
             $where = array(

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+	<!-- Site favicon -->
+	
 <head>
 
   <meta charset="utf-8">
@@ -9,7 +10,7 @@
   <meta name="author" content="">
 
   <title>Cari Makanan Sehat Yuk</title>
-
+  <link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/logobaru.svg">
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

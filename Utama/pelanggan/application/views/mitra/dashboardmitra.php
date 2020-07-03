@@ -253,7 +253,7 @@ foreach ($detail_menu as $b) {?>
                 </div>
                 
                 <div class="form-group">
-                <img src="<?php echo base_url(); ?>./uploads/<?php echo $b['foto']; ?>" width="400" height="400">
+                <img src="<?php echo base_url(); ?>./assets/img/gambar_menu/<?php echo $b['foto']; ?>" width="400" height="400">
                 </div>
 
                 <div class="form-group">

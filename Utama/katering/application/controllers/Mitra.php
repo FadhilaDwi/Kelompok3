@@ -32,7 +32,7 @@ class Mitra extends CI_Controller {
         $email = $this->input->post('email');
 		$foto_lokasi     = $_FILES['foto_lokasi']['name'];
 		if ($foto_lokasi =''){}else{
-			$confiq ['upload_path'] = './assets/img/mitra/';
+			$confiq ['upload_path'] = base_url('pelanggan/assets/img/mitra');
 			$confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
 
 			$this->load->library('upload', $confiq);

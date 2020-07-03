@@ -39,7 +39,7 @@
                 //perintah untuk memasukkan foto kedalam database
                 $foto = $_FILES['foto_lokasi']['name'];
                 if($foto){
-                    $config ['upload_path'] = './assets/img/profil/';
+                    $config ['upload_path'] = './assets/img/mitra/';
                     $config ['allowed_types'] = 'jpg|jpeg|png|gif';
                     $config ['max_size'] = '2048';
     

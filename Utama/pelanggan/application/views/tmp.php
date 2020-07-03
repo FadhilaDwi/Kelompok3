@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selamat datang</title>
+	<!-- Site favicon -->
+	<link rel="shortcut icon" href="<?php echo base_url('assets/') ?>login/images/logobaru.svg">
+	<!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/fonts/ionicons/css/ionicons.css">
+	<!-- Text Font -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/fonts/font.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/bootstrap.css">
+    <!-- Normal style CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/style.css">
+    <!-- Normal media CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>login/css/media.css">
+</head>
+<body>
+
+	<!-- Header start -->
+	
+	<!-- Header end -->
+	<main class="cd-main">
+		<section class="cd-section index5 visible">
+			<div class="cd-content style5">
+				<div class="login-box">
+					<div class="row no-gutters height-100-percentage">
+						<!-- login style5 left side start -->
+						
+						<!-- login style5 left side end -->
+						<!-- login style5 right side start -->
+						<div class="col-md-8 col-sm-12 style5-right">
+							<div class="login-form-slider">
+								<!-- login slide start -->
+								<div class="login-slide slide">
+									<div class="sign-up-txt">
+										Belum Punya Akun? <a href="javascript:;" class="sign-up-click">Daftar</a>
+									</div>
+									<div class="d-flex height-100-percentage max-width-400 margin-0-auto padding-10px">
+										<div class="align-self-center width-100-percentage">
+											<h2>Login </h2>
+											<form action = "<?php echo base_url('customer/login/aksi_login') ?>" class="floating-form" method="post">
+												<div class="form-group">
+													<input type="text" name="username" class="form-control">
+													<label class="label">Username</label>
+												</div>
+												<div class="form-group">
+													<input type="password" name="password" class="form-control">
+													<label class="label">Password</label>
+												</div>
+												<div class="row">
+													<div class="col-6">
+														
+													</div>
+													<div class="col-6">
+														<div class="form-group text-right">
+															<input type="submit" class="submit" >
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- login slide end -->
+								<!-- signup slide start -->
+								<div class="signup-slide slide">
+									<div class="sign-up-txt">
+										Sudah Punya Akun? <a href="javascript:;" class="login-click">login disini</a>
+									</div>
+									<div class="d-flex height-100-percentage padding-40px">
+										<div class="align-self-center width-100-percentage">
+											<h2>Buat Akun</h2>
+											<form class="floating-form" action="<?php echo base_url(). 'customer/login/registrasi' ?>" method="post" enctype="multipart/form-data">
+												<div class="row">
+												<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Nama Lengkap</label>
+															<input type="text" class="form-control" name="nama_pelanggan">
+														</div>
+													</div>
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Alamat</label>
+															<input type="text" class="form-control" name="alamat">
+														</div>
+													</div>
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Username</label>
+															<input type="text" class="form-control" name="username">
+														</div>
+													</div>
+													
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Password</label>
+															<input type="password" class="form-control" name="password">
+														</div>
+													</div>											
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Email</label>
+															<input type="text" class="form-control" name="email">
+														</div>
+													</div>
+													
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">Foto</label>
+															<input type="file" class="form-control" placeholder="Foto" name="foto">
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label">No. Telepon</label>
+															<input type="text" class="form-control" name="no_telepon">
+														</div>
+													</div>
+
+													<div class="col-md-6 col-sm-12">
+														<div class="form-group">
+															<label class="label" hidden></label>
+															<input type="text" class="form-control" hidden>
+														</div>
+													</div>
+
+													
+
+												</div>
+												<div class="form-group text-right">
+													<input type="submit" class="submit" value="Register">
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- signup slide end -->
+								<!-- forgot password slide start -->
+								<div class="forgot-password-slide slide">
+									<div class="d-flex height-100-percentage style4-left">
+										<div class="align-self-center width-100-percentage max-width-400 margin-0-auto padding-10px">
+											<form class="floating-form">
+												<label class="label">Enter your email address to reset your password</label>
+												<div class="form-group user-name-field">
+													<input type="text" class="form-control" name='email'>
+													<label class="label">Email</label>
+												</div>
+												<div class="form-group text-right">
+													<input type="submit" class="submit" value="Submit">
+												</div>
+											</form>
+											<div class="sign-up-txt">
+												if you remember your password? <a href="javascript:;" class="login-click">login</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- forgot password slide end -->
+							</div>
+						</div>
+						<!-- login style5 right side end -->
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div id="cd-loading-bar" data-scale="1" class="index"></div>
+	<!-- JS File -->
+	<script src="<?php echo base_url('assets/') ?>login/js/modernizr.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/popper.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/bootstrap.js"></script>
+	<script src="<?php echo base_url('assets/') ?>login/js/velocity.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/') ?>login/js/script.js"></script>
+</body>
+</html>

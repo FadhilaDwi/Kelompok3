@@ -35,16 +35,16 @@
 						
 						<!-- login style5 left side end -->
 						<!-- login style5 right side start -->
-						<div class="col  style5-right">
+						<div class="col style5-right">
 							<div class="login-form-slider">
 								<!-- login slide start -->
 								<div class="login-slide slide">
 									<div class="sign-up-txt">
-										Belum Punya Akun? <a href="javascript:;" class="sign-up-click">Daftar</a>
+										Belum Punya Akun?<a href="javascript:;" class="sign-up-click">Daftar</a>
 									</div>
 									<div class="d-flex height-100-percentage max-width-400 margin-0-auto padding-10px">
 										<div class="align-self-center width-100-percentage">
-											<h2>Login </h2>
+											<h2>Sign in to You Login </h2>
 											<form action = "<?php echo base_url('customer/login/aksi_login') ?>" class="floating-form" method="post">
 												<div class="form-group">
 													<input type="text" name="username" class="form-control">
@@ -72,7 +72,7 @@
 								<!-- signup slide start -->
 								<div class="signup-slide slide">
 									<div class="sign-up-txt">
-										Sudah Punya Akun? <a href="javascript:;" class="login-click">login disini</a>
+										Sudah Punya Akun? <a href="javascript:;" class="login-click">login</a>
 									</div>
 									<div class="d-flex height-100-percentage padding-40px">
 										<div class="align-self-center width-100-percentage">
@@ -80,7 +80,7 @@
 											<form class="floating-form" action="<?php echo base_url(). 'customer/login/registrasi' ?>" method="post" enctype="multipart/form-data">
 												<div class="row">
 												<div class="col-md-6 col-sm-12">
-														<div class="form-group">
+												<div class="form-group">
 															<label class="label">Nama Lengkap</label>
 															<input type="text" class="form-control" name="nama_pelanggan">
 														</div>

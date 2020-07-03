@@ -21,7 +21,7 @@ class tambahmenu extends CI_Controller{
 		$harga_menu = $this->input->post('harga_menu');
         $foto        = $_FILES['foto']['name'];
         if ($foto =''){}else{
-            $confiq ['upload_path'] = './uploads';
+            $confiq ['upload_path'] = './assets/img/gambar_menu';
             $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
 
             $this->load->library('upload', $confiq);

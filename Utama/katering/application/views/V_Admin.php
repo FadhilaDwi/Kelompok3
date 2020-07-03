@@ -58,7 +58,7 @@
                       <td><?php echo $a->alamat ?></td>
                       <td><?php echo $a->no_telepon ?></td>
                       <td>
-                        <img src="<?php echo base_url(); ?>uploads/<?php echo $a->foto; ?>" width="90" height="100">
+                      <img src="<?= base_url('assets/img/admin/').$a->foto;?>" width="120" height="150">
                       </td>
                       <td><a href="<?php echo base_url('admin/hapus/'.$a->id_admin); ?>" class="btn btn-danger" onclick="return confirm('Anda Yakin?')">Hapus</a></td>
                       <td><a href="" data-toggle="modal" data-target="#editModal<?=$a->id_admin; ?>"class="btn btn-success">Edit data</a></td>
@@ -159,7 +159,7 @@
             <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" 
             aria-describedby="emailHelp" placeholder="Masukkan No Telepon" name="no_telepon" value="<?=$a->no_telepon ?>">
             <h6 class="mt-2">Password</h6>
-            <input type="textarea" class="form-control form-control-user" id="exampleInputEmail" 
+            <input type="password" class="form-control form-control-user" id="exampleInputEmail" 
             aria-describedby="emailHelp" placeholder="Masukkan Password" name="password" value="<?=$a->password ?>">
             </div>
         <div class="modal-footer">

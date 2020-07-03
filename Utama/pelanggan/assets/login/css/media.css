@@ -26,6 +26,6 @@
 	/*============ Login Style 5 =============*/
 	.style5 .login-box{height: auto;}
 	.style5 .style5-left{display: none;}
-	.style5 .style5-right{min-height: 250px;}
+	.style5 .style5-right{min-height: 500px;}
 	.style5 .login-form-slider .slide{position: relative; padding: 50px 15px 0;}
 }
