@@ -7,8 +7,8 @@ class M_dashboard extends CI_Model{
     }
 
     //fungsi untuk menambahkan data ke dalam tabel yang diinginkan
-    function tambah_data($data, $table){
-        $this->db->insert($table, $data);
+    function tambah_data($data,$table){
+		$this->db->insert($table,$data);
     }
 
     //fungsi untuk menghapus data yang diinginkan berdasar id

@@ -28,11 +28,10 @@ class Admin extends CI_Controller {
         $nama_admin            = $this->input->post('nama_admin');
         $alamat        = $this->input->post('alamat');
         $no_telepon    = $this->input->post('no_telepon');
-        $foto         = $_FILES['foto']['name'];
         $password    = $this->input->post('password');
-
+        $foto         = $_FILES['foto']['name'];
             if ($foto =''){}else{
-                $confiq ['upload_path'] = './uploads';
+                $confiq ['upload_path'] = '/assets/img/admin';
                 $confiq ['allowed_types'] = 'jpg|jpeg|png|gif';
 
                 $this->load->library('upload', $confiq);
@@ -56,8 +55,8 @@ class Admin extends CI_Controller {
         redirect('admin/index');
     }
 	function hapus($id){
-		$where = array('idpengurus' => $id); // mengubah id menjadi bentuk array
-		$this->m_dashboard->hapus_data($where,'pengurus_masjid'); //perintah untuk menghapus data sesuai dengan tabel dan id yang diinginkan
+		$where = array('id_admin' => $id); // mengubah id menjadi bentuk array
+		$this->m_dashboard->hapus_data($where,'admin'); //perintah untuk menghapus data sesuai dengan tabel dan id yang diinginkan
 		redirect('admin/index');
 	}
 	function edit($id_admin){

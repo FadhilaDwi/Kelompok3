@@ -34,6 +34,7 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th hidden>idadmin</th>
                       <th>Username</th>
                       <th>Nama Admin</th>
                       <th>Alamat</th>
@@ -53,6 +54,7 @@
                   
                   ?>
                     <td><?php echo $no++ ?></td>
+                    <td hidden><?php echo $a->id_admin ?></td>
                       <td><?php echo $a->username ?></td>
                       <td><?php echo $a->nama_admin ?></td>
                       <td><?php echo $a->alamat ?></td>
