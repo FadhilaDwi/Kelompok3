@@ -31,7 +31,7 @@
 					'status' => "login"
 				);
 				$this->session->set_userdata($data_session);
-				redirect(base_url('dashboard'));
+				redirect(base_url('admin/Coba'));
 			
 			}else{
 				echo "maaf username dan password salah";
